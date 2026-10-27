@@ -271,7 +271,7 @@ ${ph}
       <section class="col left">
         <h1 class="title">Proposal for Management&nbsp;Services</h1>
         <div class="prop-name">Commercial &mdash; 838 Seneca Ave SW</div>
-        <div class="in-label" style="font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-40); margin:-14px 0 26px;">Prepared for Thomas Family Properties LLC</div>
+        <div class="in-label" style="font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-40); margin:-14px 0 26px;">Prepared for Thomas Family Properties, LLC</div>
         <p class="lead">AGM Real Estate Group&rsquo;s fully integrated platform spans syndication, asset management, property management, construction management, advisory services, and development &mdash; supporting a diverse portfolio of commercial, multi-family, mixed-use, and community association investments across the region.</p>
         <div class="inside">
           <div class="in-label">Proposal Table of Contents</div>
