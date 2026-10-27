@@ -13,7 +13,7 @@
 <meta property="og:description" content="Commercial property management services. Access by invitation." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
 /* ============================================================
    AGM DIDOT — Linotype Didot Roman, subset to the glyphs A G M
@@ -329,6 +329,90 @@ em{font-style:italic;}
 .pager .pg-name{font-size:13.5px; font-weight:600; color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;}
 
 /* ============================================================
+   OPENING SLIDES — cover letter + table of contents
+   Full-bleed slides shown before the rail-and-content pages.
+   ============================================================ */
+:root{
+  --cp-didot:'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  --cp-sans:'Montserrat', var(--sans);
+  --cp-blue:#6CA6EB;            /* sideways AGM mark + web link */
+  --cp-navy:#0F212F;            /* contents panel */
+  --cp-mark-grey:#727E86;       /* sideways AGM mark on navy */
+  --cp-paper:#FFFFFF; --cp-ink:#1C1C1C;
+}
+[data-theme="dark"]{--cp-paper:var(--surface); --cp-ink:var(--ink);}
+.covers{display:none;}
+body.on-cover .covers{display:block;}
+body.on-cover .shell{display:none;}
+.cover-page{position:relative; overflow:clip; min-height:calc(100vh - var(--hdr));}
+.cover-page.active{display:grid;}
+
+/* sideways AGM wordmark shared by both slides */
+.cp-mark{position:relative; overflow:clip; pointer-events:none; -webkit-user-select:none; user-select:none;}
+.cp-mark span{position:absolute; top:50%; writing-mode:vertical-lr; text-orientation:mixed; font-family:'AGM Didot', var(--cp-didot); font-weight:400; line-height:.8; letter-spacing:.06em; white-space:nowrap;}
+
+/* -- cover letter -- */
+.cp-letter{grid-template-columns:25.6% minmax(0,1fr); background:var(--cp-paper); color:var(--cp-ink);}
+/* the letter runs longer than one screen, so the mark stays pinned in view */
+.cp-mark-stick{position:sticky; top:var(--hdr); height:calc(100vh - var(--hdr)); max-height:100%;}
+.cp-letter .cp-mark span{left:0; transform:translateY(-50%); margin-left:-.07em; font-size:min(calc((100vh - var(--hdr)) * .29), 19vw); color:var(--cp-blue);}
+.cp-letter-body{display:flex; flex-direction:column; max-width:1180px; padding:clamp(56px,9vh,104px) 6.2vw clamp(40px,7vh,84px) 0; font-family:var(--cp-sans);}
+.cp-salute{font-family:var(--cp-didot); font-weight:400; font-size:clamp(22px,1.7vw,28px); color:var(--cp-ink); margin:0 0 clamp(40px,7vh,84px);}
+.cp-letter-body .cp-p{font-size:clamp(15px,1.13vw,18px); line-height:1.95; letter-spacing:.01em; color:var(--cp-ink); text-align:justify; margin:0 0 1.75em;}
+.cp-letter-body .cp-p:first-of-type{text-align:left;}
+.cp-sign{margin-top:clamp(28px,5vh,64px);}
+.cp-sincerely{font-family:var(--cp-didot); font-size:clamp(21px,1.6vw,26px); margin:0 0 clamp(18px,3vh,30px);}
+.cp-name{font-family:var(--cp-didot); font-size:clamp(23px,1.75vw,28px); margin:0 0 6px;}
+.cp-role{font-size:clamp(13px,.95vw,15px); margin:0;}
+.cp-url{align-self:flex-end; margin-top:clamp(36px,6vh,80px); font-family:var(--cp-sans); font-size:clamp(14px,1.05vw,17px); letter-spacing:.01em; color:var(--cp-blue);}
+.cp-url:hover{color:var(--accent);}
+
+/* -- table of contents -- */
+.cp-contents{grid-template-columns:47.8% minmax(0,1fr); background:var(--cp-navy); color:#fff;}
+.cp-photo{position:relative; min-height:100%; background:#1b2a36;}
+.cp-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:58% 50%; display:block;}
+.cp-toc{position:relative; display:flex; flex-direction:column; padding:clamp(56px,10vh,118px) 4.6vw clamp(40px,7vh,80px) 5vw;}
+.cp-toc .cp-mark{position:absolute; inset:0; z-index:0;}
+.cp-toc .cp-mark span{right:0; transform:translateY(-50%) rotate(180deg); margin-right:-.07em; font-size:min(calc((100vh - var(--hdr)) * .33), 15vw); color:var(--cp-mark-grey);}
+.cp-toc > *:not(.cp-mark){position:relative; z-index:1;}
+.cp-toc-title{font-family:var(--cp-didot); font-weight:400; font-size:clamp(30px,2.85vw,46px); line-height:1.1; letter-spacing:.035em; text-transform:uppercase; color:#fff; margin:0 0 clamp(48px,9.5vh,112px);}
+.cp-cols{display:flex; gap:clamp(28px,2.6vw,40px); max-width:calc(100% - 9vw);}
+.cp-col h3{font-family:var(--cp-sans); font-weight:600; font-size:clamp(16px,1.28vw,21px); color:#fff; margin:0 0 clamp(20px,3.4vh,40px); line-height:1.3;}
+.cp-col ul{display:flex; flex-direction:column; gap:clamp(12px,2.4vh,26px);}
+.cp-col a{position:relative; display:inline-block; white-space:nowrap; font-family:var(--cp-sans); font-weight:400; font-size:clamp(15px,1.28vw,21px); line-height:1.3; letter-spacing:.02em; color:rgba(255,255,255,.80);}
+.cp-col a::after{content:""; position:absolute; left:0; right:0; bottom:-4px; height:1px; background:var(--cp-blue); transform:scaleX(0); transform-origin:left; transition:transform .22s var(--ease);}
+.cp-col a:hover{color:#fff;}
+.cp-col a:hover::after{transform:scaleX(1);}
+.cp-toc-foot{margin-top:auto; padding-top:48px; display:flex; align-items:flex-end; gap:clamp(24px,3vw,44px); flex-wrap:wrap;}
+.cp-toc-foot img{display:block; height:clamp(52px,5.6vw,86px); width:auto;}
+.cp-toc-foot a{font-family:var(--cp-sans); font-size:clamp(13px,1.1vw,17px); color:var(--cp-blue); padding-bottom:4px;}
+.cp-toc-foot a:hover{color:#fff;}
+
+/* pager under the opening slides */
+.cover-pager{padding:0 76px 64px; background:var(--bg);}
+.cover-pager .pager{max-width:1040px; margin:0 auto; border-top:none;}
+
+@media(max-width:960px){
+  .cp-letter{grid-template-columns:18% minmax(0,1fr);}
+  .cp-letter-body{padding:56px 30px 48px 0;}
+  .cp-contents{grid-template-columns:1fr;}
+  .cp-photo{min-height:48vh;}
+  .cp-toc{padding:52px 34px 44px;}
+  .cp-toc .cp-mark span{font-size:min(44vh, 34vw);}
+  .cp-cols{max-width:calc(100% - 22vw);}
+  .cover-pager{padding:0 30px 56px;}
+}
+@media(max-width:560px){
+  .cp-letter{grid-template-columns:minmax(0,1fr);}
+  .cp-letter .cp-mark{display:none;}
+  .cp-letter-body{padding:44px 20px 40px;}
+  .cp-letter-body .cp-p{text-align:left;}
+  .cp-cols{flex-direction:column; gap:36px;}
+  .cp-toc{padding:44px 24px 40px;}
+  .cover-pager{padding:0 20px 48px;}
+}
+
+/* ============================================================
    GLOBAL FOOTER — navy closing band
    ============================================================ */
 .site-footer{background:var(--surface); color:var(--ink-72); padding:50px 76px; border-top:1px solid var(--line);}
@@ -445,10 +529,11 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 <!-- ===================== TOP BAR ===================== -->
 <header class="topbar">
   <div class="topbar-inner">
-    <span class="topbar-prop">838 Seneca Ave SW</span>
+    <a class="topbar-prop" href="#contents" data-route="contents" title="Table of contents">838 Seneca Ave SW</a>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
       <div class="nav-tabs">
+        <button class="nav-link" data-route="contents">Contents</button>
         <button class="nav-link" data-route="about">About</button>
         <button class="nav-link" data-route="management">Management</button>
         <button class="nav-link" data-route="investment">Investment Strategy</button>
@@ -464,6 +549,80 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     </nav>
   </div>
 </header>
+
+<!-- ===================== OPENING SLIDES ===================== -->
+<div class="covers" id="covers">
+
+  <!-- ============ COVER LETTER ============ -->
+  <section class="page cover-page cp-letter" id="page-letter" aria-label="Cover letter">
+    <div class="cp-mark" aria-hidden="true"><div class="cp-mark-stick"><span>AGM</span></div></div>
+    <div class="cp-letter-body">
+      <p class="cp-salute">Dear Thomas Family Properties,</p>
+
+      <p class="cp-p">Thank you for the opportunity to submit a proposal for Management Services for 838&nbsp;Seneca&nbsp;Ave&nbsp;SW.</p>
+
+      <p class="cp-p">AGM Real Estate Group, LLC (&ldquo;AGM&rdquo;) is a Washington-based real estate services firm providing property and asset management throughout the Puget Sound region. Our firm supports a diverse portfolio of real estate investments including commercial, multi-family, mixed-use, and community associations.</p>
+
+      <p class="cp-p">838 Seneca Ave SW is a single-story masonry warehouse and office building of approximately 24,600 square feet on a 1.41-acre site in Renton&rsquo;s Earlington Industrial Park. Its straightforward configuration &mdash; open distribution space, front office with mezzanine, full sprinkler coverage, and ample on-site parking &mdash; supports efficient, cost-effective operations and broad appeal to future industrial users.</p>
+
+      <p class="cp-p">While the building is vacant, AGM will provide a defined interim scope focused on protecting the asset and keeping it lease-ready: routine on-site security and condition checks, oversight of utilities and building systems including fire sprinkler monitoring and inspections, coordination of vendors for grounds, landscaping, and any required repairs, and regular reporting to Ownership. During this period, management is billed at the $1,500 monthly minimum. Once the building is leased, the fee becomes 5% of gross rents, subject to the same minimum &mdash; so the cost of management scales with the income the property generates.</p>
+
+      <p class="cp-p">AGM&rsquo;s management approach is grounded in the protection and growth of invested capital. We operate each asset with fiduciary discipline &mdash; controlling operating expenses, providing transparent monthly financial reporting through our Owner Portal, and preserving physical condition through proactive maintenance and capital planning. For Ownership, the result is a well-maintained asset, predictable costs, and a single accountable point of contact.</p>
+
+      <p class="cp-p">We appreciate the opportunity to be considered and we look forward to working with you.</p>
+
+      <div class="cp-sign">
+        <p class="cp-sincerely">Sincerely,</p>
+        <p class="cp-name">Troy Gessel</p>
+        <p class="cp-role">Principal</p>
+      </div>
+
+      <a class="cp-url" href="https://www.agmrealestategroup.com" target="_blank" rel="noopener">www.agmrealestategroup.com</a>
+    </div>
+  </section>
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <section class="page cover-page cp-contents" id="page-contents" aria-label="Table of contents">
+    <div class="cp-photo"><img src="/assets/838-seneca-ave-sw.jpg" alt="838 Seneca Ave SW, Renton — building entrance" /></div>
+    <div class="cp-toc">
+      <h2 class="cp-toc-title">Table of Contents</h2>
+      <div class="cp-cols">
+        <div class="cp-col">
+          <h3>About AGM</h3>
+          <ul>
+            <li><a href="#about" data-route="about">History</a></li>
+            <li><a href="#about" data-route="about">Featured Assets</a></li>
+            <li><a href="#about" data-route="about">Regional Footprint</a></li>
+          </ul>
+        </div>
+        <div class="cp-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#management" data-route="management">Management</a></li>
+            <li><a href="#investment" data-route="investment">Investment Strategy</a></li>
+            <li><a href="#maintenance" data-route="maintenance">Construction &amp; Facilities</a></li>
+            <li><a href="#reporting" data-route="reporting">Financial Management</a></li>
+            <li><a href="#insurance" data-route="insurance">Insurance</a></li>
+            <li><a href="#technology" data-route="technology">Technology</a></li>
+            <li><a href="#fees" data-route="fees">Fees</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cp-toc-foot">
+        <img src="/assets/agm-logo-white.svg" alt="AGM Real Estate — Asset | Growth | Management" />
+        <a href="https://www.agmrealestategroup.com" target="_blank" rel="noopener">www.agmrealestategroup.com</a>
+      </div>
+      <div class="cp-mark" aria-hidden="true"><span>AGM</span></div>
+    </div>
+  </section>
+
+  <div class="cover-pager">
+    <div class="pager">
+      <button class="prev" id="cvPrev" type="button"><span class="pg-dir">← Previous</span><span class="pg-name"></span></button>
+      <button class="next" id="cvNext" type="button"><span class="pg-dir">Next →</span><span class="pg-name"></span></button>
+    </div>
+  </div>
+</div>
 
 <!-- ===================== SHELL ===================== -->
 <div class="shell">
@@ -891,9 +1050,20 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   var IDX = {};
   PAGES.forEach(function(p,i){ IDX[p.route]=i; });
 
+  // full-bleed opening slides, shown before the numbered sections
+  var COVERS = [
+    {route:"letter",   t1:"Cover",    t2:"Letter",   label:"Cover Letter"},
+    {route:"contents", t1:"Table of", t2:"Contents", label:"Table of Contents"}
+  ];
+  var ORDER = COVERS.concat(PAGES);
+  var ORD = {};
+  ORDER.forEach(function(p,i){ ORD[p.route]=i; });
+  var isCover = function(route){ return route in ORD && !(route in IDX); };
+
   var rail   = document.getElementById("rail");
   var pgPrev = document.getElementById("pgPrev");
   var pgNext = document.getElementById("pgNext");
+  var pagers = [[pgPrev, pgNext], [document.getElementById("cvPrev"), document.getElementById("cvNext")]];
   var navlinks = document.getElementById("navlinks");
 
   function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
@@ -962,26 +1132,30 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   }
 
   function showRoute(route, push, trigger){
-    if(!(route in IDX)) route = "about";
-    var p = PAGES[IDX[route]];
+    if(!(route in ORD)) route = "letter";
+    var p = ORDER[ORD[route]];
+    var cover = isCover(route);
     var pages = document.querySelectorAll(".page");
     pages.forEach(function(pg){ pg.classList.remove("active"); });
     var page = document.getElementById("page-"+route);
     if(!page) return;
     page.classList.add("active");
-    setActiveNav(p.nav);
-    renderRail(p);
+    document.body.classList.toggle("on-cover", cover);
+    setActiveNav(cover ? route : p.nav);
+    if(!cover) renderRail(p);
 
-    // pager
-    var i = IDX[route];
-    var prev = i>0 ? PAGES[i-1] : null;
-    var next = i<PAGES.length-1 ? PAGES[i+1] : null;
-    pgPrev.disabled = !prev;
-    pgNext.disabled = !next;
-    pgPrev.setAttribute("data-route", prev?prev.route:"");
-    pgNext.setAttribute("data-route", next?next.route:"");
-    pgPrev.querySelector(".pg-name").textContent = prev ? railName(prev) : "";
-    pgNext.querySelector(".pg-name").textContent = next ? railName(next) : "";
+    // pager (section pager + opening-slide pager share the same order)
+    var i = ORD[route];
+    var prev = i>0 ? ORDER[i-1] : null;
+    var next = i<ORDER.length-1 ? ORDER[i+1] : null;
+    pagers.forEach(function(pg){
+      pg[0].disabled = !prev;
+      pg[1].disabled = !next;
+      pg[0].setAttribute("data-route", prev?prev.route:"");
+      pg[1].setAttribute("data-route", next?next.route:"");
+      pg[0].querySelector(".pg-name").textContent = prev ? railName(prev) : "";
+      pg[1].querySelector(".pg-name").textContent = next ? railName(next) : "";
+    });
 
     armReveals(page);
     if(push!==false){
@@ -1036,7 +1210,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   function ph(event, props){ if(phReady()){ try{ window.posthog.capture(event, props); }catch(e){} } }
   var _section = null, _sectionStart = 0;
   function sectionMeta(route){
-    var pp = PAGES[IDX[route]] || {};
+    var pp = ORDER[ORD[route]] || {};
     return { section: route, section_label: pp.label || route, section_index: (IDX[route] != null ? IDX[route] + 1 : null) };
   }
   function flushSection(reason){
@@ -1125,7 +1299,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 
   // boot
   var start = (location.hash||"").replace("#","");
-  showRoute(start in IDX ? start : "about", false, "load");
+  showRoute(start in ORD ? start : "letter", false, "load");
   onScroll();
 })();
 </script>
