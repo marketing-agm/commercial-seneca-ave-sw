@@ -315,78 +315,84 @@ em{font-style:italic;}
   --cp-sans:'Montserrat', var(--sans);
   --cp-blue:#6CA6EB;            /* sideways AGM mark + web link */
   --cp-navy:#0F212F;            /* contents panel */
-  --cp-mark-grey:#727E86;       /* sideways AGM mark on navy */
   --cp-paper:#FFFFFF; --cp-ink:#1C1C1C;
 }
 [data-theme="dark"]{--cp-paper:var(--surface); --cp-ink:var(--ink);}
 .covers{display:none;}
 body.on-cover .covers{display:block;}
 body.on-cover .shell{display:none;}
-.cover-page{position:relative; overflow:clip; min-height:calc(100vh - var(--hdr));}
+.cover-page{position:relative; min-height:calc(100vh - var(--hdr));}
 .cover-page.active{display:grid;}
 
-/* sideways AGM wordmark shared by both slides */
-.cp-mark{position:relative; overflow:clip; pointer-events:none; -webkit-user-select:none; user-select:none;}
-.cp-mark span{position:absolute; top:50%; writing-mode:vertical-lr; text-orientation:mixed; font-family:'AGM Didot', var(--cp-didot); font-weight:400; line-height:.8; letter-spacing:.06em; white-space:nowrap;}
 
-/* -- cover letter -- */
-.cp-letter{grid-template-columns:25.6% minmax(0,1fr); background:var(--cp-paper); color:var(--cp-ink);}
-/* the letter runs longer than one screen, so the mark stays pinned in view */
-.cp-mark-stick{position:sticky; top:var(--hdr); height:calc(100vh - var(--hdr)); max-height:100%;}
-.cp-letter .cp-mark span{left:0; transform:translateY(-50%); margin-left:-.07em; font-size:min(calc((100vh - var(--hdr)) * .29), 19vw); color:var(--cp-blue);}
-.cp-letter-body{display:flex; flex-direction:column; max-width:1180px; padding:clamp(56px,9vh,104px) 6.2vw clamp(40px,7vh,84px) 0; font-family:var(--cp-sans);}
-.cp-salute{font-family:var(--cp-didot); font-weight:400; font-size:clamp(22px,1.7vw,28px); color:var(--cp-ink); margin:0 0 clamp(40px,7vh,84px);}
-.cp-letter-body .cp-p{font-size:clamp(15px,1.13vw,18px); line-height:1.95; letter-spacing:.01em; color:var(--cp-ink); text-align:justify; margin:0 0 1.75em;}
-.cp-letter-body .cp-p:first-of-type{text-align:left;}
-.cp-sign{margin-top:clamp(28px,5vh,64px);}
-.cp-sincerely{font-family:var(--cp-didot); font-size:clamp(21px,1.6vw,26px); margin:0 0 clamp(18px,3vh,30px);}
-.cp-name{font-family:var(--cp-didot); font-size:clamp(23px,1.75vw,28px); margin:0 0 6px;}
-.cp-role{font-size:clamp(13px,.95vw,15px); margin:0;}
-.cp-url{align-self:flex-end; margin-top:clamp(36px,6vh,80px); font-family:var(--cp-sans); font-size:clamp(14px,1.05vw,17px); letter-spacing:.01em; color:var(--cp-blue);}
-.cp-url:hover{color:var(--accent);}
+/* -- cover: photograph, letter and contents on one page -- */
+.cp-cover{grid-template-columns:44% minmax(0,1fr); background:var(--cp-paper); color:var(--cp-ink);}
 
-/* -- table of contents -- */
-.cp-contents{grid-template-columns:47.8% minmax(0,1fr); background:var(--cp-navy); color:#fff;}
-.cp-photo{position:relative; min-height:100%; background:#1b2a36;}
-.cp-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:58% 50%; display:block;}
-.cp-toc{position:relative; display:flex; flex-direction:column; padding:clamp(56px,10vh,118px) 4.6vw clamp(40px,7vh,80px) 5vw;}
-.cp-toc .cp-mark{position:absolute; inset:0; z-index:0;}
-.cp-toc .cp-mark span{right:0; transform:translateY(-50%) rotate(180deg); margin-right:-.07em; font-size:min(calc((100vh - var(--hdr)) * .33), 15vw); color:var(--cp-mark-grey);}
-.cp-toc > *:not(.cp-mark){position:relative; z-index:1;}
-.cp-toc-title{font-family:var(--cp-didot); font-weight:400; font-size:clamp(30px,2.85vw,46px); line-height:1.1; letter-spacing:.035em; text-transform:uppercase; color:#fff; margin:0 0 clamp(48px,9.5vh,112px);}
-.cp-cols{display:flex; gap:clamp(28px,2.6vw,40px); max-width:calc(100% - 9vw);}
-.cp-col h3{font-family:var(--cp-sans); font-weight:600; font-size:clamp(16px,1.28vw,21px); color:#fff; margin:0 0 clamp(20px,3.4vh,40px); line-height:1.3;}
-.cp-col ul{display:flex; flex-direction:column; gap:clamp(12px,2.4vh,26px);}
-.cp-col a{position:relative; display:inline-block; white-space:nowrap; font-family:var(--cp-sans); font-weight:400; font-size:clamp(15px,1.28vw,21px); line-height:1.3; letter-spacing:.02em; color:rgba(255,255,255,.80);}
-.cp-col a::after{content:""; position:absolute; left:0; right:0; bottom:-4px; height:1px; background:var(--cp-blue); transform:scaleX(0); transform-origin:left; transition:transform .22s var(--ease);}
-.cp-col a:hover{color:#fff;}
-.cp-col a:hover::after{transform:scaleX(1);}
-.cp-toc-foot{margin-top:auto; padding-top:48px; display:flex; align-items:flex-end; gap:clamp(24px,3vw,44px); flex-wrap:wrap;}
-.cp-toc-foot img{display:block; height:clamp(52px,5.6vw,86px); width:auto;}
-.cp-toc-foot a{font-family:var(--cp-sans); font-size:clamp(13px,1.1vw,17px); color:var(--cp-blue); padding-bottom:4px;}
-.cp-toc-foot a:hover{color:#fff;}
+.cp-plate{position:relative; min-height:100%; background:#1b2a36;}
+.cp-plate img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:58% 50%; display:block;}
+.cp-plate-stick{position:sticky; top:var(--hdr); height:calc(100vh - var(--hdr)); overflow:hidden;}
+.cp-ident{
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:clamp(76px,11vh,124px) clamp(26px,3vw,44px) clamp(22px,3vh,32px);
+  background:linear-gradient(to top, rgba(15,33,47,.96) 0%, rgba(15,33,47,.94) 58%, rgba(15,33,47,.80) 78%, rgba(15,33,47,0) 100%);
+  color:#fff; font-family:var(--cp-sans);
+}
+.cp-ident .ci-k{font-size:10.5px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--cp-blue); margin-bottom:14px;}
+.cp-ident .ci-addr{font-family:var(--cp-didot); font-weight:400; font-size:clamp(23px,2.1vw,34px); line-height:1.12; letter-spacing:.005em; margin:0 0 14px;}
+.cp-ident .ci-facts{display:flex; flex-wrap:wrap; gap:7px 16px; font-size:clamp(12px,.95vw,13.5px); color:rgba(255,255,255,.80); line-height:1.5;}
+.cp-ident .ci-facts span{position:relative;}
+.cp-ident .ci-facts span + span::before{content:"\00b7"; position:absolute; left:-10px; color:rgba(255,255,255,.42);}
+.cp-ident .ci-for{margin-top:18px; padding-top:15px; border-top:1px solid rgba(255,255,255,.22); font-size:clamp(12px,.95vw,13.5px); color:rgba(255,255,255,.88);}
+.cp-ident .ci-for strong{font-weight:600; color:#fff;}
 
-/* pager under the opening slides */
+.cp-letter-body{display:flex; flex-direction:column; max-width:720px; padding:clamp(46px,7vh,80px) clamp(32px,4vw,64px) clamp(36px,6vh,64px); font-family:var(--cp-sans);}
+.cp-salute{font-family:var(--cp-didot); font-weight:400; font-size:clamp(21px,1.6vw,27px); color:var(--cp-ink); margin:0 0 clamp(26px,4vh,40px);}
+.cp-letter-body .cp-p{font-size:clamp(14px,1.02vw,16px); line-height:1.8; letter-spacing:.005em; color:var(--cp-ink); text-align:left; margin:0 0 1.3em;}
+.cp-sign{margin-top:clamp(20px,3vh,34px); padding-top:clamp(20px,3vh,32px); border-top:1px solid rgba(28,28,28,.14);}
+[data-theme="dark"] .cp-sign{border-top-color:var(--line);}
+.cp-sincerely{font-family:var(--cp-didot); font-size:clamp(17px,1.25vw,21px); margin:0 0 10px;}
+.cp-name{font-family:var(--cp-didot); font-size:clamp(20px,1.5vw,25px); margin:0 0 4px;}
+.cp-role{font-size:clamp(12.5px,.92vw,14px); margin:0; color:rgba(28,28,28,.62);}
+[data-theme="dark"] .cp-role{color:var(--ink-65);}
+
+/* contents strip under the signature */
+.cp-index{margin-top:clamp(30px,5vh,52px); padding-top:clamp(24px,3.4vh,34px); border-top:1px solid rgba(28,28,28,.14);}
+[data-theme="dark"] .cp-index{border-top-color:var(--line);}
+.cp-index-k{font-size:10.5px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:18px;}
+.cp-index ol{display:grid; grid-template-columns:1fr 1fr; gap:2px 26px; margin:0; padding:0; list-style:none; counter-reset:idx;}
+.cp-index li{counter-increment:idx;}
+.cp-index a{display:grid; grid-template-columns:26px 1fr; gap:10px; align-items:baseline; padding:7px 8px 7px 0; border-radius:var(--radius-sm); color:var(--cp-ink); transition:background .16s var(--ease);}
+.cp-index a:hover{background:var(--accent-wash); color:var(--cp-ink);}
+.cp-index a::before{content:counter(idx,decimal-leading-zero); font-size:10.5px; font-weight:600; color:var(--accent); font-variant-numeric:tabular-nums; letter-spacing:.06em;}
+.cp-index .ix-t{font-size:13.5px; font-weight:600; line-height:1.3; letter-spacing:-.01em;}
+.cp-index .ix-d{display:block; font-size:11.5px; font-weight:400; line-height:1.45; color:rgba(28,28,28,.56); margin-top:3px;}
+[data-theme="dark"] .cp-index .ix-d{color:var(--ink-55);}
+.cp-foot{margin-top:clamp(26px,4vh,40px); padding-top:clamp(18px,2.6vh,26px); border-top:1px solid rgba(28,28,28,.14); display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+[data-theme="dark"] .cp-foot{border-top-color:var(--line);}
+.cp-url{font-family:var(--cp-sans); font-size:clamp(12.5px,.95vw,14px); letter-spacing:.01em; color:var(--accent);}
+.cp-url:hover{color:var(--accent-hover);}
+
+/* pager under the opening slide */
 .cover-pager{padding:0 76px 64px; background:var(--bg);}
 .cover-pager .pager{max-width:1040px; margin:0 auto; border-top:none;}
 
-@media(max-width:960px){
-  .cp-letter{grid-template-columns:18% minmax(0,1fr);}
-  .cp-letter-body{padding:56px 30px 48px 0;}
-  .cp-contents{grid-template-columns:1fr;}
-  .cp-photo{min-height:48vh;}
-  .cp-toc{padding:52px 34px 44px;}
-  .cp-toc .cp-mark span{font-size:min(44vh, 34vw);}
-  .cp-cols{max-width:calc(100% - 22vw);}
+@media(max-width:1080px){
+  .cp-cover{grid-template-columns:38% minmax(0,1fr);}
+  .cp-index ol{grid-template-columns:1fr;}
+}
+@media(max-width:860px){
+  .cp-cover{grid-template-columns:1fr;}
+  .cp-plate{min-height:46vh;}
+  .cp-plate-stick{position:relative; top:auto; height:46vh;}
+  .cp-ident{padding-top:clamp(44px,7vh,64px);}
+  .cp-letter-body{padding:40px 26px 44px; max-width:none;}
   .cover-pager{padding:0 30px 56px;}
 }
 @media(max-width:560px){
-  .cp-letter{grid-template-columns:minmax(0,1fr);}
-  .cp-letter .cp-mark{display:none;}
-  .cp-letter-body{padding:44px 20px 40px;}
-  .cp-letter-body .cp-p{text-align:left;}
-  .cp-cols{flex-direction:column; gap:36px;}
-  .cp-toc{padding:44px 24px 40px;}
+  .cp-plate{min-height:44vh;}
+  .cp-plate-stick{top:auto; height:44vh;}
+  .cp-ident{padding-top:40px;}
+  .cp-letter-body{padding:34px 20px 40px;}
   .cover-pager{padding:0 20px 48px;}
 }
 
@@ -719,15 +725,6 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 .inline-item .ii-d{font-size:12px; line-height:1.6; color:var(--ink-65);}
 @media(max-width:720px){.inline-set{grid-template-columns:1fr;} .inline-item{border-right:none; border-bottom:1px solid var(--line-soft);}}
 /* ============================================================
-   TABLE OF CONTENTS: now three columns
-   ============================================================ */
-.cp-cols{flex-wrap:wrap; gap:clamp(20px,2.1vw,36px); max-width:calc(100% - 7vw);}
-.cp-col{min-width:0;}
-.cp-col h3{font-size:clamp(14px,1.08vw,18px);}
-.cp-col a{font-size:clamp(14px,1.06vw,18px);}
-@media(max-width:960px){.cp-cols{max-width:calc(100% - 20vw);}}
-@media(max-width:620px){.cp-cols{flex-direction:column; gap:30px; max-width:100%;}}
-/* ============================================================
    FIX: on phones the summary rail keeps the sticky `top` offset
    after it is switched to position:relative, which pushed it 66px
    down over the first lines of every page. Clear the offset.
@@ -736,6 +733,50 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 .source-note{
   font-size:11.5px; line-height:1.65; color:var(--ink-55); margin:18px 0 0;
   padding-top:14px; border-top:1px solid var(--line-soft);
+}
+/* ============================================================
+   PRINT: every section on the page, in reading order, with the
+   interface and the unfinished-content marks suppressed.
+   ============================================================ */
+@media print{
+  @page{ margin:14mm 12mm; }
+  html,body{background:#fff !important; color:#000 !important; font-size:10.5pt;}
+  .topbar,.progress,.pager,.cover-pager,.skip,.theme-toggle,.hamburger,.sb-actions,.btn-row{display:none !important;}
+  .covers{display:block !important;}
+  .shell{display:grid !important; grid-template-columns:1fr !important;}
+  .rail{border:none !important; border-bottom:1px solid #999 !important;}
+  .rail-stick{position:static !important; height:auto !important; display:block !important; overflow:visible !important;}
+  .rail-navy,.rail-blue{background:#fff !important; color:#000 !important; padding:0 0 10pt !important; min-height:0 !important;}
+  .rail-title,.rail-lead,.rail-label,.rail-num{color:#000 !important;}
+  .rail-title .hl{color:#000 !important;}
+  .rail-ticker,.rail-watermark,.rail-icon{display:none !important;}
+  .content{padding:0 !important;}
+  .content-inner{max-width:none !important;}
+  /* every section prints, not just the open one */
+  .page{display:block !important; animation:none !important; break-after:page; page-break-after:always;}
+  .page:last-of-type{break-after:auto; page-break-after:auto;}
+  .reveal,.cellgrid.reveal > .cell{opacity:1 !important; transform:none !important;}
+  .cp-cover{display:block !important;}
+  .cp-plate{min-height:0 !important; background:none !important;}
+  .cp-plate-stick{position:static !important; height:auto !important; overflow:visible !important;}
+  .cp-plate img{position:static !important; width:100% !important; height:52mm !important; object-fit:cover;}
+  .cp-ident{position:static !important; background:none !important; padding:12pt 0 0 !important;}
+  .cp-ident,.cp-ident .ci-k,.cp-ident .ci-addr,.cp-ident .ci-facts,
+  .cp-ident .ci-facts span,.cp-ident .ci-for,.cp-ident .ci-for strong{color:#000 !important;}
+  .cp-ident .ci-facts span + span::before{color:#666 !important;}
+  .cp-ident .ci-for{border-top-color:#999 !important;}
+  .cp-letter-body{max-width:none !important; padding:16pt 0 0 !important;}
+  .cp-index{display:none !important;}
+  .cp-foot a[data-route]{display:none !important;}
+  .sign-band{background:#fff !important; color:#000 !important; border:1px solid #999 !important;}
+  .sign-band .sb-k,.sign-band .sb-h,.sign-band .sb-p{color:#000 !important;}
+  /* unfinished content prints as plain text, not as a highlight */
+  .tbd{background:none !important; border:none !important; color:#000 !important; padding:0 !important;}
+  .tbd-note{border:1px solid #999 !important; background:none !important; color:#000 !important;}
+  .block,.case,.cell,.phase,.contact,.q,.term,.exhibit,.fee-card{break-inside:avoid; page-break-inside:avoid;}
+  .sec-head{break-after:avoid; page-break-after:avoid;}
+  a{color:#000 !important; text-decoration:none;}
+  .portal-shot,.propsum-shot,.case-shot,.asset-tile{break-inside:avoid;}
 }
 </style>
 
@@ -777,15 +818,14 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 <!-- ===================== TOP BAR ===================== -->
 <header class="topbar">
   <div class="topbar-inner">
-    <a class="topbar-prop" href="#contents" data-route="contents" title="Table of contents">838 Seneca Ave SW</a>
+    <a class="topbar-prop" href="#cover" data-route="cover" title="Cover">838 Seneca Ave SW</a>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
       <div class="nav-tabs">
-        <button class="nav-link" data-route="letter">Letter</button>
-        <button class="nav-link" data-route="contents">Contents</button>
+        <button class="nav-link" data-route="cover">Cover</button>
         <button class="nav-link" data-route="property">Property</button>
         <button class="nav-link" data-route="team">Team</button>
-        <button class="nav-link" data-route="onboarding">First 90 Days</button>
+        <button class="nav-link" data-route="onboarding">90 Days</button>
         <button class="nav-link" data-route="operations">Operations</button>
         <button class="nav-link" data-route="reporting">Reporting</button>
         <button class="nav-link" data-route="strategy">Strategy</button>
@@ -804,15 +844,26 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 <!-- ===================== OPENING SLIDES ===================== -->
 <div class="covers" id="covers">
 
-  <!-- ============ COVER LETTER ============ -->
-  <section class="page cover-page cp-letter" id="page-letter" aria-label="Cover letter">
-    <div class="cp-mark" aria-hidden="true"><div class="cp-mark-stick"><span>AGM</span></div></div>
+  <!-- ============ COVER: photograph, letter and contents ============ -->
+  <section class="page cover-page cp-cover" id="page-cover" aria-label="Cover letter and contents">
+    <div class="cp-plate">
+      <div class="cp-plate-stick">
+        <img src="/assets/838-seneca-ave-sw.jpg" alt="838 Seneca Ave SW, Renton: single-story masonry warehouse and office building" />
+        <div class="cp-ident">
+          <div class="ci-k">Proposal for Management Services</div>
+          <p class="ci-addr">838 Seneca Ave&nbsp;SW<br />Renton, Washington</p>
+          <div class="ci-facts">
+            <span>24,592 SF</span><span>1.41 acres</span><span>Single-tenant industrial</span><span>Earlington Industrial Park</span>
+          </div>
+          <div class="ci-for">Prepared for <strong>Thomas Family Properties, LLC</strong></div>
+        </div>
+      </div>
+    </div>
+
     <div class="cp-letter-body">
       <p class="cp-salute">Dear Thomas Family Properties, LLC,</p>
 
       <p class="cp-p">Thank you for the opportunity to submit a proposal for Management Services for 838&nbsp;Seneca&nbsp;Ave&nbsp;SW.</p>
-
-      <p class="cp-p">838 Seneca Ave SW is a single-story masonry warehouse and office building of approximately 24,600 square feet, situated on a 1.41-acre site in Renton&rsquo;s Earlington Industrial Park. The building offers open distribution space, a front office with mezzanine, full sprinkler coverage, and ample on-site parking. This straightforward configuration supports efficient, cost-effective operations and will appeal to a broad range of future industrial users.</p>
 
       <p class="cp-p">While the building is vacant, AGM will provide a focused interim scope designed to protect the asset and keep it ready to lease. This includes routine on-site security and condition checks, oversight of utilities and building systems, fire sprinkler monitoring and inspections, and coordination of vendors for grounds, landscaping, and repairs. Ownership will receive regular reports throughout this period.</p>
 
@@ -828,54 +879,33 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         <p class="cp-role">Principal</p>
       </div>
 
-      <a class="cp-url" href="https://www.agmrealestategroup.com" target="_blank" rel="noopener">www.agmrealestategroup.com</a>
-    </div>
-  </section>
+      <nav class="cp-index" aria-label="Contents">
+        <div class="cp-index-k">Inside this proposal</div>
+        <ol>
+          <li><a href="#property" data-route="property"><span class="ix-t">The Property<span class="ix-d">The asset, the lease and who the lease makes responsible for what</span></span></a></li>
+          <li><a href="#team" data-route="team"><span class="ix-t">Your Team<span class="ix-d">The four people who would run this building, with direct lines</span></span></a></li>
+          <li><a href="#onboarding" data-route="onboarding"><span class="ix-t">The First 90 Days<span class="ix-d">What AGM reviews, sets up and hands over</span></span></a></li>
+          <li><a href="#operations" data-route="operations"><span class="ix-t">Day-to-Day Management<span class="ix-d">What transfers from Ownership on day one</span></span></a></li>
+          <li><a href="#reporting" data-route="reporting"><span class="ix-t">Reporting<span class="ix-d">The monthly package and the Owner Portal</span></span></a></li>
+          <li><a href="#strategy" data-route="strategy"><span class="ix-t">Strategy and Exit<span class="ix-d">Protecting value at a sale, and questions for Ownership</span></span></a></li>
+          <li><a href="#about" data-route="about"><span class="ix-t">Track Record<span class="ix-d">Buildings AGM took over, and what they produced</span></span></a></li>
+          <li><a href="#fees" data-route="fees"><span class="ix-t">Fees<span class="ix-d">$750 while vacant, 3% of gross rents once leased</span></span></a></li>
+          <li><a href="#agreement" data-route="agreement"><span class="ix-t">Ready to Proceed<span class="ix-d">Key terms, the agreement and an electronic signature</span></span></a></li>
+          <li><a href="#contact" data-route="contact"><span class="ix-t">Contact<span class="ix-d">Direct lines, the 24/7 number and the next three steps</span></span></a></li>
+        </ol>
+      </nav>
 
-  <!-- ============ TABLE OF CONTENTS ============ -->
-  <section class="page cover-page cp-contents" id="page-contents" aria-label="Table of contents">
-    <div class="cp-photo"><img src="/assets/838-seneca-ave-sw.jpg" alt="Building entrance at 838 Seneca Ave SW, Renton" /></div>
-    <div class="cp-toc">
-      <h2 class="cp-toc-title">Table of Contents</h2>
-      <div class="cp-cols">
-        <div class="cp-col">
-          <h3>This Building</h3>
-          <ul>
-            <li><a href="#property" data-route="property">The Property</a></li>
-            <li><a href="#team" data-route="team">Your Team</a></li>
-            <li><a href="#onboarding" data-route="onboarding">The First 90 Days</a></li>
-            <li><a href="#operations" data-route="operations">Operations</a></li>
-          </ul>
-        </div>
-        <div class="cp-col">
-          <h3>The Service</h3>
-          <ul>
-            <li><a href="#reporting" data-route="reporting">Reporting</a></li>
-            <li><a href="#strategy" data-route="strategy">Strategy &amp; Exit</a></li>
-            <li><a href="#about" data-route="about">Track Record</a></li>
-          </ul>
-        </div>
-        <div class="cp-col">
-          <h3>Next Steps</h3>
-          <ul>
-            <li><a href="#fees" data-route="fees">Fees</a></li>
-            <li><a href="#agreement" data-route="agreement">Ready to Proceed</a></li>
-            <li><a href="#contact" data-route="contact">Contact</a></li>
-          </ul>
-        </div>
+      <div class="cp-foot">
+        <a class="cp-url" href="https://www.agmrealestategroup.com" target="_blank" rel="noopener">www.agmrealestategroup.com</a>
+        <a class="cp-url" href="#property" data-route="property">Start with the property &rarr;</a>
       </div>
-      <div class="cp-toc-foot">
-        <img src="/assets/agm-logo-white.svg" alt="AGM Real Estate: Asset | Growth | Management" />
-        <a href="https://www.agmrealestategroup.com" target="_blank" rel="noopener">www.agmrealestategroup.com</a>
-      </div>
-      <div class="cp-mark" aria-hidden="true"><span>AGM</span></div>
     </div>
   </section>
 
   <div class="cover-pager">
     <div class="pager">
-      <button class="prev" id="cvPrev" type="button"><span class="pg-dir">← Previous</span><span class="pg-name"></span></button>
-      <button class="next" id="cvNext" type="button"><span class="pg-dir">Next →</span><span class="pg-name"></span></button>
+      <button class="prev" id="cvPrev" type="button"><span class="pg-dir">&larr; Previous</span><span class="pg-name"></span></button>
+      <button class="next" id="cvNext" type="button"><span class="pg-dir">Next &rarr;</span><span class="pg-name"></span></button>
     </div>
   </div>
 </div>
@@ -1232,9 +1262,8 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             <figure class="portal-shot">
               <img src="/assets/agm-owner-portal-screenshot.png" alt="AGM Owner Portal dashboard: cash flow, rent collected and occupancy" loading="lazy" onerror="this.style.display='none'; var p=this.parentNode.querySelector('.ph'); if(p){p.style.display='flex';} var c=this.parentNode.querySelector('figcaption'); if(c){c.style.display='none';}" />
               <div class="ph" style="display:none;">
-                <span class="ph-k">Screenshot</span>
+                <span class="ph-k">Owner Portal</span>
                 <span class="ph-name">Owner Portal &middot; Dashboard</span>
-                <code>/assets/owner-portal.png</code>
               </div>
               <figcaption>Owner Portal &middot; Dashboard</figcaption>
             </figure>
@@ -1262,10 +1291,29 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 
         <div class="block reveal">
           <div class="sec-head"><h3>The Forward View</h3><span class="pipe">|</span><span class="kick">Beyond the Month</span></div>
-          <div class="inline-set">
-            <div class="inline-item"><div class="ii-t">Performance against plan</div><div class="ii-d">Actual results tracked against the operating plan, with variance explained, so decisions are made against current numbers.</div></div>
-            <div class="inline-item"><div class="ii-t">Long-term planning</div><div class="ii-d">The five-year capital plan and the reserve position in one view, showing what the building will require and when.</div></div>
-            <div class="inline-item"><div class="ii-t">Exit and option modeling</div><div class="ii-d">What a sale or an exercised purchase option produces at current numbers, updated as those numbers change.</div></div>
+          <div class="portal">
+            <figure class="portal-shot">
+              <img src="/assets/agm-investor-portal-screenshot.png" alt="AGM reporting dashboard: investments and performance view" loading="lazy" onerror="this.style.display='none'; var p=this.parentNode.querySelector('.ph'); if(p){p.style.display='flex';} var c=this.parentNode.querySelector('figcaption'); if(c){c.style.display='none';}" />
+              <div class="ph" style="display:none;">
+                <span class="ph-k">Reporting</span>
+                <span class="ph-name">Performance &amp; Planning View</span>
+              </div>
+              <figcaption>Performance &amp; Planning View</figcaption>
+            </figure>
+            <div class="portal-feats">
+              <div class="portal-feat">
+                <div class="pf-title">Performance Against Plan</div>
+                <div class="pf-desc">Actual results tracked against the operating plan, with variance explained, so decisions are made against current numbers.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Long-Term Planning</div>
+                <div class="pf-desc">The five-year capital plan and the reserve position in one view, showing what the building will require and when.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Exit and Option Modeling</div>
+                <div class="pf-desc">What a sale or an exercised purchase option produces at current numbers, updated as those numbers change.</div>
+              </div>
+            </div>
           </div>
           <p class="source-note">The tenant has a separate portal for payments, balances, lease documents and work orders. The building also has a public website, used for leasing and as the access point to both portals.</p>
         </div>
@@ -1783,9 +1831,10 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 
   // full-bleed opening slides, shown before the numbered sections
   var COVERS = [
-    {route:"letter",   t1:"Cover",    t2:"Letter",   label:"Cover Letter"},
-    {route:"contents", t1:"Table of", t2:"Contents", label:"Table of Contents"}
+    {route:"cover", t1:"Cover", t2:"Letter", label:"Cover Letter"}
   ];
+  // the letter and the contents page were merged on 2026-11-04; keep old links working
+  var ALIAS = { letter:"cover", contents:"cover", technology:"reporting", insurance:"fees", explore:"property" };
   var ORDER = COVERS.concat(PAGES);
   var ORD = {};
   ORDER.forEach(function(p,i){ ORD[p.route]=i; });
@@ -1865,7 +1914,8 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   }
 
   function showRoute(route, push, trigger){
-    if(!(route in ORD)) route = "letter";
+    if(ALIAS[route]) route = ALIAS[route];
+    if(!(route in ORD)) route = "cover";
     var p = ORDER[ORD[route]];
     var cover = isCover(route);
     var pages = document.querySelectorAll(".page");
@@ -2024,7 +2074,8 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 
   // boot
   var start = (location.hash||"").replace("#","");
-  showRoute(start in ORD ? start : "letter", false, "load");
+  if(ALIAS[start]) start = ALIAS[start];
+  showRoute(start in ORD ? start : "cover", false, "load");
   onScroll();
 })();
 </script>
