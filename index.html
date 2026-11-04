@@ -459,6 +459,292 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   .rail-title{font-size:34px;}
   .cell{padding:26px 24px 28px;}
 }
+/* ============================================================
+   PLACEHOLDER MARKER — content still to be supplied by AGM.
+   Every [bracketed] value in the proposal carries this class so
+   unfinished copy is impossible to miss in review. Delete the
+   span (not just the brackets) once the real value is dropped in.
+   ============================================================ */
+.tbd{
+  font-style:normal; font-weight:500; color:#9A6A00;
+  background:rgba(214,158,46,0.13); border-bottom:1px dashed rgba(214,158,46,0.75);
+  padding:0 4px; border-radius:3px; white-space:normal;
+}
+[data-theme="dark"] .tbd{color:#F0C266; background:rgba(240,194,102,0.12); border-bottom-color:rgba(240,194,102,0.6);}
+.tbd-note{
+  font-size:11.5px; line-height:1.6; color:#9A6A00; margin:18px 0 0;
+  padding:11px 16px; border:1px dashed rgba(214,158,46,0.6);
+  background:rgba(214,158,46,0.07); border-radius:var(--radius);
+}
+[data-theme="dark"] .tbd-note{color:#F0C266; background:rgba(240,194,102,0.07);}
+.tbd-note strong{font-weight:600;}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex; align-items:center; gap:9px; font-family:var(--sans);
+  font-size:13px; font-weight:600; letter-spacing:.01em; line-height:1;
+  padding:14px 24px; border-radius:var(--radius); cursor:pointer;
+  border:1px solid var(--line-strong); background:var(--surface); color:var(--ink);
+  transition:border-color .16s var(--ease), background .16s var(--ease), color .16s var(--ease), transform .16s var(--ease);
+}
+.btn:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-1px);}
+.btn-primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+.btn-primary:hover{background:var(--accent-hover); border-color:var(--accent-hover); color:#fff;}
+.btn-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px;}
+
+/* ============================================================
+   PROPERTY SUMMARY — photo beside the spec sheet
+   ============================================================ */
+.propsum{display:grid; grid-template-columns:1.05fr 1fr; gap:42px; align-items:start;}
+.propsum-shot{position:relative; margin:0; border:1px solid var(--line-strong); border-radius:var(--radius); overflow:hidden; background:var(--surface-2); box-shadow:var(--card-shadow);}
+.propsum-shot img{display:block; width:100%; height:100%; min-height:300px; object-fit:cover;}
+.propsum-shot figcaption{font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-55); padding:12px 18px; border-top:1px solid var(--line-soft); background:var(--surface);}
+@media(max-width:900px){.propsum{grid-template-columns:1fr; gap:28px;}}
+
+.specs{border-top:1px solid var(--line-strong);}
+.spec{display:grid; grid-template-columns:168px 1fr; gap:22px; padding:13px 0; border-bottom:1px solid var(--line-soft); align-items:baseline;}
+.spec dt{font-size:11px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--accent);}
+.spec dd{margin:0; font-size:13.5px; line-height:1.6; color:var(--ink-80);}
+.spec dd strong{font-weight:600; color:var(--ink);}
+@media(max-width:560px){.spec{grid-template-columns:1fr; gap:5px;}}
+
+/* ============================================================
+   SCOPE SPLIT — what the lease puts on each party
+   ============================================================ */
+.scope{width:100%; border-collapse:collapse; border-top:1px solid var(--line-strong); font-size:13px;}
+.scope th{
+  text-align:left; font-family:var(--sans); font-size:10.5px; font-weight:600;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--accent);
+  padding:15px 16px; border-bottom:1px solid var(--line-strong); white-space:nowrap;
+}
+.scope td{padding:15px 16px; border-bottom:1px solid var(--line-soft); color:var(--ink-72); line-height:1.6; vertical-align:top;}
+.scope tbody tr{transition:background .16s var(--ease);}
+.scope tbody tr:hover{background:var(--accent-wash);}
+.scope td:first-child{color:var(--ink); font-weight:600; width:30%;}
+.scope .who{font-size:11px; font-weight:600; letter-spacing:.04em; white-space:nowrap;}
+.scope .who-ll{color:var(--accent);}
+.scope .who-tn{color:var(--ink-55);}
+@media(max-width:720px){
+  .scope, .scope tbody, .scope tr, .scope td{display:block; width:100%;}
+  .scope thead{display:none;}
+  .scope tr{padding:16px 0; border-bottom:1px solid var(--line);}
+  .scope td{border:none; padding:3px 0;}
+  .scope td:first-child{width:auto; margin-bottom:6px;}
+}
+
+/* ============================================================
+   TEAM — named people, with a lead bio card
+   ============================================================ */
+.bio{display:grid; grid-template-columns:200px 1fr; gap:38px; align-items:start; border:1px solid var(--line-strong); border-left:3px solid var(--accent); border-radius:var(--radius); background:var(--surface); padding:38px 42px; box-shadow:var(--card-shadow);}
+.bio-photo{aspect-ratio:1/1; border-radius:var(--radius); overflow:hidden; background:linear-gradient(135deg,var(--surface-3),var(--surface-2)); border:1px solid var(--line); display:grid; place-items:center; position:relative;}
+.bio-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+.bio-photo .ph-k{font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-42); text-align:center; padding:0 16px; line-height:1.7;}
+.bio-name{font-family:var(--serif); font-weight:600; font-size:26px; letter-spacing:-.01em; color:var(--ink); margin:0 0 7px; line-height:1.15;}
+.bio-role{font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:20px;}
+.bio-body{font-size:13.5px; line-height:1.75; color:var(--ink-72); margin:0 0 20px;}
+.bio-facts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 32px; border-top:1px solid var(--line-soft); padding-top:18px;}
+.bio-fact{padding:9px 0; border-bottom:1px solid var(--line-soft);}
+.bio-fact .bf-k{font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-42); margin-bottom:5px;}
+.bio-fact .bf-v{font-size:12.5px; line-height:1.55; color:var(--ink-80);}
+@media(max-width:760px){.bio{grid-template-columns:1fr; gap:26px; padding:30px 26px;} .bio-photo{max-width:200px;} .bio-facts{grid-template-columns:1fr;}}
+
+.people{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border-top:1px solid var(--line-strong);}
+.person{padding:26px 30px 28px; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.person:nth-child(odd){border-right:1px solid var(--line-soft);}
+.person:hover{background:var(--accent-wash);}
+.person .p-name{font-size:15.5px; font-weight:600; color:var(--ink); letter-spacing:-.01em; margin-bottom:5px;}
+.person .p-role{font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:13px;}
+.person .p-desc{font-size:12.5px; line-height:1.68; color:var(--ink-72);}
+.person .p-contact{font-size:12px; line-height:1.8; color:var(--ink-65); margin-top:14px; padding-top:12px; border-top:1px solid var(--line-soft);}
+.person .p-contact a{font-weight:500;}
+@media(max-width:720px){.people{grid-template-columns:1fr;} .person:nth-child(odd){border-right:none;}}
+
+/* ============================================================
+   PHASED PLAN — the first 90 days
+   ============================================================ */
+.phases{border-top:1px solid var(--line-strong);}
+.phase{display:grid; grid-template-columns:190px 1fr; gap:40px; padding:34px 0 36px; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.phase:hover{background:var(--accent-wash);}
+.phase-when{position:relative; padding-left:24px;}
+.phase-when::before{content:""; position:absolute; left:0; top:6px; width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-wash-2);}
+.phase-when .pw-k{font-family:var(--serif); font-weight:600; font-size:21px; color:var(--ink); line-height:1.15; letter-spacing:-.01em;}
+.phase-when .pw-s{font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-top:8px;}
+.phase-title{font-size:15px; font-weight:600; color:var(--ink); margin-bottom:12px; letter-spacing:-.01em;}
+.phase-body{font-size:13px; line-height:1.72; color:var(--ink-72);}
+@media(max-width:720px){.phase{grid-template-columns:1fr; gap:18px; padding:28px 0;}}
+
+.checklist{margin:16px 0 0; display:grid; gap:9px;}
+.checklist li{position:relative; padding-left:26px; font-size:12.8px; line-height:1.65; color:var(--ink-72);}
+.checklist li::before{
+  content:""; position:absolute; left:0; top:5px; width:13px; height:13px;
+  border:1px solid var(--accent); border-radius:3px; background:var(--accent-wash);
+}
+.checklist li::after{
+  content:""; position:absolute; left:4px; top:8px; width:5px; height:8px;
+  border:solid var(--accent); border-width:0 1.6px 1.6px 0; transform:rotate(42deg);
+}
+.checklist.plain li::before, .checklist.plain li::after{display:none;}
+.checklist.plain li{padding-left:18px;}
+.checklist.plain li:before{content:""; display:block; position:absolute; left:0; top:9px; width:7px; height:1.5px; background:var(--accent);}
+
+/* ============================================================
+   WHAT OWNERSHIP STOPS DOING — a two-column swap
+   ============================================================ */
+.swap{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line-strong); border-radius:var(--radius); overflow:hidden;}
+.swap-col{padding:34px 34px 38px;}
+.swap-col + .swap-col{border-left:1px solid var(--line);}
+.swap-col.before{background:var(--surface-2);}
+.swap-col.after{background:var(--surface);}
+.swap-k{font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; margin-bottom:8px;}
+.swap-col.before .swap-k{color:var(--ink-42);}
+.swap-col.after .swap-k{color:var(--accent);}
+.swap-h{font-family:var(--serif); font-weight:600; font-size:19px; color:var(--ink); line-height:1.25; margin-bottom:22px; letter-spacing:-.01em;}
+.swap ul{display:grid; gap:12px;}
+.swap li{font-size:13px; line-height:1.65; color:var(--ink-72); position:relative; padding-left:24px;}
+.swap-col.before li::before{content:"\00d7"; position:absolute; left:2px; top:-1px; font-size:15px; color:var(--ink-42);}
+.swap-col.after li::before{content:""; position:absolute; left:2px; top:8px; width:10px; height:5px; border:solid var(--accent); border-width:0 0 1.6px 1.6px; transform:rotate(-45deg);}
+@media(max-width:760px){.swap{grid-template-columns:1fr;} .swap-col + .swap-col{border-left:none; border-top:1px solid var(--line);}}
+
+/* ============================================================
+   CASE STUDIES — situation, action, result
+   ============================================================ */
+.case{border:1px solid var(--line-strong); border-radius:var(--radius); background:var(--surface); box-shadow:var(--card-shadow); overflow:hidden; margin-bottom:26px; transition:box-shadow .2s var(--ease), border-color .18s var(--ease);}
+.case:hover{box-shadow:var(--card-shadow-hover); border-color:var(--line-strong);}
+.case-head{display:grid; grid-template-columns:1.6fr 1fr; gap:0; border-bottom:1px solid var(--line);}
+.case-head-txt{padding:32px 36px 30px;}
+.case-k{font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:12px;}
+.case-title{font-family:var(--sans); font-size:18px; font-weight:600; color:var(--ink); line-height:1.3; letter-spacing:-.01em; margin-bottom:12px;}
+.case-meta{font-size:12px; line-height:1.7; color:var(--ink-55);}
+.case-shot{position:relative; min-height:170px; background:linear-gradient(135deg,var(--surface-3),var(--surface-2)); border-left:1px solid var(--line);}
+.case-shot img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+.case-body{display:grid; grid-template-columns:repeat(3,1fr); gap:0;}
+.case-step{padding:28px 30px 32px; border-right:1px solid var(--line-soft);}
+.case-step:last-child{border-right:none;}
+.case-step .cs-k{font-size:10.5px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-42); margin-bottom:12px;}
+.case-step .cs-v{font-size:12.8px; line-height:1.7; color:var(--ink-72);}
+.case-nums{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); background:var(--surface-2);}
+.case-num{padding:22px 30px 24px; border-right:1px solid var(--line-soft);}
+.case-num:last-child{border-right:none;}
+.case-num .cn-v{font-family:var(--serif); font-weight:600; font-size:24px; color:var(--ink); line-height:1.05; letter-spacing:-.01em; font-variant-numeric:tabular-nums;}
+.case-num .cn-k{font-size:11.5px; line-height:1.5; color:var(--ink-65); margin-top:8px;}
+@media(max-width:860px){.case-head{grid-template-columns:1fr;} .case-shot{min-height:150px; border-left:none; border-top:1px solid var(--line);} .case-body,.case-nums{grid-template-columns:1fr;} .case-step{border-right:none; border-bottom:1px solid var(--line-soft);} .case-num{border-right:none; border-bottom:1px solid var(--line-soft);}}
+
+/* comparable assets — the featured tiles, with facts under them */
+.assets.detailed{grid-template-columns:repeat(3,1fr); gap:22px;}
+.assets.detailed .asset-loc{font-size:13px; font-weight:600; color:var(--ink); letter-spacing:-.01em;}
+.asset-facts{display:grid; gap:4px; margin-top:4px;}
+.asset-facts span{font-size:11.5px; line-height:1.5; color:var(--ink-65);}
+@media(max-width:860px){.assets.detailed{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.assets.detailed{grid-template-columns:1fr;}}
+
+/* references */
+.refs{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line-strong);}
+.ref{padding:28px 30px 30px; border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+.ref:last-child{border-right:none;}
+.ref .r-quote{font-family:var(--serif); font-style:italic; font-size:14.5px; line-height:1.65; color:var(--ink); margin-bottom:18px;}
+.ref .r-who{font-size:12px; font-weight:600; color:var(--ink-80);}
+.ref .r-what{font-size:11.5px; line-height:1.6; color:var(--ink-55); margin-top:4px;}
+@media(max-width:820px){.refs{grid-template-columns:1fr;} .ref{border-right:none;}}
+
+/* ============================================================
+   QUESTIONS FOR OWNERSHIP
+   ============================================================ */
+.qa{border-top:1px solid var(--line-strong);}
+.q{display:grid; grid-template-columns:44px 1fr; gap:22px; padding:24px 0 26px; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.q:hover{background:var(--accent-wash);}
+.q-n{font-family:var(--serif); font-weight:600; font-size:17px; color:var(--accent); opacity:.6; font-variant-numeric:tabular-nums; line-height:1.4;}
+.q-t{font-size:14.5px; font-weight:600; color:var(--ink); line-height:1.5; letter-spacing:-.01em; margin-bottom:9px;}
+.q-w{font-size:12.8px; line-height:1.7; color:var(--ink-72);}
+.q-w strong{font-weight:600; color:var(--ink-80);}
+@media(max-width:560px){.q{grid-template-columns:1fr; gap:8px;}}
+
+/* ============================================================
+   KEY TERMS SUMMARY + SIGNATURE BAND
+   ============================================================ */
+.terms{border-top:1px solid var(--line-strong);}
+.term{display:grid; grid-template-columns:230px 1fr; gap:30px; padding:17px 0; border-bottom:1px solid var(--line-soft); align-items:baseline; transition:background .16s var(--ease);}
+.term:hover{background:var(--accent-wash);}
+.term dt{font-size:12px; font-weight:600; color:var(--ink); letter-spacing:-.005em;}
+.term dd{margin:0; font-size:13px; line-height:1.65; color:var(--ink-72);}
+@media(max-width:620px){.term{grid-template-columns:1fr; gap:6px;}}
+
+.sign-band{
+  margin-top:40px; border:1px solid var(--accent); border-radius:var(--radius);
+  background:linear-gradient(165deg, var(--navy-soft) 0%, var(--navy) 70%); color:var(--on-navy);
+  padding:44px 46px; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center;
+}
+.sign-band .sb-k{font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-2); margin-bottom:12px;}
+.sign-band .sb-h{font-family:var(--serif); font-weight:600; font-size:25px; line-height:1.2; color:var(--on-navy); margin-bottom:12px; letter-spacing:-.01em;}
+.sign-band .sb-p{font-size:13px; line-height:1.7; color:var(--on-navy-soft); margin:0; max-width:560px;}
+.sign-band .btn{background:var(--accent); border-color:var(--accent); color:#fff; white-space:nowrap;}
+.sign-band .btn:hover{background:#fff; border-color:#fff; color:var(--navy);}
+.sign-band .btn.ghost{background:transparent; border-color:rgba(255,255,255,0.4); color:#fff;}
+.sign-band .btn.ghost:hover{background:rgba(255,255,255,0.1); border-color:#fff; color:#fff;}
+.sign-band .sb-actions{display:flex; flex-direction:column; gap:10px;}
+@media(max-width:820px){.sign-band{grid-template-columns:1fr; gap:26px; padding:34px 28px;}}
+
+/* exhibit list */
+.exhibits{border-top:1px solid var(--line-strong);}
+.exhibit{display:grid; grid-template-columns:96px 1fr auto; gap:26px; align-items:baseline; padding:18px 0; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.exhibit:hover{background:var(--accent-wash);}
+.exhibit .ex-n{font-size:10.5px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--accent);}
+.exhibit .ex-t{font-size:13px; line-height:1.6; color:var(--ink-80);}
+.exhibit .ex-t strong{font-weight:600; color:var(--ink);}
+.exhibit .ex-s{font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-42); white-space:nowrap;}
+@media(max-width:620px){.exhibit{grid-template-columns:1fr; gap:5px;}}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contacts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border-top:1px solid var(--line-strong);}
+.contact{padding:28px 32px 30px; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.contact:nth-child(odd){border-right:1px solid var(--line-soft);}
+.contact:hover{background:var(--accent-wash);}
+.contact .c-k{font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:13px;}
+.contact .c-name{font-size:16px; font-weight:600; color:var(--ink); letter-spacing:-.01em; margin-bottom:4px;}
+.contact .c-role{font-size:12px; color:var(--ink-55); margin-bottom:14px;}
+.contact .c-lines{display:grid; gap:7px;}
+.contact .c-line{display:grid; grid-template-columns:76px 1fr; gap:14px; font-size:12.5px; line-height:1.55; align-items:baseline;}
+.contact .c-line .cl-k{font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-42);}
+.contact .c-line .cl-v{color:var(--ink-80);}
+.contact.urgent{background:var(--surface-2);}
+.contact.urgent .c-name{font-family:var(--serif); font-size:22px;}
+@media(max-width:720px){.contacts{grid-template-columns:1fr;} .contact:nth-child(odd){border-right:none;}}
+
+/* next steps — numbered actions */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line-strong);}
+.step{padding:30px 30px 34px; border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); position:relative;}
+.step:last-child{border-right:none;}
+.step .st-n{font-family:var(--serif); font-weight:600; font-size:15px; color:var(--accent); opacity:.4; margin-bottom:16px; font-variant-numeric:tabular-nums;}
+.step .st-t{font-size:15px; font-weight:600; color:var(--ink); line-height:1.32; letter-spacing:-.01em; margin-bottom:11px;}
+.step .st-d{font-size:12.8px; line-height:1.7; color:var(--ink-72);}
+@media(max-width:820px){.steps{grid-template-columns:1fr;} .step{border-right:none;}}
+
+/* a compact one-line summary row — used where a full grid would overstate */
+.inline-set{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line-strong); border-radius:var(--radius); overflow:hidden;}
+.inline-item{padding:22px 26px 24px; border-right:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.inline-item:last-child{border-right:none;}
+.inline-item:hover{background:var(--accent-wash);}
+.inline-item .ii-t{font-size:13.5px; font-weight:600; color:var(--ink); margin-bottom:7px; letter-spacing:-.01em;}
+.inline-item .ii-d{font-size:12px; line-height:1.6; color:var(--ink-65);}
+@media(max-width:720px){.inline-set{grid-template-columns:1fr;} .inline-item{border-right:none; border-bottom:1px solid var(--line-soft);}}
+/* ============================================================
+   TABLE OF CONTENTS — now three columns
+   ============================================================ */
+.cp-cols{flex-wrap:wrap; gap:clamp(20px,2.1vw,36px); max-width:calc(100% - 7vw);}
+.cp-col{min-width:0;}
+.cp-col h3{font-size:clamp(14px,1.08vw,18px);}
+.cp-col a{font-size:clamp(14px,1.06vw,18px);}
+@media(max-width:960px){.cp-cols{max-width:calc(100% - 20vw);}}
+@media(max-width:620px){.cp-cols{flex-direction:column; gap:30px; max-width:100%;}}
+/* ============================================================
+   FIX — on phones the summary rail keeps the sticky `top` offset
+   after it is switched to position:relative, which pushed it 66px
+   down over the first lines of every page. Clear the offset.
+   ============================================================ */
+@media(max-width:960px){ .rail-stick{top:auto;} }
 </style>
 
 <!-- ===================== PostHog product analytics =====================
@@ -505,14 +791,18 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
       <div class="nav-tabs">
         <button class="nav-link" data-route="letter">Letter</button>
         <button class="nav-link" data-route="contents">Contents</button>
-        <button class="nav-link" data-route="about">About</button>
-        <button class="nav-link" data-route="management">Management</button>
-        <button class="nav-link" data-route="investment">Investment Strategy</button>
-        <button class="nav-link" data-route="maintenance">Maintenance</button>
+        <button class="nav-link" data-route="property">Property</button>
+        <button class="nav-link" data-route="team">Team</button>
+        <button class="nav-link" data-route="onboarding">First 90 Days</button>
+        <button class="nav-link" data-route="operations">Operations</button>
         <button class="nav-link" data-route="reporting">Reporting</button>
         <button class="nav-link" data-route="insurance">Insurance</button>
         <button class="nav-link" data-route="technology">Technology</button>
+        <button class="nav-link" data-route="strategy">Strategy</button>
+        <button class="nav-link" data-route="about">Track Record</button>
         <button class="nav-link" data-route="fees">Fees</button>
+        <button class="nav-link" data-route="agreement">Agreement</button>
+        <button class="nav-link" data-route="contact">Contact</button>
       </div>
       <div class="nav-right">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle light / dark">◐</button>
@@ -559,23 +849,30 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
       <h2 class="cp-toc-title">Table of Contents</h2>
       <div class="cp-cols">
         <div class="cp-col">
-          <h3>About AGM</h3>
+          <h3>This Building</h3>
           <ul>
-            <li><a href="#about" data-route="about">History</a></li>
-            <li><a href="#about" data-route="about">Featured Assets</a></li>
-            <li><a href="#about" data-route="about">Regional Footprint</a></li>
+            <li><a href="#property" data-route="property">The Property</a></li>
+            <li><a href="#team" data-route="team">Your Team</a></li>
+            <li><a href="#onboarding" data-route="onboarding">The First 90 Days</a></li>
+            <li><a href="#operations" data-route="operations">Operations</a></li>
           </ul>
         </div>
         <div class="cp-col">
-          <h3>Services</h3>
+          <h3>The Service</h3>
           <ul>
-            <li><a href="#management" data-route="management">Management</a></li>
-            <li><a href="#investment" data-route="investment">Investment Strategy</a></li>
-            <li><a href="#maintenance" data-route="maintenance">Construction &amp; Facilities</a></li>
-            <li><a href="#reporting" data-route="reporting">Financial Management</a></li>
+            <li><a href="#reporting" data-route="reporting">Reporting</a></li>
             <li><a href="#insurance" data-route="insurance">Insurance</a></li>
             <li><a href="#technology" data-route="technology">Technology</a></li>
+            <li><a href="#strategy" data-route="strategy">Strategy &amp; Exit</a></li>
+          </ul>
+        </div>
+        <div class="cp-col">
+          <h3>Proceeding</h3>
+          <ul>
+            <li><a href="#about" data-route="about">Track Record</a></li>
             <li><a href="#fees" data-route="fees">Fees</a></li>
+            <li><a href="#agreement" data-route="agreement">Ready to Proceed</a></li>
+            <li><a href="#contact" data-route="contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -605,34 +902,787 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     <main class="content" id="content">
       <div class="content-inner">
 
-      <!-- ============ SLIDE 1 · ABOUT AGM ============ -->
-      <div class="page" id="page-about">
+      <!-- ============ SLIDE 1 · THE PROPERTY ============ -->
+      <div class="page" id="page-property">
 
-        <div class="metrics block reveal">
-          <div class="metric">
-            <span class="m-label">Assets Under Management</span>
-            <span class="m-value">$1B</span>
-            <span class="m-unit">portfolio value</span>
-          </div>
-          <div class="metric">
-            <span class="m-label">Properties Managed</span>
-            <span class="m-value">200+</span>
-            <span class="m-unit">across the region</span>
-          </div>
-          <div class="metric">
-            <span class="m-label">Founded</span>
-            <span class="m-value">1998</span>
-            <span class="m-unit">Pacific Northwest</span>
-          </div>
-          <div class="metric">
-            <span class="m-label">Service Lines</span>
-            <span class="m-unit" style="margin-top:4px;">Asset Management · Property Management · Syndication · Investment · Construction</span>
+        <p class="lead reveal">This proposal is written for one building. Everything that follows &mdash; the team, the scope, the reporting, the fee &mdash; is sized to a single-tenant industrial asset in Renton, not to a generic portfolio.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>The Asset</h3><span class="pipe">|</span><span class="kick">838 Seneca Ave SW, Renton</span></div>
+          <div class="propsum">
+            <figure class="propsum-shot">
+              <img src="/assets/838-seneca-ave-sw.jpg" alt="838 Seneca Ave SW, Renton — single-story masonry warehouse and office building" />
+              <figcaption>838 Seneca Ave SW &middot; Earlington Industrial Park</figcaption>
+            </figure>
+            <dl class="specs">
+              <div class="spec"><dt>Building</dt><dd><strong>&plusmn;24,600 SF</strong> single-story masonry warehouse and office</dd></div>
+              <div class="spec"><dt>Site</dt><dd><strong>1.41 acres</strong> &middot; Earlington Industrial Park, Renton, WA</dd></div>
+              <div class="spec"><dt>Configuration</dt><dd>Open distribution space, front office with mezzanine, full sprinkler coverage, ample on-site parking</dd></div>
+              <div class="spec"><dt>Year built</dt><dd><span class="tbd">[year built]</span></dd></div>
+              <div class="spec"><dt>Clear height / loading</dt><dd><span class="tbd">[clear height, dock doors, grade doors]</span></dd></div>
+              <div class="spec"><dt>Zoning</dt><dd><span class="tbd">[zoning designation and permitted use]</span></dd></div>
+              <div class="spec"><dt>Parcel</dt><dd><span class="tbd">[King County parcel number]</span></dd></div>
+              <div class="spec"><dt>Ownership entity</dt><dd>Thomas Family Properties, LLC</dd></div>
+            </dl>
           </div>
         </div>
 
         <div class="block reveal">
-          <div class="sec-head"><h3>History</h3><span class="pipe">|</span><span class="kick">Key Milestones</span></div>
-          <div class="timeline" id="timeline">
+          <div class="sec-head"><h3>Tenancy &amp; Lease Status</h3><span class="pipe">|</span><span class="kick">Single Tenant</span></div>
+          <dl class="specs">
+            <div class="spec"><dt>Current status</dt><dd><span class="tbd">[vacant / in negotiation — confirm status as of the proposal date]</span></dd></div>
+            <div class="spec"><dt>Tenant</dt><dd><span class="tbd">[tenant name or prospective tenant]</span></dd></div>
+            <div class="spec"><dt>Lease structure</dt><dd><span class="tbd">[NNN / modified gross — confirm]</span></dd></div>
+            <div class="spec"><dt>Commencement</dt><dd><span class="tbd">[lease commencement date]</span></dd></div>
+            <div class="spec"><dt>Expiration</dt><dd><span class="tbd">[lease expiration date]</span></dd></div>
+            <div class="spec"><dt>Renewal options</dt><dd><span class="tbd">[number, length, notice window, rent mechanism]</span></dd></div>
+            <div class="spec"><dt>Purchase option</dt><dd><span class="tbd">[exercise window, price or formula, notice requirement]</span> &mdash; this drives the hold assumption and is addressed on the Strategy page</dd></div>
+            <div class="spec"><dt>Key dates to diary</dt><dd><span class="tbd">[option notice deadlines, rent escalation dates, reconciliation dates, insurance certificate renewals]</span></dd></div>
+          </dl>
+          <p class="tbd-note"><strong>To complete:</strong> AGM will populate this page from the executed lease and the abstract we prepare in week one. Where a lease is still being negotiated, AGM can review the draft against the management scope before signature &mdash; see &ldquo;Lease negotiation support&rdquo; on the Strategy page.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Who Is Responsible for What</h3><span class="pipe">|</span><span class="kick">Scope Matched to the Lease</span></div>
+          <p class="lead">A single-tenant industrial lease puts most of the building on the tenant. AGM&rsquo;s scope is written to that split, so Ownership does not pay for management of obligations the tenant already carries. The table below is a draft to be confirmed against the executed lease.</p>
+          <table class="scope">
+            <thead>
+              <tr><th>Obligation</th><th>Responsible</th><th>AGM&rsquo;s role</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Roof, structure, foundation</td><td class="who who-ll">Landlord</td><td>Inspection, budgeting, contractor selection, project oversight</td></tr>
+              <tr><td>HVAC service &amp; replacement</td><td class="who"><span class="tbd">[per lease]</span></td><td>Track service records; coordinate replacement if landlord obligation</td></tr>
+              <tr><td>Parking lot, paving, striping</td><td class="who who-ll">Landlord</td><td>Condition tracking, multi-year capital plan, bid and oversight</td></tr>
+              <tr><td>Fire sprinkler system</td><td class="who"><span class="tbd">[per lease]</span></td><td>Confirm annual certification is current and on file</td></tr>
+              <tr><td>Utilities</td><td class="who who-tn">Tenant</td><td>Verify transfer at commencement; hold accounts during vacancy</td></tr>
+              <tr><td>Interior repairs &amp; janitorial</td><td class="who who-tn">Tenant</td><td>None beyond lease compliance checks</td></tr>
+              <tr><td>Landscaping &amp; grounds</td><td class="who"><span class="tbd">[per lease]</span></td><td>Vendor contract and oversight if landlord obligation</td></tr>
+              <tr><td>Property taxes &amp; insurance</td><td class="who who-ll">Landlord</td><td>Pay, allocate, and bill back per the lease; reconcile annually</td></tr>
+              <tr><td>Tenant insurance certificates</td><td class="who who-tn">Tenant</td><td>Collect, verify limits, diary renewals, chase lapses</td></tr>
+              <tr><td>Environmental compliance</td><td class="who"><span class="tbd">[per lease and consent order]</span></td><td>File custody and consultant coordination &mdash; see below</td></tr>
+            </tbody>
+          </table>
+          <p class="tbd-note"><strong>To complete:</strong> AGM will replace each <span class="tbd">[per lease]</span> entry with the actual allocation once the executed lease is provided, and deliver the finished table as Exhibit A to the management agreement.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Environmental &amp; Compliance</h3><span class="pipe">|</span><span class="kick">The Management Risk on This Property</span></div>
+          <p class="lead">Industrial sites in this corridor frequently carry continuing environmental obligations &mdash; monitoring wells, periodic sampling, reporting to Ecology, access for consultants, and a file a future buyer will ask to see. Whatever the obligations at 838 Seneca turn out to be, somebody has to own them. AGM does.</p>
+          <div class="cellgrid reveal">
+            <div class="cell">
+              <div class="kicker">Custody</div>
+              <div class="cell-title">One File, Kept Current</div>
+              <div class="cell-desc">AGM holds the environmental file for the property: prior assessments, consultant reports, correspondence with regulators, sampling results, and any recorded restrictions. It is stored in the Owner Portal document vault and is ready on demand.</div>
+              <div class="pills"><span class="pill">Document Vault</span><span class="pill">Version Control</span><span class="pill">Owner Access</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Calendar</div>
+              <div class="cell-title">Obligations on a Schedule</div>
+              <div class="cell-desc">Every recurring obligation is diarized &mdash; sampling intervals, report submission dates, certification renewals &mdash; and tracked to completion rather than remembered. Ownership sees the schedule and the status in the monthly report.</div>
+              <div class="pills"><span class="pill">Compliance Calendar</span><span class="pill">Deadline Tracking</span><span class="pill">Monthly Status</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Coordination</div>
+              <div class="cell-title">Consultant &amp; Tenant Access</div>
+              <div class="cell-desc">AGM schedules consultant site visits, arranges access with the tenant under the lease notice provisions, escorts where required, and keeps a record of each visit so there is no dispute later about who was on site and when.</div>
+              <div class="pills"><span class="pill">Site Access</span><span class="pill">Tenant Notice</span><span class="pill">Visit Log</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Cost</div>
+              <div class="cell-title">Budgeted, Not Surprising</div>
+              <div class="cell-desc">Ongoing environmental cost is a budget line with an approval threshold, not an invoice that appears. Ownership sets the threshold; anything above it comes to Ownership before the work is authorized.</div>
+              <div class="pills"><span class="pill">Annual Budget Line</span><span class="pill">Approval Threshold</span><span class="pill">Variance Reporting</span></div>
+            </div>
+          </div>
+          <p class="tbd-note"><strong>Open item for Ownership:</strong> AGM needs the current environmental file for this property &mdash; prior Phase I/II reports, any consent order or agreed order, the current consultant of record, and the sampling and reporting schedule. If no continuing obligation exists, this page is reduced to a single line. If one does, it is the most important page in this proposal.</p>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 2 · YOUR TEAM ============ -->
+      <div class="page" id="page-team">
+
+        <p class="lead reveal">Ownership gets named people with direct lines, not a role on an org chart. One manager is accountable for this building, and three others support her.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Your Property Manager</h3><span class="pipe">|</span><span class="kick">Day-to-Day Point of Contact</span></div>
+          <div class="bio">
+            <div class="bio-photo">
+              <span class="ph-k">Photo<br />to be added</span>
+            </div>
+            <div>
+              <div class="bio-role">Property Manager &middot; 838 Seneca Ave SW</div>
+              <h4 class="bio-name">Cindy <span class="tbd">[last name]</span></h4>
+              <p class="bio-body">Cindy is the person Ownership calls. She runs the day-to-day operation of the building, holds the vendor relationships, reviews every invoice before it is paid, prepares the monthly report, and brings Ownership the decisions that need an answer. <span class="tbd">[Two or three sentences on Cindy's background: where she has worked, the kind of portfolio she has run, and what she is known for.]</span></p>
+              <p class="bio-body"><strong>Why Cindy is the right fit for this building:</strong> <span class="tbd">[her experience with single-tenant industrial assets, net lease administration, and properties carrying environmental or compliance obligations &mdash; two or three specific buildings by type and submarket.]</span></p>
+              <div class="bio-facts">
+                <div class="bio-fact"><div class="bf-k">Years in commercial management</div><div class="bf-v"><span class="tbd">[number]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Years with AGM</div><div class="bf-v"><span class="tbd">[number]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Industrial SF under management</div><div class="bf-v"><span class="tbd">[square feet across how many buildings]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Comparable properties managed</div><div class="bf-v"><span class="tbd">[two or three, by type and submarket]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Licenses</div><div class="bf-v"><span class="tbd">[WA broker/managing broker license number, expiry]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Designations &amp; memberships</div><div class="bf-v"><span class="tbd">[CPM, RPA, IREM, BOMA, etc.]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Direct line</div><div class="bf-v"><span class="tbd">[direct phone]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Email</div><div class="bf-v"><span class="tbd">[email address]</span></div></div>
+              </div>
+            </div>
+          </div>
+          <p class="tbd-note"><strong>To complete:</strong> Cindy&rsquo;s headshot, last name, license number, and the background paragraphs. A one-page version of this bio is listed as Exhibit D in the Ready to Proceed section.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>The Supporting Team</h3><span class="pipe">|</span><span class="kick">Named, With Direct Contact</span></div>
+          <div class="people">
+            <div class="person">
+              <div class="p-role">Accounting</div>
+              <div class="p-name">Herman <span class="tbd">[last name]</span></div>
+              <div class="p-desc">Property-level accounting: accounts payable, owner statements, the monthly financial package, CAM and expense reconciliation, and year-end documentation for Ownership&rsquo;s accountant.</div>
+              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+            </div>
+            <div class="person">
+              <div class="p-role">Property Management Support</div>
+              <div class="p-name">Alix <span class="tbd">[last name]</span></div>
+              <div class="p-desc">Works directly with Cindy on vendor scheduling, work orders, certificate and compliance tracking, and tenant coordination. Covers for Cindy when she is out, so there is never a day without an answer.</div>
+              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+            </div>
+            <div class="person">
+              <div class="p-role">Administration</div>
+              <div class="p-name">Makenzie <span class="tbd">[last name]</span></div>
+              <div class="p-desc">Lease files and abstracts, insurance certificates, document filing in the Owner Portal, vendor onboarding and W-9s, and correspondence records.</div>
+              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+            </div>
+            <div class="person">
+              <div class="p-role">Escalation</div>
+              <div class="p-name"><span class="tbd">[supervisor name]</span></div>
+              <div class="p-desc">Ownership&rsquo;s escalation point if a matter is not resolved to its satisfaction at the property level, and the signatory on the management agreement.</div>
+              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+            </div>
+          </div>
+          <div class="highlight reveal">
+            <span class="h-label">What This Means</span>
+            <span class="h-value">Four named people, one accountable manager, and a defined escalation path. Full contact details, including the 24/7 emergency line, are on the Contact page.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 3 · THE FIRST 90 DAYS ============ -->
+      <div class="page" id="page-onboarding">
+
+        <p class="lead reveal">Changing managers should cost Ownership one meeting and a signature. AGM does the rest. Here is exactly what happens, and what Ownership holds at the end of it.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Transition Plan</h3><span class="pipe">|</span><span class="kick">Day One to Day Ninety</span></div>
+          <div class="phases">
+            <div class="phase">
+              <div class="phase-when"><div class="pw-k">Day 1&ndash;7</div><div class="pw-s">Take Custody</div></div>
+              <div>
+                <div class="phase-title">AGM collects and reads everything before touching the building.</div>
+                <div class="phase-body">Nothing is assumed from the prior manager or from Ownership&rsquo;s memory. Every document is obtained, read, and abstracted.</div>
+                <ul class="checklist">
+                  <li>Executed lease, amendments, and any side letters &mdash; abstracted into a one-page summary with every date diarized</li>
+                  <li>Environmental file: assessments, consultant reports, regulatory correspondence, sampling schedule</li>
+                  <li>Two years of operating expense history, tax bills, and utility accounts</li>
+                  <li>Insurance policies, certificates, and loss runs</li>
+                  <li>Vendor contracts, warranties, as-builts, and keys</li>
+                  <li>Bank account opened in Ownership&rsquo;s name, signature cards executed</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-when"><div class="pw-k">Day 8&ndash;30</div><div class="pw-s">Set Up &amp; Inspect</div></div>
+              <div>
+                <div class="phase-title">The property goes live on the platform and gets walked.</div>
+                <div class="phase-body">Systems are configured for this building specifically, and the first physical inspection establishes the baseline condition record.</div>
+                <ul class="checklist">
+                  <li>Property, lease, and budget loaded into the management platform</li>
+                  <li>Owner Portal access issued to Ownership and its accountant</li>
+                  <li>Full site inspection with a dated photographic condition record, roof to paving</li>
+                  <li>Tenant introduction letter with Cindy&rsquo;s direct line and the emergency number</li>
+                  <li>Utility and vendor accounts transferred or confirmed</li>
+                  <li>Insurance review, including a no-obligation quote under AGM&rsquo;s Master Program</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-when"><div class="pw-k">Day 31&ndash;60</div><div class="pw-s">Find the Gaps</div></div>
+              <div>
+                <div class="phase-title">AGM reports what it found, including what it did not like.</div>
+                <div class="phase-body">The first findings memo is the honest one: lease compliance gaps, deferred maintenance, mispriced vendor contracts, missing documents, and anything in the environmental file that needs attention.</div>
+                <ul class="checklist">
+                  <li>Lease compliance review: is each party doing what the lease requires</li>
+                  <li>Deferred maintenance list with estimated cost and urgency</li>
+                  <li>Vendor contracts rebid where pricing is off market</li>
+                  <li>Missing-document list with a plan to close each gap</li>
+                  <li>First full monthly financial package delivered</li>
+                </ul>
+              </div>
+            </div>
+            <div class="phase">
+              <div class="phase-when"><div class="pw-k">Day 61&ndash;90</div><div class="pw-s">Hand Ownership the Plan</div></div>
+              <div>
+                <div class="phase-title">Ownership receives a working plan, not a status update.</div>
+                <div class="phase-body">At the ninety-day meeting AGM presents the operating plan for the next twelve months and the capital plan for the next five, with the numbers behind both.</div>
+                <ul class="checklist">
+                  <li>Twelve-month operating budget with the assumptions stated</li>
+                  <li>Five-year capital plan: roof, HVAC, paving, with timing and estimated cost</li>
+                  <li>Reserve recommendation and distribution schedule for Ownership&rsquo;s approval</li>
+                  <li>Environmental compliance calendar and budgeted annual cost</li>
+                  <li>Complete, indexed property file &mdash; the same file a buyer&rsquo;s diligence team would request</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight reveal">
+          <span class="h-label">At Day 90</span>
+          <span class="h-value">Ownership holds an abstracted lease, a dated condition record, a clean set of books, a twelve-month budget, a five-year capital plan, an ordered environmental file, and one named manager who knows the building.</span>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 4 · DAY-TO-DAY MANAGEMENT ============ -->
+      <div class="page" id="page-operations">
+
+        <p class="lead reveal">The practical case for hiring a manager is subtraction. These are the things Ownership stops doing on the day the agreement commences.</p>
+
+        <div class="block reveal">
+          <div class="swap">
+            <div class="swap-col before">
+              <div class="swap-k">Today</div>
+              <div class="swap-h">Ownership handles this.</div>
+              <ul>
+                <li>Taking the tenant&rsquo;s call, at whatever hour it comes</li>
+                <li>Finding, vetting, and scheduling vendors, then checking the work</li>
+                <li>Chasing reimbursements, CAM charges, and late payments</li>
+                <li>Tracking insurance certificates and chasing lapses</li>
+                <li>Coordinating consultant access and remembering compliance deadlines</li>
+                <li>Paying bills, coding them, and keeping the receipts somewhere</li>
+                <li>Assembling year-end numbers for the accountant from a shoebox</li>
+                <li>Remembering the option notice date</li>
+              </ul>
+            </div>
+            <div class="swap-col after">
+              <div class="swap-k">With AGM</div>
+              <div class="swap-h">Ownership reviews a report and approves decisions.</div>
+              <ul>
+                <li>Tenant calls Cindy, or the 24/7 line after hours</li>
+                <li>Vendors are under contract, insured, and supervised by AGM</li>
+                <li>Billing, collection, and reconciliation run on a schedule</li>
+                <li>Certificates are collected, verified, and diaried</li>
+                <li>Compliance obligations sit on a calendar AGM owns</li>
+                <li>Invoices are reviewed, coded, paid, and filed</li>
+                <li>Year-end package goes straight to the accountant</li>
+                <li>Every critical date is diarized and surfaced in advance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Operations</h3><span class="pipe">|</span><span class="kick">Sized to a Single-Tenant Industrial Building</span></div>
+          <div class="cellgrid reveal">
+            <div class="cell">
+              <div class="kicker">Ongoing</div>
+              <div class="cell-title">Repairs &amp; Maintenance</div>
+              <div class="cell-desc">Coordination of landlord-obligation repairs with budget-aligned execution and Ownership approval above the agreed threshold. Tenant-obligation items are tracked for lease compliance, not managed and billed.</div>
+              <div class="pills"><span class="pill">Vendor Coordination</span><span class="pill">Work Order Records</span><span class="pill">Approval Thresholds</span><span class="pill">Warranty Tracking</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Inspection</div>
+              <div class="cell-title">Site Inspections</div>
+              <div class="cell-desc">A dated, photographed exterior and common-area inspection on a schedule set to the asset &mdash; not a monthly building-engineer walk priced for a multi-tenant office tower. Interior access follows the lease notice provisions.</div>
+              <div class="pills"><span class="pill">Quarterly Exterior Inspection</span><span class="pill">Annual Interior Walk</span><span class="pill">Photographic Record</span><span class="pill">Condition Reporting</span></div>
+              <div class="sub-note"><strong>Frequency:</strong> proposed quarterly for a leased single-tenant building and monthly while vacant. Ownership sets the final cadence.</div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Response</div>
+              <div class="cell-title">24/7 Emergency Response</div>
+              <div class="cell-desc">After-hours calls route to an on-call AGM representative for assessment, vendor dispatch, and notification of Cindy and Ownership under the authority limits in the agreement.</div>
+              <div class="pills"><span class="pill">On-Call Line</span><span class="pill">Immediate Assessment</span><span class="pill">Vendor Dispatch</span><span class="pill">Owner Notification</span></div>
+              <div class="sub-note"><strong>Emergency authority:</strong> AGM may act without prior approval only to prevent injury or further property damage, and notifies Ownership the same day.</div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Vacancy</div>
+              <div class="cell-title">Interim Vacancy Protection</div>
+              <div class="cell-desc">While the building is unleased: security and condition checks, utilities and building systems kept live and monitored, fire sprinkler monitoring and inspection, and grounds maintained so the asset shows well to prospective tenants.</div>
+              <div class="pills"><span class="pill">Security Checks</span><span class="pill">Systems Monitoring</span><span class="pill">Sprinkler Inspection</span><span class="pill">Grounds &amp; Landscaping</span><span class="pill">Lease-Ready Condition</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Capital Projects</h3><span class="pipe">|</span><span class="kick">Planned, Bid, Supervised</span></div>
+          <div class="cellgrid cols-1 reveal no-num">
+            <div class="cell">
+              <div class="cell-title">Multi-Year Capital Planning</div>
+              <div class="cell-desc">The building&rsquo;s major systems are inventoried with remaining useful life and replacement cost, so roof, HVAC, and paving appear in a plan years before they appear as an emergency. Ownership approves the plan annually and decides what gets funded and when.</div>
+              <div class="pills"><span class="pill">Useful Life Inventory</span><span class="pill">Five-Year Forecast</span><span class="pill">Reserve Recommendation</span><span class="pill">Annual Reapproval</span></div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">Project Execution</div>
+              <div class="cell-desc">For approved work: scope definition, competitive bids from insured and licensed contractors, contract award with Ownership&rsquo;s approval, course-of-performance oversight, lien release collection, and a closeout file with warranties and as-builts. Project coordination is billed separately &mdash; the fee is agreed before the project starts.</div>
+              <div class="pills"><span class="pill">Competitive Bids</span><span class="pill">Vendor Compliance</span><span class="pill">Performance Oversight</span><span class="pill">Lien Releases</span><span class="pill">Closeout File</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 5 · FINANCIAL MANAGEMENT & REPORTING ============ -->
+      <div class="page" id="page-reporting">
+
+        <p class="lead reveal">Ownership receives the same package by the 15th of every month, in a format its accountant can use without rework. The point of the reporting is that nothing about the building&rsquo;s finances is a question at year end.</p>
+
+        <div class="cellgrid reveal">
+          <div class="cell">
+            <div class="kicker">Reporting</div>
+            <div class="cell-title">Monthly Package</div>
+            <div class="cell-desc">A complete financial package delivered to the Owner Portal by the 15th, covering the prior month in full. Format is customizable to Ownership&rsquo;s preference and to what its accountant wants to receive.</div>
+            <div class="pills"><span class="pill">Balance Sheet</span><span class="pill">Income Statement</span><span class="pill">Rent Roll &amp; Lease Expirations</span><span class="pill">A/R &amp; A/P</span><span class="pill">Budget vs. Actual</span><span class="pill">Bank Reconciliation</span><span class="pill">Paid Invoices</span><span class="pill">Compliance Status</span></div>
+          </div>
+          <div class="cell">
+            <div class="kicker">Lease Administration</div>
+            <div class="cell-title">Billing &amp; Reconciliation</div>
+            <div class="cell-desc">Rent and escalations billed on the lease terms, operating expense recoveries allocated and billed back as the lease provides, and an annual reconciliation prepared and issued with the supporting detail behind it.</div>
+            <div class="pills"><span class="pill">Rent &amp; Escalations</span><span class="pill">NNN Allocation</span><span class="pill">Annual Reconciliation</span><span class="pill">Credits &amp; Charges</span><span class="pill">Collection Follow-Up</span></div>
+            <div class="sub-note"><strong>Lease alignment:</strong> every charge is issued in accordance with the executed lease, with the calculation shown.</div>
+          </div>
+          <div class="cell">
+            <div class="kicker">Budget</div>
+            <div class="cell-title">Annual Budget &amp; Forecast</div>
+            <div class="cell-desc">An annual operating budget built from the building&rsquo;s own expense history and the capital plan, presented for Ownership&rsquo;s approval, then tracked monthly with variance explained in writing rather than left to be noticed.</div>
+            <div class="pills"><span class="pill">Operating Budget</span><span class="pill">Capital Forecast</span><span class="pill">Variance Analysis</span><span class="pill">Reforecast</span></div>
+          </div>
+          <div class="cell">
+            <div class="kicker">Controls</div>
+            <div class="cell-title">Banking &amp; Financial Controls</div>
+            <div class="cell-desc">Funds are held in a bank account in Ownership&rsquo;s name, separate from AGM&rsquo;s operating funds and from every other property. Separation of duties between the manager who approves and the accountant who pays, with monthly reconciliation.</div>
+            <div class="pills"><span class="pill">Segregated Accounts</span><span class="pill">Separation of Duties</span><span class="pill">Approval Thresholds</span><span class="pill">Monthly Reconciliation</span></div>
+          </div>
+        </div>
+
+        <div class="block reveal" style="margin-top:60px;">
+          <div class="sec-head"><h3>Year End</h3><span class="pipe">|</span><span class="kick">What Goes to the Accountant</span></div>
+          <div class="inline-set">
+            <div class="inline-item"><div class="ii-t">Year-end financial package</div><div class="ii-d">Twelve months of statements, general ledger, and the annual reconciliation, delivered in one file.</div></div>
+            <div class="inline-item"><div class="ii-t">1099 and tax documentation</div><div class="ii-d">Vendor 1099 preparation and filing, with the supporting detail retained in the portal.</div></div>
+            <div class="inline-item"><div class="ii-t">Capital expenditure schedule</div><div class="ii-d">Every capital item with invoice, in-service date, and documentation for depreciation treatment.</div></div>
+          </div>
+        </div>
+
+        <div class="highlight reveal">
+          <span class="h-label">Delivery Commitment</span>
+          <span class="h-value">Monthly financial package in the Owner Portal by the 15th. If it is going to be late, Ownership hears it from Cindy before the 15th, not after.</span>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 6 · INSURANCE ============ -->
+      <div class="page" id="page-insurance">
+
+        <p class="lead reveal">AGM places eligible managed assets into a grouped insurance structure rather than marketing each building on its own. For a single industrial building, that scale is usually worth money. AGM will quote it so Ownership can compare against its current policy.</p>
+
+        <div class="cellgrid reveal">
+          <div class="cell">
+            <div class="kicker">Evaluation</div>
+            <div class="cell-title">Coverage Review</div>
+            <div class="cell-desc">AGM reviews the current policy against the lease requirements and the asset&rsquo;s risk profile, and identifies gaps &mdash; which, on an industrial property with environmental history, is a review worth doing on its own merits.</div>
+            <div class="pills"><span class="pill">Policy Review</span><span class="pill">Lease Requirement Match</span><span class="pill">Gap Identification</span></div>
+          </div>
+          <div class="cell">
+            <div class="kicker">Structure</div>
+            <div class="cell-title">Grouped Placement</div>
+            <div class="cell-desc">Eligible assets within the AGM-managed portfolio are considered for placement in a grouped structure rather than being separately marketed, giving a single building access to portfolio-level terms.</div>
+            <div class="pills"><span class="pill">Portfolio Placement</span><span class="pill">Eligibility Review</span><span class="pill">Carrier Coordination</span></div>
+          </div>
+          <div class="cell">
+            <div class="kicker">Efficiency</div>
+            <div class="cell-title">Coverage &amp; Cost</div>
+            <div class="cell-desc">Grouped placement can support broader coverage capacity and economies of scale relative to an individually placed policy. Where it does not beat the current policy, AGM says so.</div>
+            <div class="pills"><span class="pill">Economies of Scale</span><span class="pill">Broader Capacity</span><span class="pill">Side-by-Side Comparison</span></div>
+          </div>
+          <div class="cell">
+            <div class="kicker">Conditions</div>
+            <div class="cell-title">Program Conditions</div>
+            <div class="cell-desc">Availability, pricing, and coverage terms are subject to underwriting review, property eligibility, and carrier approval. Nothing here is a commitment of terms.</div>
+            <div class="pills"><span class="pill">Underwriting Review</span><span class="pill">Property Eligibility</span><span class="pill">Carrier Approval</span></div>
+          </div>
+        </div>
+
+        <div class="highlight reveal">
+          <span class="h-label">Offer</span>
+          <span class="h-value">AGM will obtain a no-obligation quote for 838 Seneca Ave SW under the Master Program and present it next to the current premium and coverage, whether or not Ownership engages AGM for management.</span>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 7 · TOOLS & TECHNOLOGY ============ -->
+      <div class="page" id="page-technology">
+
+        <p class="lead reveal">One platform, three doors: Ownership sees the money and the documents, the tenant handles payments and requests, and the property has a public page for leasing. Ownership&rsquo;s door is the one that matters here.</p>
+
+        <div class="inline-set reveal">
+          <div class="inline-item"><div class="ii-t">Owner Portal</div><div class="ii-d">Ownership&rsquo;s view: financials, documents, distributions, and reporting. Covered in detail below.</div></div>
+          <div class="inline-item"><div class="ii-t">Tenant Portal</div><div class="ii-d">Online payment, account balance, lease documents, and work order submission for the tenant.</div></div>
+          <div class="inline-item"><div class="ii-t">Property Website</div><div class="ii-d">A public page for the building, used for leasing and as the access point to both portals.</div></div>
+        </div>
+
+        <div class="block reveal" style="margin-top:60px;">
+          <div class="sec-head"><h3>Owner Portal</h3><span class="pipe">|</span><span class="kick">What Ownership Sees</span></div>
+          <div class="portal">
+            <figure class="portal-shot">
+              <img src="/assets/agm-owner-portal-screenshot.png" alt="AGM Owner Portal dashboard — cash flow, rent collected, and occupancy" loading="lazy" onerror="this.style.display='none'; var p=this.parentNode.querySelector('.ph'); if(p){p.style.display='flex';} var c=this.parentNode.querySelector('figcaption'); if(c){c.style.display='none';}" />
+              <div class="ph" style="display:none;">
+                <span class="ph-k">Screenshot</span>
+                <span class="ph-name">Owner Portal &mdash; Dashboard</span>
+                <code>/assets/owner-portal.png</code>
+              </div>
+              <figcaption>Owner Portal &middot; Dashboard</figcaption>
+            </figure>
+            <div class="portal-feats">
+              <div class="portal-feat">
+                <div class="pf-title">Profit &amp; Loss, Live</div>
+                <div class="pf-desc">Income and expense against budget for the month and year to date, with the detail behind every line and the paid invoice attached to it.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Distributions &amp; Cash Position</div>
+                <div class="pf-desc">Cash on hand, reserve balance, distributions paid and scheduled, and the contribution history &mdash; so the question &ldquo;what is actually in the account&rdquo; has an answer at any hour.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Year-End Tax Documents</div>
+                <div class="pf-desc">K-1s where the ownership structure produces them, 1099s, the year-end package, and the capital expenditure schedule &mdash; all in one place and downloadable by Ownership&rsquo;s accountant directly.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Document Vault</div>
+                <div class="pf-desc">Lease and amendments, the environmental file, insurance policies and certificates, vendor contracts, warranties, inspection records, and capital project closeouts. This is the file a buyer&rsquo;s diligence team receives.</div>
+              </div>
+            </div>
+          </div>
+          <p class="tbd-note"><strong>To confirm:</strong> whether Thomas Family Properties, LLC holds 838 Seneca in a structure that issues K-1s, and who at Ownership&rsquo;s accounting firm should be granted portal access.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Planning View</h3><span class="pipe">|</span><span class="kick">Beyond the Monthly Numbers</span></div>
+          <p class="lead">The same platform carries the forward view: what the asset is projected to do, what capital it needs, and what a sale or option exercise would produce. Ownership does not have to rebuild that model each time the question comes up.</p>
+          <div class="portal">
+            <figure class="portal-shot">
+              <img src="/assets/agm-investor-portal-screenshot.png" alt="AGM reporting dashboard — investments and performance view" loading="lazy" onerror="this.style.display='none'; var p=this.parentNode.querySelector('.ph'); if(p){p.style.display='flex';} var c=this.parentNode.querySelector('figcaption'); if(c){c.style.display='none';}" />
+              <div class="ph" style="display:none;">
+                <span class="ph-k">Screenshot</span>
+                <span class="ph-name">Performance &amp; Planning View</span>
+                <code>/assets/investor-portal.png</code>
+              </div>
+              <figcaption>Performance &amp; Planning View</figcaption>
+            </figure>
+            <div class="portal-feats">
+              <div class="portal-feat">
+                <div class="pf-title">Performance Against Plan</div>
+                <div class="pf-desc">Actual results tracked against the operating plan, with variance explained, so a decision about the building is made against current numbers.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Long-Term Planning</div>
+                <div class="pf-desc">The five-year capital plan and reserve position in one view, showing what the building will ask for and when.</div>
+              </div>
+              <div class="portal-feat">
+                <div class="pf-title">Exit &amp; Option Modeling</div>
+                <div class="pf-desc">What a sale or an exercised purchase option produces at today&rsquo;s numbers, refreshed as the numbers move. Addressed further on the Strategy page.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 8 · STRATEGY & EXIT ============ -->
+      <div class="page" id="page-strategy">
+
+        <p class="lead reveal">AGM does not propose a strategy for a building it has not been told the plan for. This page sets out the framework AGM uses, the questions Ownership needs to answer for it to mean anything, and how management protects the value of whatever exit Ownership chooses.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Operating Framework</h3><span class="pipe">|</span><span class="kick">Decisions Follow the Plan</span></div>
+          <div class="cellgrid reveal">
+            <div class="cell">
+              <div class="kicker">Objective</div>
+              <div class="cell-title">Ownership&rsquo;s Objective</div>
+              <div class="cell-desc">Hold period, target return, income versus appreciation, and tolerance for capital outlay. Every operating decision &mdash; what to repair versus replace, what to fund versus defer &mdash; follows from this and is wrong without it.</div>
+              <div class="pills"><span class="pill">Hold Period</span><span class="pill">Target Return</span><span class="pill">Income vs. Appreciation</span><span class="pill">Risk Tolerance</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Proforma</div>
+              <div class="cell-title">The Operating Model</div>
+              <div class="cell-desc">A working proforma for this building: rent, escalations, recoveries, operating cost, capital, and reserve. It becomes the measuring stick the monthly reporting is read against.</div>
+              <div class="pills"><span class="pill">Revenue</span><span class="pill">Operating Assumptions</span><span class="pill">Capital Forecast</span><span class="pill">Return Modeling</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Cash</div>
+              <div class="cell-title">Distributions &amp; Reserve</div>
+              <div class="cell-desc">How much cash goes out, how often, and how much stays against the capital plan. Set once with Ownership and then administered, rather than decided month by month.</div>
+              <div class="pills"><span class="pill">Distribution Schedule</span><span class="pill">Reserve Target</span><span class="pill">Capital Funding</span></div>
+            </div>
+            <div class="cell">
+              <div class="kicker">Budget</div>
+              <div class="cell-title">Annual Operating Budget</div>
+              <div class="cell-desc">The objective translated into a year of spending, approved by Ownership and tracked against monthly. Variance is reported with a reason, not a number.</div>
+              <div class="pills"><span class="pill">Expense Discipline</span><span class="pill">Approval Thresholds</span><span class="pill">Variance Reporting</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Protecting the Exit</h3><span class="pipe">|</span><span class="kick">Sale or Purchase Option</span></div>
+          <p class="lead">If the tenant holds a purchase option, the exit may not be Ownership&rsquo;s to time &mdash; which makes the file that supports the price the thing worth managing. Good management shows up in the exit as a shorter diligence period, fewer price adjustments, and fewer holdbacks.</p>
+          <div class="cellgrid reveal no-num">
+            <div class="cell">
+              <div class="cell-title">Books a Buyer Can Rely On</div>
+              <div class="cell-desc">Three years of clean, reconciled, consistently presented financials with invoice-level support. Diligence teams discount what they cannot verify; verification is cheaper to provide in advance than to argue about in escrow.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">A Documented Capital History</div>
+              <div class="cell-desc">Every capital item with scope, contractor, cost, warranty, and in-service date. A roof with paperwork is an asset; a roof without it is a buyer&rsquo;s inspection contingency.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">An Ordered Compliance File</div>
+              <div class="cell-desc">The environmental and compliance record assembled continuously rather than reconstructed under a thirty-day diligence clock. On an industrial site, this is usually the item that moves the closing date.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">A Defensible Lease File</div>
+              <div class="cell-desc">Executed lease, amendments, estoppel-ready abstract, reconciliation history, and a payment record. The buyer is purchasing the income stream, and this is the evidence of it.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Lease Negotiation Support</h3><span class="pipe">|</span><span class="kick">Available Now</span></div>
+          <div class="highlight">
+            <span class="h-label">Offer</span>
+            <span class="h-value">AGM understands lease negotiations are underway for this building. Before signature, AGM will review the draft from the operating side at no cost &mdash; the maintenance and expense allocations, the recovery and reconciliation mechanics, the access and notice provisions needed for environmental work, the insurance requirements, and the option notice mechanics. A lease that is clear about who does what is cheaper to manage for its whole term, and the cheapest time to fix it is before it is signed.</span>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Questions for Ownership</h3><span class="pipe">|</span><span class="kick">To Work Through Together</span></div>
+          <p class="lead">These are the answers AGM needs before the operating plan is worth anything. They are the agenda for the meeting this proposal is asking for.</p>
+          <div class="qa">
+            <div class="q">
+              <div class="q-n">01</div>
+              <div>
+                <div class="q-t">What is the intended hold period, given the tenant&rsquo;s purchase option?</div>
+                <div class="q-w">If the option is likely to be exercised, the operating plan optimizes for a clean, documented handover and for the value measured by the option formula. If Ownership intends to hold through the option window, the plan optimizes for income durability and asset condition instead. <strong>These lead to different decisions on nearly every capital item.</strong></div>
+              </div>
+            </div>
+            <div class="q">
+              <div class="q-n">02</div>
+              <div>
+                <div class="q-t">How often does Ownership want distributions, and what reserve should be held?</div>
+                <div class="q-w">Monthly, quarterly, or on request. AGM will recommend a reserve level against the five-year capital plan, but the trade-off between cash out and cash held is Ownership&rsquo;s to set. <strong>Set it once and AGM administers it.</strong></div>
+              </div>
+            </div>
+            <div class="q">
+              <div class="q-n">03</div>
+              <div>
+                <div class="q-t">What capital items should be planned for over the next few years?</div>
+                <div class="q-w">Roof, HVAC, paving, and electrical service are the four that matter on a building of this age and type. AGM will inventory remaining useful life in the first ninety days, but Ownership&rsquo;s view on what it is willing to fund, and when, shapes the plan. <strong>What does Ownership already know is coming?</strong></div>
+              </div>
+            </div>
+            <div class="q">
+              <div class="q-n">04</div>
+              <div>
+                <div class="q-t">How should environmental costs be budgeted and approved?</div>
+                <div class="q-w">AGM proposes an annual budget line with a standing approval threshold for routine monitoring and reporting, and Ownership approval above it. <strong>What are the current obligations, who is the consultant of record, and what did this cost last year?</strong></div>
+              </div>
+            </div>
+            <div class="q">
+              <div class="q-n">05</div>
+              <div>
+                <div class="q-t">What spending authority does AGM have without prior approval?</div>
+                <div class="q-w">AGM proposes <span class="tbd">[$X]</span> per item for unbudgeted spending, with emergency authority to prevent injury or further damage and same-day notice to Ownership. <strong>Ownership sets both numbers in the agreement.</strong></div>
+              </div>
+            </div>
+            <div class="q">
+              <div class="q-n">06</div>
+              <div>
+                <div class="q-t">Who else needs to be in the reporting loop?</div>
+                <div class="q-w">Accountant, attorney, lender, family members with an interest. <strong>Each can be given portal access at the level Ownership chooses.</strong></div>
+              </div>
+            </div>
+            <div class="q">
+              <div class="q-n">07</div>
+              <div>
+                <div class="q-t">Is leasing and sale brokerage carved out, or coordinated with AGM?</div>
+                <div class="q-w">If a listing broker is already engaged, the management agreement carves out leasing and sales and defines how AGM supports that broker. <strong>AGM does not need the brokerage to take the management.</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 9 · TRACK RECORD & ABOUT AGM ============ -->
+      <div class="page" id="page-about">
+
+        <p class="lead reveal">The relevant question is not how large AGM is. It is whether AGM has taken over buildings like this one and made them better. Two examples, then the firm behind them.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Case Studies</h3><span class="pipe">|</span><span class="kick">Taken Over, Fixed, Measured</span></div>
+
+          <div class="case">
+            <div class="case-head">
+              <div class="case-head-txt">
+                <div class="case-k">Case Study 01 &middot; Industrial</div>
+                <div class="case-title">Pacific Business Park &mdash; Pacific, WA</div>
+                <div class="case-meta"><span class="tbd">[Property type, rentable SF, number of buildings, tenancy at takeover, year AGM assumed management]</span></div>
+              </div>
+              <div class="case-shot"><img src="/assets/pacific.jpg" alt="Pacific Business Park, Pacific, WA" loading="lazy" /></div>
+            </div>
+            <div class="case-body">
+              <div class="case-step">
+                <div class="cs-k">What AGM found</div>
+                <div class="cs-v"><span class="tbd">[The condition at takeover: deferred maintenance, expense items that were off market, lease compliance gaps, reporting that was late or absent, missing documentation.]</span></div>
+              </div>
+              <div class="case-step">
+                <div class="cs-k">What AGM did</div>
+                <div class="cs-v"><span class="tbd">[The specific actions taken in the first year: contracts rebid, recoveries corrected, capital sequenced, reporting rebuilt.]</span></div>
+              </div>
+              <div class="case-step">
+                <div class="cs-k">What it was worth</div>
+                <div class="cs-v"><span class="tbd">[The result to the owner, in dollars or percentage, and over what period.]</span></div>
+              </div>
+            </div>
+            <div class="case-nums">
+              <div class="case-num"><div class="cn-v"><span class="tbd">[before &rarr; after]</span></div><div class="cn-k">Operating expense per SF</div></div>
+              <div class="case-num"><div class="cn-v"><span class="tbd">[before &rarr; after]</span></div><div class="cn-k">Occupancy</div></div>
+              <div class="case-num"><div class="cn-v"><span class="tbd">[figure]</span></div><div class="cn-k">Net operating income change</div></div>
+            </div>
+          </div>
+
+          <div class="case">
+            <div class="case-head">
+              <div class="case-head-txt">
+                <div class="case-k">Case Study 02 &middot; Commercial</div>
+                <div class="case-title">Mt Si Building &mdash; Bellevue, WA</div>
+                <div class="case-meta"><span class="tbd">[Property type, rentable SF, tenancy at takeover, year AGM assumed management]</span></div>
+              </div>
+              <div class="case-shot"><img src="/assets/mt-si.jpg" alt="Mt Si commercial building, Bellevue, WA" loading="lazy" /></div>
+            </div>
+            <div class="case-body">
+              <div class="case-step">
+                <div class="cs-k">What AGM found</div>
+                <div class="cs-v"><span class="tbd">[The condition at takeover.]</span></div>
+              </div>
+              <div class="case-step">
+                <div class="cs-k">What AGM did</div>
+                <div class="cs-v"><span class="tbd">[The actions taken.]</span></div>
+              </div>
+              <div class="case-step">
+                <div class="cs-k">What it was worth</div>
+                <div class="cs-v"><span class="tbd">[The measured result to the owner.]</span></div>
+              </div>
+            </div>
+            <div class="case-nums">
+              <div class="case-num"><div class="cn-v"><span class="tbd">[before &rarr; after]</span></div><div class="cn-k">Operating expense per SF</div></div>
+              <div class="case-num"><div class="cn-v"><span class="tbd">[before &rarr; after]</span></div><div class="cn-k">Occupancy</div></div>
+              <div class="case-num"><div class="cn-v"><span class="tbd">[figure]</span></div><div class="cn-k">Net operating income change</div></div>
+            </div>
+          </div>
+
+          <p class="tbd-note"><strong>To complete:</strong> the two case studies above are structured and ready for content. AGM internal candidates discussed: Pacific Business Park, the Mt Si building, North Park, and the Center Building. Two are enough &mdash; pick the two with the strongest before-and-after numbers and the closest resemblance to a single-tenant industrial asset, and the rest can be dropped.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Comparable Assets Under Management</h3><span class="pipe">|</span><span class="kick">Industrial First</span></div>
+          <div class="assets detailed">
+            <div class="asset">
+              <div class="asset-tile"><img src="/assets/pacific.jpg" alt="Pacific Business Park, Pacific, WA" loading="lazy" /></div>
+              <div class="asset-loc">Pacific Business Park &middot; Pacific, WA</div>
+              <div class="asset-facts">
+                <span>Industrial / flex &middot; <span class="tbd">[rentable SF]</span></span>
+                <span><span class="tbd">[tenancy: single or multi-tenant, lease structure]</span></span>
+              </div>
+            </div>
+            <div class="asset">
+              <div class="asset-tile"><img src="/assets/marysville.png" alt="Industrial property, Marysville, WA" loading="lazy" /></div>
+              <div class="asset-loc"><span class="tbd">[Property name]</span> &middot; Marysville, WA</div>
+              <div class="asset-facts">
+                <span>Industrial &middot; <span class="tbd">[rentable SF]</span></span>
+                <span><span class="tbd">[tenancy and lease structure]</span></span>
+              </div>
+            </div>
+            <div class="asset">
+              <div class="asset-tile"><img src="/assets/mt-si.jpg" alt="Mt Si commercial building, Bellevue, WA" loading="lazy" /></div>
+              <div class="asset-loc">Mt Si Building &middot; Bellevue, WA</div>
+              <div class="asset-facts">
+                <span>Commercial &middot; <span class="tbd">[rentable SF]</span></span>
+                <span><span class="tbd">[tenancy and lease structure]</span></span>
+              </div>
+            </div>
+            <div class="asset">
+              <div class="asset-tile"><img src="/assets/bellevue.png" alt="Commercial property, Bellevue, WA" loading="lazy" /></div>
+              <div class="asset-loc"><span class="tbd">[Property name]</span> &middot; Bellevue, WA</div>
+              <div class="asset-facts">
+                <span><span class="tbd">[type]</span> &middot; <span class="tbd">[rentable SF]</span></span>
+                <span><span class="tbd">[tenancy and lease structure]</span></span>
+              </div>
+            </div>
+            <div class="asset">
+              <div class="asset-tile"><img src="/assets/fremont.png" alt="Commercial property, Fremont, Seattle, WA" loading="lazy" /></div>
+              <div class="asset-loc"><span class="tbd">[Property name]</span> &middot; Fremont, WA</div>
+              <div class="asset-facts">
+                <span><span class="tbd">[type]</span> &middot; <span class="tbd">[rentable SF]</span></span>
+                <span><span class="tbd">[tenancy and lease structure]</span></span>
+              </div>
+            </div>
+            <div class="asset">
+              <div class="asset-tile"><img src="/assets/queen anne.png" alt="Commercial property, Queen Anne, Seattle, WA" loading="lazy" /></div>
+              <div class="asset-loc"><span class="tbd">[Property name]</span> &middot; Queen Anne, WA</div>
+              <div class="asset-facts">
+                <span><span class="tbd">[type]</span> &middot; <span class="tbd">[rentable SF]</span></span>
+                <span><span class="tbd">[tenancy and lease structure]</span></span>
+              </div>
+            </div>
+          </div>
+          <p class="tbd-note"><strong>To complete:</strong> property type, rentable square footage, and tenancy for each tile, with industrial and single-tenant net lease assets ordered first. Replace or reorder tiles so the closest comparables to 838 Seneca lead.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>References</h3><span class="pipe">|</span><span class="kick">Current Commercial Owner Clients</span></div>
+          <div class="refs">
+            <div class="ref">
+              <div class="r-quote">&ldquo;<span class="tbd">[One or two sentences from a current commercial owner client, on what changed after AGM took over.]</span>&rdquo;</div>
+              <div class="r-who"><span class="tbd">[Name]</span></div>
+              <div class="r-what"><span class="tbd">[Title, entity, property type and size, years as an AGM client]</span></div>
+            </div>
+            <div class="ref">
+              <div class="r-quote">&ldquo;<span class="tbd">[Reference quote.]</span>&rdquo;</div>
+              <div class="r-who"><span class="tbd">[Name]</span></div>
+              <div class="r-what"><span class="tbd">[Title, entity, property type and size, years as an AGM client]</span></div>
+            </div>
+            <div class="ref">
+              <div class="r-quote">&ldquo;<span class="tbd">[Reference quote.]</span>&rdquo;</div>
+              <div class="r-who"><span class="tbd">[Name]</span></div>
+              <div class="r-what"><span class="tbd">[Title, entity, property type and size, years as an AGM client]</span></div>
+            </div>
+          </div>
+          <p class="tbd-note"><strong>To complete:</strong> three current commercial owner clients willing to take a call, with permission confirmed. If quotes are not available, list name, entity, property, and a direct phone number instead &mdash; a reference who will pick up is worth more than a quote.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>About AGM</h3><span class="pipe">|</span><span class="kick">The Firm Behind the Team</span></div>
+          <div class="metrics">
+            <div class="metric">
+              <span class="m-label">Assets Under Management</span>
+              <span class="m-value">$1B</span>
+              <span class="m-unit">portfolio value</span>
+            </div>
+            <div class="metric">
+              <span class="m-label">Properties Managed</span>
+              <span class="m-value">200+</span>
+              <span class="m-unit">across the region</span>
+            </div>
+            <div class="metric">
+              <span class="m-label">Founded</span>
+              <span class="m-value">1998</span>
+              <span class="m-unit">Pacific Northwest</span>
+            </div>
+            <div class="metric">
+              <span class="m-label">Service Lines</span>
+              <span class="m-unit" style="margin-top:4px;">Asset Management &middot; Property Management &middot; Syndication &middot; Investment &middot; Construction</span>
+            </div>
+          </div>
+          <div class="timeline" id="timeline" style="margin-top:52px;">
             <div class="timeline-rule"></div>
             <div class="timeline-fill" id="tlFill"></div>
             <button class="milestone" type="button">
@@ -666,290 +1716,41 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <div class="milestone-desc">$1B AUM, 200+ properties under one roof: management, investment, and construction</div>
             </button>
           </div>
-        </div>
-
-        <div class="block reveal">
-          <div class="sec-head"><h3>Featured Assets Under Management</h3><span class="pipe">|</span><span class="kick">Diversified Portfolio</span></div>
-          <div class="assets">
-            <div class="asset"><div class="asset-tile"><img src="/assets/bellevue.png" alt="Bellevue, WA" loading="lazy" /></div><div class="asset-loc">Bellevue, WA</div></div>
-            <div class="asset"><div class="asset-tile"><img src="/assets/fremont.png" alt="Fremont, WA" loading="lazy" /></div><div class="asset-loc">Fremont, WA</div></div>
-            <div class="asset"><div class="asset-tile"><img src="/assets/mt-si.jpg" alt="Mt Si commercial building, Bellevue, WA" loading="lazy" /></div><div class="asset-loc">Bellevue, WA</div></div>
-            <div class="asset"><div class="asset-tile"><img src="/assets/pacific.jpg" alt="Pacific Business Park, Pacific, WA" loading="lazy" /></div><div class="asset-loc">Pacific, WA</div></div>
-            <div class="asset"><div class="asset-tile"><img src="/assets/juneau.png" alt="Juneau, AK" loading="lazy" /></div><div class="asset-loc">Juneau, AK</div></div>
-          </div>
           <div class="footprint">
             <span class="fp-label">Regional Footprint</span>
-            <span class="fp-text"><strong>Strong Presence Across Greater Seattle</strong> &mdash; Managed properties spanning Seattle, Bellevue, Kirkland, Redmond, and the broader Puget Sound, with additional assets in Oregon and Alaska. Deep local market knowledge supports our ability to anticipate market shifts, protect asset value, and drive consistent performance.</span>
+            <span class="fp-text"><strong>Strong Presence Across Greater Seattle</strong> &mdash; Managed properties spanning Seattle, Bellevue, Kirkland, Redmond, Renton, and the broader Puget Sound, with additional assets in Oregon and Alaska. For 838 Seneca that means vendors already under contract in the South King County submarket and a manager who does not have to drive an hour to look at the roof.</span>
           </div>
         </div>
       </div>
 
-      <!-- ============ SLIDE 2 · MANAGEMENT TEAM ============ -->
-      <div class="page" id="page-management">
-
-        <div class="feature-role reveal">
-          <div class="kicker">Primary Point of Contact</div>
-          <div class="role-title">Property Manager</div>
-          <div class="cell-desc">Oversight of investment performance and day-to-day operations, serving as the primary point of contact for Ownership.</div>
-        </div>
-
-        <div class="sec-head reveal" style="margin-top:48px;"><h3>Supporting Team</h3><span class="pipe">|</span><span class="kick">Roles &amp; Responsibilities</span></div>
-        <div class="cellgrid reveal no-num">
-          <div class="cell"><div class="role-title">Property Operations Associate</div><div class="cell-desc">Day-to-day coordination and tenant relations</div></div>
-          <div class="cell"><div class="role-title">Financial Analyst</div><div class="cell-desc">Budget development, forecasting, and ongoing financial performance analysis</div></div>
-          <div class="cell"><div class="role-title">Property Accountant</div><div class="cell-desc">Property-level accounting and financial reporting</div></div>
-          <div class="cell"><div class="role-title">Project Manager · Construction</div><div class="cell-desc">Leads capital projects with a focus on cost control, quality execution, and long-term asset performance</div></div>
-          <div class="cell"><div class="role-title">Maintenance Technician</div><div class="cell-desc">Preventive maintenance and emergency response</div></div>
-        </div>
-      </div>
-
-      <!-- ============ SLIDE 3 · INVESTMENT STRATEGY ============ -->
-      <div class="page" id="page-investment">
-        <div class="cellgrid reveal">
-          <div class="cell">
-            <div class="kicker">Objectives</div>
-            <div class="cell-title">Investment Objective</div>
-            <div class="cell-desc">Understand Ownership&rsquo;s investment goals, target returns, and overall strategy to align operating decisions with the broader investment plan</div>
-            <div class="pills"><span class="pill">Investment Goals</span><span class="pill">Target Returns</span><span class="pill">Hold Period</span><span class="pill">Risk Profile</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Proforma</div>
-            <div class="cell-title">Proforma Generation</div>
-            <div class="cell-desc">Generate proforma and develop operating strategy aligned with the investment objectives, providing a working financial framework for performance tracking</div>
-            <div class="pills"><span class="pill">Revenue Projections</span><span class="pill">Operating Assumptions</span><span class="pill">Capital Forecast</span><span class="pill">Return Modeling</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Distributions</div>
-            <div class="cell-title">Distribution Structure</div>
-            <div class="cell-desc">Establish a distribution schedule aligned with the investment proforma and overall return objectives, supporting predictable cash flow to Ownership</div>
-            <div class="pills"><span class="pill">Distribution Schedule</span><span class="pill">Reserve Alignment</span><span class="pill">Cash Flow Coordination</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Budget</div>
-            <div class="cell-title">Operating Budget</div>
-            <div class="cell-desc">Align the operating budget with performance targets and capital preservation priorities, ensuring day-to-day decisions support long-term return objectives</div>
-            <div class="pills"><span class="pill">Performance Targets</span><span class="pill">Capital Preservation</span><span class="pill">Expense Discipline</span><span class="pill">Forecast Accuracy</span></div>
-          </div>
-        </div>
-        <div class="highlight reveal">
-          <span class="h-label">Strategic Alignment</span>
-          <span class="h-value">Investment objectives, proforma, distributions, and operating budget integrated into a single execution plan</span>
-        </div>
-      </div>
-
-      <!-- ============ SLIDE 4 · CONSTRUCTION, FACILITIES & CAPITAL PROJECTS ============ -->
-      <div class="page" id="page-maintenance">
-        <div class="cellgrid reveal">
-          <div class="cell">
-            <div class="kicker">Ongoing</div>
-            <div class="cell-title">Repairs &amp; Maintenance</div>
-            <div class="cell-desc">Coordination of routine maintenance and repairs with budget-aligned execution, owner approval for overages, and preventive scheduling to minimize emergency repairs and unplanned expenses</div>
-            <div class="pills"><span class="pill">Maintenance Coordination</span><span class="pill">Service Request</span><span class="pill">Preventative Planning</span><span class="pill">Maintenance Records</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Inspection</div>
-            <div class="cell-title">Inspections &amp; Documentation</div>
-            <div class="cell-desc">Regular property inspections, documentation, and systems review to identify maintenance needs and support preventative planning</div>
-            <div class="pills"><span class="pill">Monthly Inspections</span><span class="pill">Photographic Records</span><span class="pill">Systems Verification</span><span class="pill">Work Order Recommendations</span></div>
-            <div class="sub-note"><strong>Performed By:</strong> AGM Building Engineer</div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Response</div>
-            <div class="cell-title">24/7 Emergency Response</div>
-            <div class="cell-desc">After-hours emergencies routed to an on-call facilities representative for immediate assessment, vendor dispatch, and property manager notification under authorized protocols</div>
-            <div class="pills"><span class="pill">On-Call Facilities Representative</span><span class="pill">Immediate Assessment</span><span class="pill">Vendor Dispatch</span><span class="pill">Authorization Protocols</span><span class="pill">Owner Call Tree</span></div>
-            <div class="sub-note"><strong>Authorization:</strong> Aligned with management agreement scope · Owner call tree for major incidents</div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Capital</div>
-            <div class="cell-title">Capital Project Planning</div>
-            <div class="cell-desc">Multi-year capital forecasting aligned with ownership strategy and CapEx prioritization based on risk, ROI, and operational impact, paired with bid procurement, vendor compliance review, and performance oversight from bid through scope verification at completion</div>
-            <div class="pills"><span class="pill">Multi-Year Forecasting</span><span class="pill">Useful Life Analysis</span><span class="pill">CapEx Prioritization</span><span class="pill">Bid Package Preparation</span></div>
-          </div>
-        </div>
-        <div class="highlight reveal">
-          <span class="h-label">Asset Protection</span>
-          <span class="h-value">Proactive maintenance and capital planning aligned with ownership strategy to preserve asset condition and long-term value</span>
-        </div>
-      </div>
-
-      <!-- ============ SLIDE 5 · FINANCIAL MANAGEMENT & REPORTING ============ -->
-      <div class="page" id="page-reporting">
-        <div class="cellgrid reveal">
-          <div class="cell">
-            <div class="kicker">Reporting</div>
-            <div class="cell-title">Monthly Reports</div>
-            <div class="cell-desc">Comprehensive monthly financial package providing full visibility into property performance, cash position, and operating results</div>
-            <div class="pills"><span class="pill">Balance Sheet</span><span class="pill">Income Statement</span><span class="pill">Rent Roll &amp; Lease Expirations</span><span class="pill">A/R &amp; A/P</span><span class="pill">Budget vs. Actual</span><span class="pill">Bank Reconciliation</span><span class="pill">Paid Invoices</span></div>
-            <div class="sub-note"><strong>Customization:</strong> AGM&rsquo;s platform allows for full customization of all financial reporting to align with Ownership preferences</div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Budgeting</div>
-            <div class="cell-title">Annual Budget &amp; Tenant Charges</div>
-            <div class="cell-desc">Annual operating budget development paired with disciplined administration of tenant-side charges, reconciliations, and lease compliance</div>
-            <div class="pills"><span class="pill">Operating Budget</span><span class="pill">Scheduled Expenditures</span><span class="pill">NNN Allocation</span><span class="pill">Annual CAM Reconciliation</span><span class="pill">Credits &amp; Charges</span></div>
-            <div class="sub-note"><strong>Lease Alignment:</strong> Credits and charges issued in accordance with the lease agreement and CAM reconciliation</div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Performance</div>
-            <div class="cell-title">Investment Performance</div>
-            <div class="cell-desc">Active monitoring of property performance against the proforma, with forward-looking projections and variance analysis to keep results on plan</div>
-            <div class="pills"><span class="pill">Proforma Generation</span><span class="pill">Performance vs. Projections</span><span class="pill">Return Tracking</span><span class="pill">Forecasting</span><span class="pill">Variance Analysis</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Controls</div>
-            <div class="cell-title">Banking &amp; Financial Controls</div>
-            <div class="cell-desc">Financial control procedures designed to protect Ownership funds and promote transparency through segregated accounts, internal controls, and secure systems</div>
-            <div class="pills"><span class="pill">Segregated Bank Accounts</span><span class="pill">Separation of Duties</span><span class="pill">Owner Approval Protocols</span><span class="pill">Monthly Reconciliations</span></div>
-          </div>
-        </div>
-        <div class="highlight reveal">
-          <span class="h-label">Investment Reporting</span>
-          <span class="h-value">Comprehensive monthly reporting on investment performance, financial position, and operating activity, delivered to Ownership via Owner Portal by the 15th of each month</span>
-        </div>
-      </div>
-
-      <!-- ============ SLIDE 6 · AGM MASTER INSURANCE PROGRAM ============ -->
-      <div class="page" id="page-insurance">
-        <div class="cellgrid reveal">
-          <div class="cell">
-            <div class="kicker">Evaluation</div>
-            <div class="cell-title">Insurance Solutions Evaluation</div>
-            <div class="cell-desc">AGM assists Ownership in evaluating property insurance solutions, including participation in AGM&rsquo;s Master Insurance Program</div>
-            <div class="pills"><span class="pill">Coverage Review</span><span class="pill">Risk Profile Assessment</span><span class="pill">Program Alternatives</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Structure</div>
-            <div class="cell-title">Grouped Placement</div>
-            <div class="cell-desc">The program enables eligible assets within the AGM-managed portfolio to be considered for placement within a grouped insurance structure, rather than being separately marketed on a standalone basis</div>
-            <div class="pills"><span class="pill">Portfolio-Level Placement</span><span class="pill">Eligible Asset Review</span><span class="pill">Carrier Coordination</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Efficiency</div>
-            <div class="cell-title">Coverage &amp; Cost Efficiency</div>
-            <div class="cell-desc">AGM&rsquo;s Master Insurance Program can support more efficient coverage placement and, in many cases, economies of scale relative to individually placed policies, resulting in meaningful cost savings for the investment</div>
-            <div class="pills"><span class="pill">Economies of Scale</span><span class="pill">Efficient Placement</span><span class="pill">Cost Savings</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Conditions</div>
-            <div class="cell-title">Program Conditions</div>
-            <div class="cell-desc">Availability, pricing, and coverage terms are subject to underwriting review, property eligibility, and carrier approval</div>
-            <div class="pills"><span class="pill">Underwriting Review</span><span class="pill">Property Eligibility</span><span class="pill">Carrier Approval</span></div>
-          </div>
-        </div>
-        <div class="highlight reveal">
-          <span class="h-label">Key Benefit</span>
-          <span class="h-value">Shared master insurance policy for eligible properties provides broader coverage capacity and competitive premiums through portfolio scale. AGM can secure a quote for Ownership to demonstrate any potential savings.</span>
-        </div>
-      </div>
-
-      <!-- ============ SLIDE 7 · TOOLS & TECHNOLOGY ============ -->
-      <div class="page" id="page-technology">
-        <p class="lead reveal">The AGM platform provides Ownership and residents with secure, 24/7 access to property information, real-time financial reporting, payment history, work order submission, and integrated communication tools.</p>
-        <div class="cellgrid cols-1 reveal no-num">
-          <div class="cell">
-            <div class="kicker">Owner</div>
-            <div class="cell-title">Owner Portal</div>
-            <div class="cell-desc">Real-time property dashboard with live financial and operational reporting, secure banking for distributions and contributions, and investment-level performance metrics</div>
-            <div class="pills"><span class="pill">Real-Time Dashboard</span><span class="pill">Live Financial &amp; Ops Reports</span><span class="pill">Financial Reports &amp; Documents</span><span class="pill">Secure Banking Information</span><span class="pill">Investment Performance Metrics</span><span class="pill">Multi-Property View</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Tenant</div>
-            <div class="cell-title">Tenant Portal</div>
-            <div class="cell-desc">Self-service resident platform supporting online payments, account visibility, document access, and work order tracking through a single secure interface</div>
-            <div class="pills"><span class="pill">Online Rent Payment</span><span class="pill">Account Balance &amp; Charges</span><span class="pill">Tenant Documents &amp; Leases</span><span class="pill">Email &amp; Text Correspondence</span><span class="pill">Work Order Tracking</span><span class="pill">Tenant Insurance Submission</span></div>
-          </div>
-          <div class="cell">
-            <div class="kicker">Website</div>
-            <div class="cell-title">Property Website</div>
-            <div class="cell-desc">Public-facing website that supports leasing efforts, showcases the property, and serves as the central access point for the tenant and owner portals</div>
-            <div class="pills"><span class="pill">Professional Online Presence</span><span class="pill">Amenities &amp; Available Units</span><span class="pill">Contact Information</span><span class="pill">Public-Facing Showcase</span><span class="pill">Portal Access Point</span></div>
-          </div>
-        </div>
-        <div class="highlight reveal">
-          <span class="h-label">Platform Access</span>
-          <span class="h-value">Secure, 24/7 access to property information, real-time reporting, and integrated communication tools</span>
-        </div>
-
-        <!-- Investor Portal Overview -->
-        <div class="block reveal" style="margin-top:60px;">
-          <div class="sec-head"><h3>Investor Portal</h3><span class="pipe">|</span><span class="kick">Overview</span></div>
-          <p class="lead">Our Investor Portal provides secure, real-time access to comprehensive investment reporting and performance data. Designed for clarity and transparency, the platform centralizes critical information in one streamlined interface.</p>
-          <div class="portal">
-            <figure class="portal-shot">
-              <img src="/assets/agm-investor-portal-screenshot.png" alt="Investor Portal dashboard — current investments and asset map" loading="lazy" onerror="this.style.display='none'; var p=this.parentNode.querySelector('.ph'); if(p){p.style.display='flex';} var c=this.parentNode.querySelector('figcaption'); if(c){c.style.display='none';}" />
-              <div class="ph" style="display:none;">
-                <span class="ph-k">Screenshot</span>
-                <span class="ph-name">Investor Portal &mdash; Dashboard</span>
-                <code>/assets/investor-portal.png</code>
-              </div>
-              <figcaption>Investor Portal &middot; Dashboard</figcaption>
-            </figure>
-            <div class="portal-feats">
-              <div class="portal-feat">
-                <div class="pf-title">Consolidated Dashboard</div>
-                <div class="pf-desc">A single view of all investments, including current performance metrics, capital contributions, distributions, and overall portfolio value.</div>
-              </div>
-              <div class="portal-feat">
-                <div class="pf-title">Loan &amp; Capital Structure Visibility</div>
-                <div class="pf-desc">Access to key loan terms, maturity dates, debt balances, and capital stack summaries across each asset.</div>
-              </div>
-              <div class="portal-feat">
-                <div class="pf-title">Document &amp; Reporting Access</div>
-                <div class="pf-desc">On-demand access to financial statements, K-1s, operating reports, tax documents, and investment updates.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Owner Portal Overview -->
-        <div class="block reveal">
-          <div class="sec-head"><h3>Owner Portal</h3><span class="pipe">|</span><span class="kick">Overview</span></div>
-          <p class="lead">The AppFolio Owner Portal provides secure, real-time visibility into property performance and financial reporting. Designed for transparency and operational clarity, the platform centralizes key property-level data in one accessible dashboard.</p>
-          <div class="portal">
-            <figure class="portal-shot">
-              <img src="/assets/agm-owner-portal-screenshot.png" alt="AppFolio Owner Portal dashboard — cash flow, rent collected, and occupancy" loading="lazy" onerror="this.style.display='none'; var p=this.parentNode.querySelector('.ph'); if(p){p.style.display='flex';} var c=this.parentNode.querySelector('figcaption'); if(c){c.style.display='none';}" />
-              <div class="ph" style="display:none;">
-                <span class="ph-k">Screenshot</span>
-                <span class="ph-name">Owner Portal &mdash; Dashboard</span>
-                <code>/assets/owner-portal.png</code>
-              </div>
-              <figcaption>AppFolio Owner Portal &middot; Dashboard</figcaption>
-            </figure>
-            <div class="portal-feats">
-              <div class="portal-feat">
-                <div class="pf-title">Consolidated Property Dashboard</div>
-                <div class="pf-desc">A single view of portfolio performance, including rent collections, income and expenses, net operating income, and occupancy metrics.</div>
-              </div>
-              <div class="portal-feat">
-                <div class="pf-title">Financial Reporting &amp; Statements</div>
-                <div class="pf-desc">On-demand access to monthly owner statements, balance sheets, income statements, general ledgers, and year-end tax documentation.</div>
-              </div>
-              <div class="portal-feat">
-                <div class="pf-title">Operational Transparency</div>
-                <div class="pf-desc">Real-time updates on leasing activity, maintenance requests, vendor invoices, and work order status to ensure full visibility into day-to-day operations.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ============ SLIDE 8 · MANAGEMENT FEES ============ -->
+      <!-- ============ SLIDE 10 · MANAGEMENT FEES ============ -->
       <div class="page" id="page-fees">
-        <p class="lead reveal">AGM&rsquo;s full-service management includes a one-time onboarding fee and an ongoing monthly fee.</p>
+        <p class="lead reveal">The fee scales with what the building earns. While it is vacant, Ownership pays a flat interim fee for a reduced scope. Once it is leased, the fee becomes a percentage of what comes in.</p>
         <div class="fee-cards reveal">
           <div class="fee-card">
             <div>
-              <div class="fc-label">Service Option · Full Management</div>
+              <div class="fc-label">Interim &middot; While Vacant</div>
+              <div class="fc-title">Vacancy Management</div>
+              <div class="fc-desc">Reduced scope while the building is unleased: routine on-site security and condition checks, oversight of utilities and building systems, fire sprinkler monitoring and inspection, vendor coordination for grounds and repairs, and regular reporting to Ownership.</div>
+            </div>
+            <div class="fc-price">
+              <div class="fc-amount">$750</div>
+              <div class="fc-unit">per month, flat</div>
+              <div class="fc-unit italic">Converts on lease commencement</div>
+            </div>
+          </div>
+          <div class="fee-card">
+            <div>
+              <div class="fc-label">Ongoing &middot; Once Leased</div>
               <div class="fc-title">Full-Service Management</div>
-              <div class="fc-desc">Day-to-day operations, including accounting, financial management, maintenance coordination, and ongoing reporting.</div>
+              <div class="fc-desc">Day-to-day operations: accounting, financial management, lease administration and recoveries, maintenance coordination, compliance tracking, and monthly reporting.</div>
             </div>
             <div class="fc-price">
               <div class="fc-amount">3%<sup>*</sup></div>
               <div class="fc-unit">of gross rents</div>
               <div class="fc-unit">Minimum $1,500 / month</div>
               <div class="fc-sec">
-                <div class="fc-sec-label">Onboarding · One-Time</div>
+                <div class="fc-sec-label">Onboarding &middot; One-Time</div>
                 <div class="fc-amount sm">$1,500</div>
                 <div class="fc-unit">Transition, setup &amp; website</div>
               </div>
@@ -957,9 +1758,9 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
           </div>
           <div class="fee-card">
             <div>
-              <div class="fc-label">Add-On · Either Service</div>
+              <div class="fc-label">Add-On &middot; By Project</div>
               <div class="fc-title">Capital Project Coordination</div>
-              <div class="fc-desc">Capital projects, tenant improvements, renovation, or other work beyond routine repair and maintenance — including bid preparation, contractor selection, and course-of-performance oversight.</div>
+              <div class="fc-desc">Capital projects, tenant improvements, renovation, or other work beyond routine repair and maintenance &mdash; including bid preparation, contractor selection, and course-of-performance oversight.</div>
             </div>
             <div class="fc-price">
               <div class="fc-amount sm">Hourly Rate /<br />% of Project Cost</div>
@@ -967,7 +1768,200 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             </div>
           </div>
         </div>
-        <p class="fee-footnote reveal">* Percentage applied to gross rents.</p>
+        <p class="fee-footnote reveal">* Percentage applied to gross rents. Leasing and sales commissions are not included and are either carved out to Ownership&rsquo;s listing broker or agreed separately.</p>
+
+        <div class="block reveal" style="margin-top:56px;">
+          <div class="sec-head"><h3>What Is Not Charged Extra</h3><span class="pipe">|</span><span class="kick">Included in the Monthly Fee</span></div>
+          <div class="inline-set">
+            <div class="inline-item"><div class="ii-t">Monthly financial package</div><div class="ii-d">Including the annual operating expense reconciliation and year-end documentation.</div></div>
+            <div class="inline-item"><div class="ii-t">Owner Portal access</div><div class="ii-d">For Ownership and anyone Ownership designates, including its accountant.</div></div>
+            <div class="inline-item"><div class="ii-t">Compliance file custody</div><div class="ii-d">Lease, insurance, and environmental file maintenance and consultant coordination.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SLIDE 11 · READY TO PROCEED ============ -->
+      <div class="page" id="page-agreement">
+
+        <p class="lead reveal">Ownership can execute from this page. The key commercial terms are summarized first; the full management agreement and its exhibits sit behind them, and the signature link opens the executable version.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Key Terms</h3><span class="pipe">|</span><span class="kick">One Page, Then the Agreement</span></div>
+          <dl class="terms">
+            <div class="term"><dt>Owner entity</dt><dd>Thomas Family Properties, LLC &mdash; <span class="tbd">[confirm exact legal entity name and state of formation]</span></dd></div>
+            <div class="term"><dt>Property</dt><dd>838 Seneca Ave SW, Renton, WA &mdash; <span class="tbd">[legal description and King County parcel number]</span></dd></div>
+            <div class="term"><dt>Manager</dt><dd>AGM Real Estate Group &mdash; <span class="tbd">[exact legal entity]</span>, Washington real estate firm license <span class="tbd">[license number]</span></dd></div>
+            <div class="term"><dt>Commencement date</dt><dd><span class="tbd">[proposed start date]</span></dd></div>
+            <div class="term"><dt>Term</dt><dd>One year, continuing month to month thereafter unless terminated</dd></div>
+            <div class="term"><dt>Termination for convenience</dt><dd>Either party, on <span class="tbd">[30 / 60]</span> days&rsquo; written notice, without cause or penalty</dd></div>
+            <div class="term"><dt>Management fee</dt><dd>$750 per month while vacant; on lease commencement, 3% of gross rents subject to a $1,500 monthly minimum. One-time onboarding fee of $1,500. Full schedule at Exhibit B.</dd></div>
+            <div class="term"><dt>Scope of services</dt><dd>As set out at Exhibit A, matched line by line to the executed lease&rsquo;s allocation between landlord and tenant</dd></div>
+            <div class="term"><dt>Spending authority</dt><dd>AGM may incur unbudgeted expense up to <span class="tbd">[$X]</span> per item without prior approval. Emergency authority limited to preventing injury or further property damage, with notice to Ownership the same day.</dd></div>
+            <div class="term"><dt>Bank accounts</dt><dd>Funds held in an account in Ownership&rsquo;s name, segregated from AGM&rsquo;s funds and from other properties. AGM is a signatory for operating disbursements only.</dd></div>
+            <div class="term"><dt>Reporting deadline</dt><dd>Monthly financial package delivered to the Owner Portal by the 15th of the following month</dd></div>
+            <div class="term"><dt>Insurance</dt><dd>AGM carries general liability, errors and omissions, fidelity bond, and workers&rsquo; compensation at the limits shown at Exhibit C. Ownership names AGM as additional insured on the property policy.</dd></div>
+            <div class="term"><dt>Indemnity</dt><dd>Mutual, each party for its own negligent acts and omissions</dd></div>
+            <div class="term"><dt>Environmental</dt><dd>AGM coordinates consultants, maintains the file, administers the compliance calendar, and arranges site access. AGM does not assume liability as an owner or operator, does not direct remediation, and does not act as the environmental professional of record.</dd></div>
+            <div class="term"><dt>Leasing and sales</dt><dd><span class="tbd">[Carved out to Ownership&rsquo;s listing broker / coordinated with AGM — confirm]</span>. Commissions are not included in the management fee.</dd></div>
+            <div class="term"><dt>Transition on termination</dt><dd>Within <span class="tbd">[15 / 30]</span> days of termination, AGM returns all records, funds, keys, tenant files, vendor contracts, and the complete property file, in the formats in which they are held</dd></div>
+          </dl>
+          <p class="tbd-note"><strong>Before circulation:</strong> the bracketed terms above are the ones requiring Ownership&rsquo;s input or AGM&rsquo;s confirmation. The final agreement form is to be reviewed by counsel before it is sent for signature. This page is a summary and is not itself the agreement.</p>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>The Agreement</h3><span class="pipe">|</span><span class="kick">Full Document &amp; Exhibits</span></div>
+          <div class="exhibits">
+            <div class="exhibit">
+              <div class="ex-n">Agreement</div>
+              <div class="ex-t"><strong>Commercial Property Management Agreement</strong> &mdash; 838 Seneca Ave SW, Renton, WA</div>
+              <div class="ex-s"><span class="tbd">[to attach]</span></div>
+            </div>
+            <div class="exhibit">
+              <div class="ex-n">Exhibit A</div>
+              <div class="ex-t"><strong>Scope of Services</strong> &mdash; the responsibility table from the Property page, confirmed against the executed lease</div>
+              <div class="ex-s"><span class="tbd">[to attach]</span></div>
+            </div>
+            <div class="exhibit">
+              <div class="ex-n">Exhibit B</div>
+              <div class="ex-t"><strong>Fee Schedule</strong> &mdash; interim, ongoing, onboarding, and project coordination fees</div>
+              <div class="ex-s"><span class="tbd">[to attach]</span></div>
+            </div>
+            <div class="exhibit">
+              <div class="ex-n">Exhibit C</div>
+              <div class="ex-t"><strong>Manager&rsquo;s Insurance Certificates</strong> &mdash; general liability, E&amp;O, fidelity bond, workers&rsquo; compensation</div>
+              <div class="ex-s"><span class="tbd">[to attach]</span></div>
+            </div>
+            <div class="exhibit">
+              <div class="ex-n">Exhibit D</div>
+              <div class="ex-t"><strong>Team Biographies</strong> &mdash; Cindy <span class="tbd">[last name]</span> and the supporting team, with licenses</div>
+              <div class="ex-s"><span class="tbd">[to attach]</span></div>
+            </div>
+            <div class="exhibit">
+              <div class="ex-n">Exhibit E</div>
+              <div class="ex-t"><strong>Approval Thresholds &amp; Owner Call Tree</strong> &mdash; spending authority and after-hours escalation</div>
+              <div class="ex-s"><span class="tbd">[to attach]</span></div>
+            </div>
+            <div class="exhibit">
+              <div class="ex-n">Signatures</div>
+              <div class="ex-t">Signature blocks for Thomas Family Properties, LLC and AGM Real Estate Group, with AGM&rsquo;s Washington firm license information</div>
+              <div class="ex-s">In agreement</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sign-band reveal">
+          <div>
+            <div class="sb-k">Ready to Proceed</div>
+            <div class="sb-h">Execute the agreement from here.</div>
+            <p class="sb-p">The signature link opens the management agreement with the terms above already filled in. Ownership signs electronically; AGM countersigns and returns the executed copy the same day. Nothing is binding until both parties sign, and the agreement can be terminated for convenience on notice.</p>
+          </div>
+          <div class="sb-actions">
+            <a class="btn" href="#" data-esign aria-disabled="true">Review &amp; Sign</a>
+            <a class="btn ghost" href="#" data-download aria-disabled="true">Download Agreement (PDF)</a>
+          </div>
+        </div>
+        <p class="tbd-note"><strong>To activate:</strong> replace the two links above with the e-signature URL (DocuSign, Dropbox Sign, or Adobe Acrobat Sign envelope prepared for Thomas Family Properties, LLC) and a direct link to the agreement PDF. Both are inert placeholders until then.</p>
+      </div>
+
+      <!-- ============ SLIDE 12 · CONTACT & NEXT STEPS ============ -->
+      <div class="page" id="page-contact">
+
+        <p class="lead reveal">Three things AGM is asking for, and every number Ownership needs to reach the people who would be running this building.</p>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Next Steps</h3><span class="pipe">|</span><span class="kick">What AGM Is Proposing</span></div>
+          <div class="steps">
+            <div class="step">
+              <div class="st-n">01</div>
+              <div class="st-t">Walk the building together.</div>
+              <div class="st-d">Cindy and <span class="tbd">[supervisor]</span> meet Ownership at 838 Seneca, walk the property, and answer the questions this proposal raises. AGM proposes <span class="tbd">[proposed date and time]</span>, and will work around Ownership&rsquo;s schedule.</div>
+            </div>
+            <div class="step">
+              <div class="st-n">02</div>
+              <div class="st-t">Review the lease before it is signed.</div>
+              <div class="st-d">AGM will review the draft lease from the operating side at no cost and no obligation &mdash; maintenance allocation, recovery mechanics, access and notice provisions, insurance requirements, and option notice mechanics. Send the draft and AGM will turn comments in <span class="tbd">[X]</span> business days.</div>
+            </div>
+            <div class="step">
+              <div class="st-n">03</div>
+              <div class="st-t">Start management on <span class="tbd">[proposed start date]</span>.</div>
+              <div class="st-d">Sign from the Ready to Proceed page and the ninety-day plan begins on the commencement date. AGM needs the lease, the environmental file, and the expense history to start; everything else AGM gathers itself.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Contact</h3><span class="pipe">|</span><span class="kick">Direct Lines</span></div>
+          <div class="contacts">
+            <div class="contact">
+              <div class="c-k">Day-to-Day Property Manager</div>
+              <div class="c-name">Cindy <span class="tbd">[last name]</span></div>
+              <div class="c-role">Property Manager &middot; 838 Seneca Ave SW</div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
+                <div class="c-line"><span class="cl-k">Mobile</span><span class="cl-v"><span class="tbd">[mobile]</span></span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+              </div>
+            </div>
+            <div class="contact urgent">
+              <div class="c-k">24/7 Emergency</div>
+              <div class="c-name"><span class="tbd">[after-hours number]</span></div>
+              <div class="c-role">Answered at any hour, every day of the year</div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Routes to</span><span class="cl-v">On-call AGM representative for assessment and vendor dispatch</span></div>
+                <div class="c-line"><span class="cl-k">Notifies</span><span class="cl-v">Cindy, then Ownership, under the agreed call tree</span></div>
+              </div>
+            </div>
+            <div class="contact">
+              <div class="c-k">Escalation</div>
+              <div class="c-name"><span class="tbd">[supervisor name]</span></div>
+              <div class="c-role"><span class="tbd">[title]</span> &middot; Ownership&rsquo;s escalation point</div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+              </div>
+            </div>
+            <div class="contact">
+              <div class="c-k">Accounting</div>
+              <div class="c-name">Herman <span class="tbd">[last name]</span></div>
+              <div class="c-role">Property accounting &middot; statements, payables, reconciliations</div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+              </div>
+            </div>
+            <div class="contact">
+              <div class="c-k">Management Support</div>
+              <div class="c-name">Alix <span class="tbd">[last name]</span></div>
+              <div class="c-role">Vendor scheduling, work orders, compliance tracking</div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+              </div>
+            </div>
+            <div class="contact">
+              <div class="c-k">Office</div>
+              <div class="c-name">AGM Real Estate Group</div>
+              <div class="c-role"><span class="tbd">[street address, suite]</span><br /><span class="tbd">[city, state, ZIP]</span></div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Main</span><span class="cl-v"><a href="tel:+12066228600">206.622.8600</a></span></div>
+                <div class="c-line"><span class="cl-k">Web</span><span class="cl-v"><a href="https://www.agmrealestategroup.com" target="_blank" rel="noopener">agmrealestategroup.com</a></span></div>
+                <div class="c-line"><span class="cl-k">License</span><span class="cl-v"><span class="tbd">[WA firm license number]</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sign-band reveal">
+          <div>
+            <div class="sb-k">The Ask</div>
+            <div class="sb-h">A walk-through, and the lease draft.</div>
+            <p class="sb-p">Give AGM an hour at the building and a copy of the lease being negotiated. Ownership will get comments on the lease and a plan for the property whether or not it engages AGM. If Ownership would rather move straight to an agreement, the executable version is on the Ready to Proceed page.</p>
+          </div>
+          <div class="sb-actions">
+            <a class="btn" href="tel:+12066228600">Call 206.622.8600</a>
+            <a class="btn ghost" href="#agreement" data-route="agreement">Ready to Proceed</a>
+          </div>
+        </div>
       </div>
 
       <!-- prev / next pager (shared, updated by JS) -->
@@ -986,22 +1980,30 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   "use strict";
   // ---- route order + per-page rail data --------------------------------
   var PAGES = [
-    {route:"about",      nav:"about",      eyebrow:"01 · About",       t1:"About",          t2:"AGM",                   label:"About AGM",
-      lead:"Established in 1998, AGM Real Estate Group has grown into a full-service real estate firm providing institutional-grade management, investment, and development services across the Pacific Northwest."},
-    {route:"management", nav:"management", eyebrow:"02 · Management",  t1:"Property",       t2:"Management Team",       label:"Property Management Team",
-      lead:"Supporting your property — led by the Property Manager — is a dedicated team working together to drive performance and execution."},
-    {route:"investment", nav:"investment", eyebrow:"03 · Investment",  t1:"Investment",     t2:"Strategy",              label:"Investment Strategy",
-      lead:"Each engagement begins with a defined investment strategy and clearly articulated performance objectives, which directly drive the operating plan and long-term capital strategy."},
-    {route:"maintenance",nav:"maintenance",eyebrow:"04 · Maintenance", t1:"Construction &", t2:"Facilities",            label:"Construction, Facilities & Capital Projects",
-      lead:"AGM’s Construction & Facilities team protects asset value through proactive maintenance, vendor oversight, and capital planning — preserving asset condition, reducing deferred costs, and aligning long-term investment with ownership strategy."},
-    {route:"reporting",  nav:"reporting",  eyebrow:"05 · Reporting",   t1:"Financial",      t2:"Management & Reporting", label:"Financial Management & Reporting",
-      lead:"AGM’s platform provides complete financial transparency, with detailed reporting delivered by the 15th of each month, customizable reporting options, and real-time access through the owner portal."},
-    {route:"insurance",  nav:"insurance",  eyebrow:"06 · Insurance",   t1:"AGM Master",     t2:"Insurance Program",     label:"AGM Master Insurance Program",
-      lead:"AGM can assist Ownership in evaluating property insurance solutions, including participation in AGM’s Master Insurance Program — a grouped placement structure designed to deliver more efficient coverage and meaningful cost savings relative to standalone policies."},
-    {route:"technology", nav:"technology", eyebrow:"07 · Technology",  t1:"Tools &",        t2:"Technology",            label:"Tools & Technology",
-      lead:"The AGM platform provides Ownership and residents with secure, 24/7 access to property information, real-time financial reporting, payment history, work order submission, and integrated communication tools."},
-    {route:"fees",       nav:"fees",       eyebrow:"08 · Fees",        t1:"Management",     t2:"Fees",                  label:"Management Fees",
-      lead:"AGM’s full-service management includes a one-time onboarding fee and an ongoing monthly fee."}
+    {route:"property",   nav:"property",   eyebrow:"01 \u00b7 Property",   t1:"The",            t2:"Property",              label:"838 Seneca Ave SW",
+      lead:"A \u00b124,600 SF single-tenant industrial building on 1.41 acres in Renton. This page sets out the asset, the lease status, who the lease makes responsible for what, and the compliance obligations that come with an industrial site."},
+    {route:"team",       nav:"team",       eyebrow:"02 \u00b7 Team",       t1:"Your",           t2:"Team",                  label:"Your AGM Team",
+      lead:"Named people with direct lines, not roles on an org chart. One property manager is accountable for this building, supported by accounting, management support, and administration, with a defined escalation point."},
+    {route:"onboarding", nav:"onboarding", eyebrow:"03 \u00b7 Onboarding", t1:"The First",      t2:"90 Days",               label:"The First 90 Days",
+      lead:"Changing managers should cost Ownership one meeting and a signature. This is what AGM reviews on day one, what gets set up, and exactly what Ownership holds at the end of ninety days."},
+    {route:"operations", nav:"operations", eyebrow:"04 \u00b7 Operations", t1:"Day-to-Day",     t2:"Management",            label:"Day-to-Day Management",
+      lead:"The practical case for a manager is subtraction. No more tenant calls, vendor coordination, chased reimbursements, or year-end numbers assembled from receipts. Scope and inspection frequency are sized to a single-tenant industrial building."},
+    {route:"reporting",  nav:"reporting",  eyebrow:"05 \u00b7 Reporting",  t1:"Financial",      t2:"Management & Reporting", label:"Financial Management & Reporting",
+      lead:"The same package, in the Owner Portal, by the 15th of every month, in a format Ownership\u2019s accountant can use without rework. Segregated bank accounts, separation of duties, and monthly reconciliation behind it."},
+    {route:"insurance",  nav:"insurance",  eyebrow:"06 \u00b7 Insurance",  t1:"AGM Master",     t2:"Insurance Program",     label:"AGM Master Insurance Program",
+      lead:"Eligible managed assets are placed in a grouped structure rather than marketed individually, which can give a single building portfolio-level terms. AGM will quote this property so Ownership can compare it against the current policy."},
+    {route:"technology", nav:"technology", eyebrow:"07 \u00b7 Technology", t1:"Tools &",        t2:"Technology",            label:"Tools & Technology",
+      lead:"One platform, three doors. Ownership\u2019s door carries the live profit and loss, the cash and distribution position, the year-end tax documents, and the document vault a buyer\u2019s diligence team would be handed."},
+    {route:"strategy",   nav:"strategy",   eyebrow:"08 \u00b7 Strategy",   t1:"Strategy",       t2:"& Exit",                label:"Investment Strategy & Exit",
+      lead:"The framework AGM uses, the questions Ownership needs to answer for it to mean anything, how management protects the value of a sale or an exercised purchase option, and AGM\u2019s offer to review the lease now being negotiated."},
+    {route:"about",      nav:"about",      eyebrow:"09 \u00b7 Record",     t1:"Track",          t2:"Record",                label:"Track Record & About AGM",
+      lead:"Buildings AGM took over: what was found, what was fixed, and what it was worth to the owner. Then the comparable assets under management, references willing to take a call, and the firm behind them."},
+    {route:"fees",       nav:"fees",       eyebrow:"10 \u00b7 Fees",       t1:"Management",     t2:"Fees",                  label:"Management Fees",
+      lead:"$750 per month while the building is vacant. On lease commencement, 3% of gross rents subject to a $1,500 monthly minimum, plus a one-time $1,500 onboarding fee. The fee scales with what the building earns."},
+    {route:"agreement",  nav:"agreement",  eyebrow:"11 \u00b7 Agreement",  t1:"Ready to",       t2:"Proceed",               label:"Ready to Proceed",
+      lead:"The key commercial terms on one page, the full management agreement and its exhibits behind them, and a signature link so Ownership can execute directly from this proposal."},
+    {route:"contact",    nav:"contact",    eyebrow:"12 \u00b7 Contact",    t1:"Contact &",      t2:"Next Steps",            label:"Contact & Next Steps",
+      lead:"Three things AGM is asking for: an hour at the building, the lease draft to review before signature, and a start date. Every direct line, including the 24/7 emergency number, is on this page."}
   ];
   var IDX = {};
   PAGES.forEach(function(p,i){ IDX[p.route]=i; });
@@ -1028,14 +2030,18 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 
   // thin-line section icons, keyed by nav section
   var ICONS = {
-    about:'<rect x="4.5" y="3.5" width="15" height="17"/><path d="M9 20.5v-4h6v4"/><path d="M8 7.5h2.5M13.5 7.5H16M8 11.5h2.5M13.5 11.5H16"/>',
-    management:'<circle cx="9" cy="8.5" r="2.8"/><path d="M3.5 19.5c0-3 2.6-4.8 5.5-4.8s5.5 1.8 5.5 4.8"/><path d="M16 6a2.8 2.8 0 0 1 0 5.4"/><path d="M17 14.9c2.2.5 3.5 2.1 3.5 4.6"/>',
-    investment:'<path d="M4 19.5h16"/><path d="M5.5 15l4-4.5 3.5 3 5.5-6.5"/><path d="M15.5 4.5h3v3"/>',
-    maintenance:'<circle cx="12" cy="12" r="3"/><path d="M12 4.2v2.2M12 17.6v2.2M4.2 12h2.2M17.6 12h2.2M6.5 6.5l1.5 1.5M16 16l1.5 1.5M17.5 6.5L16 8M8 16l-1.5 1.5"/>',
+    property:'<path d="M3.5 20.5h17"/><path d="M5 20.5V9.2l7-4.7 7 4.7v11.3"/><path d="M9.5 20.5v-5h5v5"/><path d="M9.5 11.5h1.8M12.7 11.5h1.8"/>',
+    team:'<circle cx="9" cy="8.5" r="2.8"/><path d="M3.5 19.5c0-3 2.6-4.8 5.5-4.8s5.5 1.8 5.5 4.8"/><path d="M16 6a2.8 2.8 0 0 1 0 5.4"/><path d="M17 14.9c2.2.5 3.5 2.1 3.5 4.6"/>',
+    onboarding:'<circle cx="12" cy="12" r="8.2"/><path d="M12 6.8V12l3.4 2.1"/>',
+    operations:'<circle cx="12" cy="12" r="3"/><path d="M12 4.2v2.2M12 17.6v2.2M4.2 12h2.2M17.6 12h2.2M6.5 6.5l1.5 1.5M16 16l1.5 1.5M17.5 6.5L16 8M8 16l-1.5 1.5"/>',
     reporting:'<rect x="4.5" y="3.5" width="15" height="17" rx="1"/><path d="M8 13.5v3.5M12 9.5v7.5M16 11.5v5.5"/>',
     insurance:'<path d="M12 3.5l7 3v5c0 4.2-2.9 7.4-7 8.5-4.1-1.1-7-4.3-7-8.5v-5z"/><path d="M9 11.5l2 2 4-4"/>',
     technology:'<rect x="3.5" y="4.5" width="17" height="12" rx="1.5"/><path d="M8.5 20.5h7M12 16.5v4"/>',
-    fees:'<path d="M6.5 3.5h11v17l-2.2-1.4-2.3 1.4-2.3-1.4-2.2 1.4z"/><path d="M9.5 8h5M9.5 11.5h5"/>'
+    strategy:'<path d="M4 19.5h16"/><path d="M5.5 15l4-4.5 3.5 3 5.5-6.5"/><path d="M15.5 4.5h3v3"/>',
+    about:'<path d="M12 3.8l2.5 5.1 5.6.8-4 3.9 1 5.6-5.1-2.7-5.1 2.7 1-5.6-4-3.9 5.6-.8z"/>',
+    fees:'<path d="M6.5 3.5h11v17l-2.2-1.4-2.3 1.4-2.3-1.4-2.2 1.4z"/><path d="M9.5 8h5M9.5 11.5h5"/>',
+    agreement:'<path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4"/><path d="M9 16.5c1.6-3.4 2.6-5 3.2-4.8.7.2-.4 3 .3 3.4.5.3 1.1-.6 2.5-1.3"/>',
+    contact:'<path d="M7.6 4.5l2 3.3-1.7 1.9c.9 2.1 2.3 3.5 4.4 4.4l1.9-1.7 3.3 2v2.8c0 .9-.8 1.6-1.7 1.5C9.4 18 6 14.6 5.3 7.7c-.1-.9.6-1.7 1.5-1.7z"/>'
   };
   function iconSVG(nav){
     var paths = ICONS[nav] || ICONS.about;
@@ -1223,6 +2229,12 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     if(e.metaKey || e.ctrlKey || e.altKey) return;
     if(e.key==="ArrowRight"){ var nx = pgNext.getAttribute("data-route"); if(nx) showRoute(nx, true, "keyboard"); }
     else if(e.key==="ArrowLeft"){ var pv = pgPrev.getAttribute("data-route"); if(pv) showRoute(pv, true, "keyboard"); }
+  });
+
+  // inert placeholder links (e-signature + agreement download, until the URLs exist)
+  document.addEventListener("click", function(e){
+    var a = e.target.closest('a[aria-disabled="true"]');
+    if(a){ e.preventDefault(); }
   });
 
   // hamburger

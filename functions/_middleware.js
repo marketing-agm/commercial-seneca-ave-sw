@@ -272,18 +272,21 @@ ${ph}
         <h1 class="title">Proposal for Management&nbsp;Services</h1>
         <div class="prop-name">Commercial &mdash; 838 Seneca Ave SW</div>
         <div class="in-label" style="font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-40); margin:-14px 0 26px;">Prepared for Thomas Family Properties, LLC</div>
-        <p class="lead">AGM Real Estate Group&rsquo;s fully integrated platform spans syndication, asset management, property management, construction management, advisory services, and development &mdash; supporting a diverse portfolio of commercial, multi-family, mixed-use, and community association investments across the region.</p>
+        <p class="lead">A management proposal written for one building: a &plusmn;24,600 SF single-tenant industrial asset on 1.41 acres in Renton&rsquo;s Earlington Industrial Park. It names the people who would run it, the scope matched to the lease, the first ninety days, the fee, and an executable management agreement.</p>
         <div class="inside">
           <div class="in-label">Proposal Table of Contents</div>
           <ul>
-            <li>About AGM</li>
-            <li>Property Management Team</li>
-            <li>Investment Strategy</li>
-            <li>Construction &amp; Facilities</li>
+            <li>The Property &mdash; asset, lease status &amp; scope split</li>
+            <li>Your Team &mdash; named, with direct lines</li>
+            <li>The First 90 Days &mdash; transition plan</li>
+            <li>Day-to-Day Management &amp; Capital Projects</li>
             <li>Financial Management &amp; Reporting</li>
-            <li>AGM Master Insurance Program</li>
-            <li>Tools &amp; Technology</li>
+            <li>Insurance &amp; Technology</li>
+            <li>Strategy, Exit &amp; Questions for Ownership</li>
+            <li>Track Record &amp; References</li>
             <li>Fees</li>
+            <li>Ready to Proceed &mdash; agreement &amp; signature</li>
+            <li>Contact &amp; Next Steps</li>
           </ul>
         </div>
       </section>
