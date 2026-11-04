@@ -1,9 +1,9 @@
 /* ============================================================================
- * AGM PROPOSAL — PASSWORD GATE  (Cloudflare Pages Functions middleware)
+ * AGM PROPOSAL: PASSWORD GATE  (Cloudflare Pages Functions middleware)
  * ----------------------------------------------------------------------------
  * Runs in front of every request to this Pages project. Until a visitor submits
  * the correct password, they only ever receive the custom cover/login page
- * below — the real proposal (index.html) is never sent to the browser. The
+ * below, the real proposal (index.html) is never sent to the browser. The
  * password itself lives ONLY as an encrypted Cloudflare secret, never in this
  * code or in the client.
  *
@@ -20,7 +20,7 @@
  *
  * ── LOCAL PREVIEW ───────────────────────────────────────────────────────────
  *   Put SITE_PASSWORD / GATE_SECRET in a `.dev.vars` file (git-ignored) and run
- *   `npx wrangler pages dev .`  — see .dev.vars.example.
+ *   `npx wrangler pages dev .` , see .dev.vars.example.
  * ========================================================================== */
 
 const COOKIE = "agm_gate";
@@ -194,7 +194,7 @@ function coverHTML({ error, analytics }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 ${ph}
-<title>AGM Real Estate Group &mdash; Commercial Proposal &mdash; Access</title>
+<title>Commercial Proposal | AGM Real Estate Group</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%233A8DDE' d='M4 27 16 5l12 22h-5l-7-13-7 13z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -270,9 +270,9 @@ ${ph}
     <div class="body">
       <section class="col left">
         <h1 class="title">Proposal for Management&nbsp;Services</h1>
-        <div class="prop-name">Commercial &mdash; 838 Seneca Ave SW</div>
+        <div class="prop-name">Commercial &middot; 838 Seneca Ave SW</div>
         <div class="in-label" style="font-size:10.5px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-40); margin:-14px 0 26px;">Prepared for Thomas Family Properties, LLC</div>
-        <p class="lead">A management proposal for one building: a &plusmn;24,600 SF single-tenant industrial asset on 1.41 acres in Renton&rsquo;s Earlington Industrial Park. It names the people who would run it, the scope matched to the lease, the first ninety days, the fee and an executable management agreement.</p>
+        <p class="lead">A management proposal for one building: a 24,592 SF single-tenant industrial asset on 1.41 acres in Renton&rsquo;s Earlington Industrial Park. It names the people who would run it, the scope matched to the lease, the first ninety days, the fee and an executable management agreement.</p>
         <div class="inside">
           <div class="in-label">Proposal Table of Contents</div>
           <ul>
