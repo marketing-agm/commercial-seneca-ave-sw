@@ -103,7 +103,7 @@ Terms page is a summary and not the agreement itself. The page says so.
 - Turnaround commitment for the lease review (`[X]` business days)
 - Proposed management start date
 
-## 7 · Technology page
+## 7 · Reporting page
 
 Confirm whether Thomas Family Properties, LLC holds 838 Seneca in a structure that issues K-1s, and
 who at Ownership's accounting firm should get portal access.

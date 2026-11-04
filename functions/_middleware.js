@@ -280,10 +280,9 @@ ${ph}
             <li>Your Team</li>
             <li>The First 90 Days</li>
             <li>Day-to-Day Management and Capital Projects</li>
-            <li>Financial Management and Reporting</li>
-            <li>Insurance and Technology</li>
+            <li>Reporting and the Owner Portal</li>
             <li>Strategy, Exit and Questions for Ownership</li>
-            <li>Track Record and References</li>
+            <li>Track Record</li>
             <li>Fees</li>
             <li>Ready to Proceed</li>
             <li>Contact and Next Steps</li>
