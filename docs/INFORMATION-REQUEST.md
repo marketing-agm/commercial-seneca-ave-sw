@@ -3,15 +3,62 @@
 The proposal is built and sitting behind the password. There are 63 spots still marked in amber on
 the page, and we need them filled before it can go to Thomas Family Properties.
 
-It is grouped below by who can answer rather than by where it appears in the deck, so you can forward
-the right chunk to the right person. Reply inline wherever it is easiest.
+It follows the deck's own slide numbers, so you can open the proposal, go to the slide and fill in
+what is asked. Each heading says who can answer. Reply inline wherever it is easiest.
+
+**Slides 03 (The First 90 Days), 04 (Day-to-Day Management) and 08 (Fees) need nothing.** Those three
+are finished.
 
 ---
 
-## A. The team
+## Slide 01. The Property
+*Ownership or the listing broker. 14 items.*
 
-All of this is ours. It is also the quickest win in here: phone numbers, emails and a headshot would
-clear about a third of the list on their own.
+The building and site facts are already done. We pulled them from the King County Assessor record, so
+square footage, acreage, year built, zoning, parcel number and the legal description are all in and
+sourced. What is missing is the lease.
+
+- Current status as of the proposal date, so vacant or in negotiation: ____________
+- Tenant or prospective tenant name: ____________
+- Lease structure, NNN or modified gross: ____________
+- Commencement date: ____________
+- Expiration date: ____________
+- Renewal options: number, length, notice window, rent mechanism: ____________
+- Purchase option: exercise window, price or formula, notice requirement: ____________
+- Key dates we should be diarizing. Option notice deadlines, rent escalation dates, reconciliation
+  dates, insurance certificate renewals: ____________
+- Clear height, dock door count and grade door count. The assessor record does not carry these, so we
+  either get them from the file or confirm them on the first site walk: ____________
+
+**The responsibility split.** Four rows of the landlord and tenant table still read "per lease" and
+need the real allocation. That finished table becomes Exhibit A to the agreement, so it is worth
+getting right.
+
+- HVAC service and replacement: ____________
+- Fire sprinkler system: ____________
+- Landscaping and grounds: ____________
+- Environmental compliance: ____________
+
+**Environmental, same slide.** This is the one the principal called out hardest. His words were that
+it is the real management risk on this property and that the deck was missing it entirely. The
+section is written so it works without knowing the specifics, but we cannot finish it from public
+records. We need the file.
+
+- Prior Phase I and Phase II reports: ____________
+- Any consent order or agreed order: ____________
+- Current consultant of record: ____________
+- Sampling and reporting schedule: ____________
+- What it cost last year: ____________
+
+If it turns out there is no continuing obligation here, just say so. The whole section collapses to
+one line and the proposal gets shorter.
+
+---
+
+## Slide 02. Your Team
+*Ours. 16 items.*
+
+This is the quickest win in here. Phone numbers, emails and a headshot clear most of it.
 
 **Cindy Miller, Property Manager**
 
@@ -34,15 +81,27 @@ clear about a third of the list on their own.
 
 **Makenzie Burks, Administration.** Direct: ____________  Email: ____________
 
-**Office and emergency**
+---
 
-- The 24/7 after-hours number as we want it published: ____________
-- Office address. Public directories show 12330 Northup Way, Bellevue, WA 98005. Confirm or
-  correct: ____________
+## Slide 05. Reporting and the Owner Portal
+*Ownership, with their accountant. 1 question.*
+
+- Does Thomas Family Properties hold 838 Seneca in a structure that issues K-1s, and who at their
+  accounting firm should get portal access: ____________
 
 ---
 
-## B. Track record
+## Slide 06. Strategy and Exit
+*Ours to propose, Ownership to agree. 1 item.*
+
+- Unbudgeted spending authority per item, without prior approval: $____________
+
+This is the same figure that appears in the key terms on slide 09. Answer it once and it fills both.
+
+---
+
+## Slide 07. Track Record
+*Ours. 7 items.*
 
 Two case studies. One is nearly there, the other is an empty frame.
 
@@ -68,67 +127,19 @@ Si's place. Much easier to swap now than after this goes out.
 
 ---
 
-## C. The lease
+## Slide 09. Ready to Proceed
+*Ours, Ownership, and counsel. 12 items.*
 
-The building and site facts are done. We pulled them from the King County Assessor record, so square
-footage, acreage, year built, zoning, parcel number and the legal description are all in and sourced.
-What is missing is everything about the lease itself.
-
-- Current status as of the proposal date, so vacant or in negotiation: ____________
-- Tenant or prospective tenant name: ____________
-- Lease structure, NNN or modified gross: ____________
-- Commencement date: ____________
-- Expiration date: ____________
-- Renewal options: number, length, notice window, rent mechanism: ____________
-- Purchase option: exercise window, price or formula, notice requirement: ____________
-- Key dates we should be diarizing. Option notice deadlines, rent escalation dates, reconciliation
-  dates, insurance certificate renewals: ____________
-- Clear height, dock door count and grade door count. The assessor record does not carry these, so
-  we either get them from the file or confirm them on the first site walk: ____________
-
-**The responsibility split.** Four rows of the landlord and tenant table still read "per lease" and
-need the real allocation: HVAC service and replacement, the fire sprinkler system, landscaping and
-grounds, and environmental compliance. That finished table becomes Exhibit A to the agreement, so it
-is worth getting right.
-
----
-
-## D. Environmental
-
-This is the one the principal called out hardest. His words were that it is the real management risk
-on this property and that the deck was missing it entirely. The section is written so it works
-without knowing the specifics, but we cannot finish it from public records. We need the file.
-
-- Prior Phase I and Phase II reports: ____________
-- Any consent order or agreed order: ____________
-- Current consultant of record: ____________
-- Sampling and reporting schedule: ____________
-- What it cost last year: ____________
-
-If it turns out there is no continuing obligation here, just say so. The whole section collapses to
-one line and the proposal gets shorter.
-
----
-
-## E. Commercial terms
-
-These are the ones where we need a decision rather than a document. Some are ours, some are
-Ownership's, and a few we should propose and let them adjust.
+**Terms that need a decision rather than a document:**
 
 - Exact legal entity name and state of formation for Thomas Family Properties, LLC: ____________
 - Proposed commencement date: ____________
 - Termination for convenience, 30 or 60 days' notice: ____________
-- Unbudgeted spending authority per item without prior approval, $____________
+- Unbudgeted spending authority per item, $____________ (same figure as slide 06)
 - Leasing and sales: carved out to Ownership's listing broker, or coordinated with us: ____________
 - Records return on termination, 15 or 30 days: ____________
-- Does Thomas Family Properties hold 838 Seneca in a structure that issues K-1s: ____________
-- Who at their accounting firm should get portal access: ____________
 
----
-
-## F. Documents to attach
-
-The Ready to Proceed section lists all of these and none of them exist yet.
+**Documents to attach.** The section lists all of these and none of them exist yet.
 
 - Commercial Property Management Agreement for 838 Seneca Ave SW
 - Exhibit A, scope of services matched to the executed lease
@@ -143,9 +154,16 @@ agreement form needs to go to counsel before it is sent for signature.
 
 ---
 
-## G. Next steps
+## Slide 10. Contact and Next Steps
+*Ours. 13 items.*
 
-Three dates from us, and then it is ready.
+- The 24/7 after-hours number as we want it published: ____________
+- Office address. Public directories show 12330 Northup Way, Bellevue, WA 98005. Confirm or
+  correct: ____________
+- Cindy, Herman and Alix's direct lines and emails also repeat on this slide. Answering them on
+  slide 02 fills both.
+
+Three dates from us, and then it is ready:
 
 - Date and time we want to propose for walking the building with Ownership: ____________
 - Turnaround we want to commit to on the lease review: ________ business days
@@ -155,8 +173,9 @@ Three dates from us, and then it is ready.
 
 ## Where to start
 
-Sections A and G are the fast ones. Phone numbers, emails, a headshot and three dates would clear
+Slides 02 and 10 are the fast ones. Phone numbers, emails, a headshot and three dates would clear
 about 25 of the 63 marks in an afternoon.
 
-Section D is the one that actually changes the proposal. If there is a real monitoring obligation,
-that page becomes the strongest argument in the deck. If there is not, it shrinks to a line.
+Slide 01's environmental block is the one that actually changes the proposal. If there is a real
+monitoring obligation, that page becomes the strongest argument in the deck. If there is not, it
+shrinks to a line.
