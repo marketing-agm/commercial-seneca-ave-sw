@@ -3,7 +3,7 @@
 Everything below renders in the proposal today as an amber `[bracketed]` placeholder
 (`<span class="tbd">…</span>` in `index.html`). The structure, layout and surrounding copy are
 finished; only these values are missing. Search `index.html` for `class="tbd"` to find them all
-(38 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
+(25 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
 goes in.
 
 Page-level "To complete" notes also appear in the proposal itself as dashed amber boxes
@@ -13,19 +13,24 @@ Page-level "To complete" notes also appear in the proposal itself as dashed ambe
 
 ## 1 · People (Team page, Contact page, Exhibit D)
 
-Names are in. What is still missing is contact detail.
+Contact details arrived on 2026-11-06 from the business cards and are in the deck:
 
-| Person | Role | Still needed |
+| Person | Role | Contact |
 |---|---|---|
-| **Cindy Miller** | Property Manager | Headshot, direct phone, mobile, email, years in commercial management, years with AGM, industrial SF under management, comparable properties managed, WA license number and expiry, designations (CPM/RPA/IREM/BOMA), two background sentences |
-| **Herman Chan** | Accounting | Direct phone, email |
-| **Alix Vanwagoner** | Property management support | Direct phone, email |
-| **Makenzie Burks** | Administration | Direct phone, email |
-| **Office** | | Street address and suite confirmed. Public directories give 12330 Northup Way, Bellevue, WA 98005, which is in the page marked `[confirm: …]` |
-| **24/7 emergency** | | The after-hours number as it should be published |
+| **Cindy Miller** | Senior Property Manager | 206.694.1726, m. 206.843.5290, ext. 140, cmiller@agmrealestategroup.com |
+| **Herman Chan** | Director of Accounting and Finance | 206.694.1713, ext. 113, hchan@agmrealestategroup.com |
+| **Makenzie Burks** | Paralegal | ext. 109, burks@agmrealestategroup.com |
+| **Alix Vanwagoner** | Management support | avanwagoner@agmrealestategroup.com. **Direct line still needed** |
 
-Drop Cindy's headshot in `assets/` and replace the `.bio-photo` placeholder `<span class="ph-k">`
-with an `<img>`.
+Two titles were corrected against the cards: Cindy is Senior Property Manager and Makenzie is
+Paralegal, not Administration. Makenzie was added to the contact page.
+
+Still needed for Cindy: headshot, years in commercial management, comparable properties, WA license
+number and expiry, and the two background paragraphs. Drop the headshot in `assets/` and replace the
+`.bio-photo` placeholder span with an `<img>` tag.
+
+Also open: the 24/7 emergency number as it should be published, and the office address. Public
+directories give 12330 Northup Way, Bellevue, WA 98005, which is in the page marked `[confirm: ...]`.
 
 There is no named escalation contact in the proposal, per the 2026-11-04 review.
 

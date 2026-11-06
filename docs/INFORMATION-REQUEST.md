@@ -1,31 +1,26 @@
 # 838 Seneca management proposal: information needed
 
-Down from 63 items to 19 pieces of information, plus the agreement and its exhibits.
+25 marks left, of which 6 are documents to attach. Contact details came in on 2026-11-06 and are
+now live in the deck.
 
 Slides 03, 04, 05 and 08 need nothing.
 
 ---
 
-## Slide 02. Your Team
+## Slide 02. Cindy's bio
 
-**Cindy Miller, Property Manager**
+Phone, mobile and email are in. What is left is the bio itself.
 
-- Direct phone: ____________
-- Mobile: ____________
-- Email: ____________
 - Years in commercial property management: ____________
 - Two or three comparable properties she runs, by type and submarket: ____________
 - WA broker or managing broker license number, and expiry: ____________
 - Headshot: attach photo file
-- Background, two or three sentences: ____________
-- Why she fits this building, her experience with single-tenant industrial, net lease administration
-  and properties carrying environmental or compliance obligations: ____________
+- Background, two or three sentences: where she has worked and the kind of portfolio she has
+  run: ____________
+- Why she fits this building, her experience with single-tenant industrial, net lease
+  administration and properties carrying environmental or compliance obligations: ____________
 
-**Herman Chan, Accounting.** Direct phone: ____________  Email: ____________
-
-**Alix Vanwagoner, Management Support.** Direct phone: ____________  Email: ____________
-
-**Makenzie Burks, Administration.** Direct phone: ____________  Email: ____________
+Also still open: **Alix Vanwagoner's direct phone.** Her email is in. Everyone else is complete.
 
 ---
 
@@ -34,8 +29,6 @@ Slides 03, 04, 05 and 08 need nothing.
 - 24/7 after-hours number as published: ____________
 - Office street address and suite. Public directories show 12330 Northup Way: ____________
 - City, state, ZIP. Public directories show Bellevue, WA 98005: ____________
-
-Cindy, Herman and Alix's lines repeat on this slide. Answering them on slide 02 fills both.
 
 ---
 
@@ -57,10 +50,6 @@ return records, and five business days to turn the lease review.
 - Purchase option, if one is on the table: exercise window, price or formula, notice
   requirement: ____________
 
-Everything else on this slide is done. The building and site facts come from the King County
-Assessor record. The lease block now says the building is vacant with terms under negotiation, and
-the responsibility table states the split AGM recommends rather than asking for one.
-
 ---
 
 ## Slide 07. Track Record
@@ -80,6 +69,21 @@ the responsibility table states the split AGM recommends rather than asking for 
 - Exhibit E, approval thresholds and owner call tree
 - E-signature envelope URL: ____________
 - Direct link to the agreement PDF: ____________
+
+---
+
+## Already in, from the business cards of 2026-11-06
+
+| | |
+|---|---|
+| Cindy Miller | Senior Property Manager. Direct 206.694.1726, mobile 206.843.5290, office ext. 140, cmiller@agmrealestategroup.com |
+| Herman Chan | Director of Accounting and Finance. Direct 206.694.1713, office ext. 113, hchan@agmrealestategroup.com |
+| Makenzie Burks | Paralegal. Office ext. 109, burks@agmrealestategroup.com |
+| Alix Vanwagoner | avanwagoner@agmrealestategroup.com. Direct line still needed |
+
+Two titles were corrected against the cards: Cindy is Senior Property Manager, not Property Manager,
+and Makenzie is Paralegal, not Administration. Her description on slides 02 and 10 was rewritten to
+match the role, and she was added to the contact page.
 
 ---
 

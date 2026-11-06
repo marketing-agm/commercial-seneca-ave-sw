@@ -803,6 +803,9 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
   a{color:#000 !important; text-decoration:none;}
   .portal-shot,.propsum-shot,.case-shot,.asset-tile{break-inside:avoid;}
 }
+/* long email addresses must wrap rather than widen the page */
+.contact .c-line .cl-v,.person .p-contact,.bio-fact .bf-v{overflow-wrap:anywhere;}
+@media(max-width:560px){.contact .c-line{grid-template-columns:62px 1fr; gap:10px;}}
 </style>
 
 <!-- ===================== PostHog product analytics =====================
@@ -1050,7 +1053,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <span class="ph-k">Photo<br />to be added</span>
             </div>
             <div>
-              <div class="bio-role">Property Manager &middot; 838 Seneca Ave SW</div>
+              <div class="bio-role">Senior Property Manager &middot; 838 Seneca Ave SW</div>
               <h4 class="bio-name">Cindy Miller</h4>
               <p class="bio-body">Cindy is Ownership&rsquo;s point of contact. She runs daily operations, holds the vendor relationships, reviews every invoice before payment, prepares the monthly report and brings Ownership the decisions that require approval. <span class="tbd">[Two or three sentences on Cindy&rsquo;s background: where she has worked and the kind of portfolio she has run.]</span></p>
               <p class="bio-body"><strong>Why Cindy is the right fit for this building:</strong> <span class="tbd">[her experience with single-tenant industrial assets, net lease administration and properties carrying environmental or compliance obligations. Name two or three buildings by type and submarket.]</span></p>
@@ -1058,8 +1061,8 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
                 <div class="bio-fact"><div class="bf-k">Years in commercial management</div><div class="bf-v"><span class="tbd">[number]</span></div></div>
                 <div class="bio-fact"><div class="bf-k">Comparable properties managed</div><div class="bf-v"><span class="tbd">[two or three, by type and submarket]</span></div></div>
                 <div class="bio-fact"><div class="bf-k">Licenses</div><div class="bf-v"><span class="tbd">[WA broker or managing broker license number, expiry]</span></div></div>
-                <div class="bio-fact"><div class="bf-k">Direct line</div><div class="bf-v"><span class="tbd">[direct phone]</span></div></div>
-                <div class="bio-fact"><div class="bf-k">Email</div><div class="bf-v"><span class="tbd">[email address]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Direct line</div><div class="bf-v">206.694.1726</div></div>
+                <div class="bio-fact"><div class="bf-k">Email</div><div class="bf-v">cmiller@agmrealestategroup.com</div></div>
               </div>
             </div>
           </div>
@@ -1070,22 +1073,22 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
           <div class="sec-head"><h3>The Supporting Team</h3><span class="pipe">|</span><span class="kick">Direct Contact</span></div>
           <div class="people">
             <div class="person">
-              <div class="p-role">Accounting</div>
+              <div class="p-role">Director of Accounting and Finance</div>
               <div class="p-name">Herman Chan</div>
               <div class="p-desc">Property-level accounting: accounts payable, owner statements, the monthly financial package, expense reconciliation and year-end documentation for Ownership&rsquo;s accountant.</div>
-              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+              <div class="p-contact">206.694.1713 &middot; hchan@agmrealestategroup.com</div>
             </div>
             <div class="person">
               <div class="p-role">Property Management Support</div>
               <div class="p-name">Alix Vanwagoner</div>
               <div class="p-desc">Works with Cindy on vendor scheduling, work orders, certificate and compliance tracking and tenant coordination. Covers for Cindy during absences.</div>
-              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; avanwagoner@agmrealestategroup.com</div>
             </div>
             <div class="person">
-              <div class="p-role">Administration</div>
+              <div class="p-role">Paralegal</div>
               <div class="p-name">Makenzie Burks</div>
-              <div class="p-desc">Lease files and abstracts, insurance certificates, Owner Portal filing, vendor onboarding and correspondence records.</div>
-              <div class="p-contact"><span class="tbd">[direct phone]</span> &middot; <span class="tbd">[email]</span></div>
+              <div class="p-desc">Lease documents and abstracts, management agreement administration, insurance certificates, vendor onboarding and the property file.</div>
+              <div class="p-contact">206.622.8600 ext. 109 &middot; burks@agmrealestategroup.com</div>
             </div>
           </div>
           <div class="highlight reveal">
@@ -1716,11 +1719,12 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             <div class="contact">
               <div class="c-k">Day-to-Day Property Manager</div>
               <div class="c-name">Cindy Miller</div>
-              <div class="c-role">Property Manager &middot; 838 Seneca Ave SW</div>
+              <div class="c-role">Senior Property Manager &middot; 838 Seneca Ave SW</div>
               <div class="c-lines">
-                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
-                <div class="c-line"><span class="cl-k">Mobile</span><span class="cl-v"><span class="tbd">[mobile]</span></span></div>
-                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><a href="tel:+12066941726">206.694.1726</a></span></div>
+                <div class="c-line"><span class="cl-k">Mobile</span><span class="cl-v"><a href="tel:+12068435290">206.843.5290</a></span></div>
+                <div class="c-line"><span class="cl-k">Office</span><span class="cl-v">206.622.8600 ext. 140</span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><a href="mailto:cmiller@agmrealestategroup.com">cmiller@agmrealestategroup.com</a></span></div>
               </div>
             </div>
             <div class="contact urgent">
@@ -1735,10 +1739,11 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             <div class="contact">
               <div class="c-k">Accounting</div>
               <div class="c-name">Herman Chan</div>
-              <div class="c-role">Property accounting &middot; statements, payables, reconciliations</div>
+              <div class="c-role">Director of Accounting and Finance</div>
               <div class="c-lines">
-                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
-                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+                <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><a href="tel:+12066941713">206.694.1713</a></span></div>
+                <div class="c-line"><span class="cl-k">Office</span><span class="cl-v">206.622.8600 ext. 113</span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><a href="mailto:hchan@agmrealestategroup.com">hchan@agmrealestategroup.com</a></span></div>
               </div>
             </div>
             <div class="contact">
@@ -1747,7 +1752,16 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <div class="c-role">Vendor scheduling, work orders, compliance tracking</div>
               <div class="c-lines">
                 <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><span class="tbd">[direct phone]</span></span></div>
-                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><span class="tbd">[email]</span></span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><a href="mailto:avanwagoner@agmrealestategroup.com">avanwagoner@agmrealestategroup.com</a></span></div>
+              </div>
+            </div>
+            <div class="contact">
+              <div class="c-k">Paralegal</div>
+              <div class="c-name">Makenzie Burks</div>
+              <div class="c-role">Lease documents, agreements, insurance and the property file</div>
+              <div class="c-lines">
+                <div class="c-line"><span class="cl-k">Office</span><span class="cl-v">206.622.8600 ext. 109</span></div>
+                <div class="c-line"><span class="cl-k">Email</span><span class="cl-v"><a href="mailto:burks@agmrealestategroup.com">burks@agmrealestategroup.com</a></span></div>
               </div>
             </div>
             <div class="contact">
