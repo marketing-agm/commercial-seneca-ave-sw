@@ -3,7 +3,7 @@
 Everything below renders in the proposal today as an amber `[bracketed]` placeholder
 (`<span class="tbd">…</span>` in `index.html`). The structure, layout and surrounding copy are
 finished; only these values are missing. Search `index.html` for `class="tbd"` to find them all
-(11 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
+(10 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
 goes in.
 
 Page-level "To complete" notes also appear in the proposal itself as dashed amber boxes
@@ -55,18 +55,20 @@ obligation, cut that section down to one line.
 
 ## 3 · Case studies (Track Record page)
 
-**Pacific Business Park is populated** from AGM's own published acquisition record of 14 June 2023
-and the portfolio data behind agmrealestategroup.com: 136 Stewart Road SE, 42,000 SF on 2.78 acres,
-$8.2M in May 2023 through a 1031 exchange, 22 tenants, 100% occupancy at acquisition, AGM brokered
-the sale, syndicated the fund and manages the property. Still needed is the operating result since
-2023: occupancy held, expense change, and net operating income against the acquisition proforma.
+**Nothing outstanding.** Pacific Business Park is drawn from AGM's own published acquisition record
+of 14 June 2023 and the portfolio data behind agmrealestategroup.com: 136 Stewart Road SE, 42,000 SF
+on 2.78 acres, $8.2M in May 2023 through a 1031 exchange, 22 tenants, 100% occupancy at acquisition,
+AGM brokered the sale, syndicated the fund and manages the property.
 
-**Mount Si was cut on 2026-11-06.** It was a frame with no content behind it, and one complete case
-study reads stronger than one complete and one empty. A second can be added when North Park or the
-Center Building has before-and-after figures worth publishing.
+The study runs two steps, what AGM found and what AGM did, over three sourced figures. The third
+step, "what it was worth", was cut on 2026-11-06 because the operating result since 2023 was not
+available and the figures carry the result on their own.
 
-Comparable assets and the references section are settled: references were removed on 2026-11-04,
-and the five comparable tiles carry name, place and asset type only.
+**Mount Si was cut on 2026-11-04.** A second study can be added when North Park or the Center
+Building has before-and-after figures worth publishing.
+
+Comparable assets and references are settled: references were removed on 2026-11-04, and the five
+comparable tiles carry name, place and asset type only.
 
 ## 4 · Commercial terms (Ready to Proceed page)
 
