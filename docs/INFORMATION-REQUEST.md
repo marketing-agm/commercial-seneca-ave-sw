@@ -1,34 +1,33 @@
 # 838 Seneca management proposal: information needed
 
-10 marks left, of which 6 are documents to attach. Only slides 02 and 09 carry any.
+4 marks left, plus a headshot and two links. Only slide 02 carries any placeholder.
 
 ---
 
 ## Slide 02. Cindy's bio
 
-Her phone, mobile, email and title are in. What is left is the bio itself.
+Her title, direct line, mobile, office extension and email are in. What is left is the bio block
+beside her photo.
 
 - Years in commercial property management: ____________
 - Two or three comparable properties she runs, by type and submarket: ____________
 - WA broker or managing broker license number, and expiry: ____________
-- Headshot: attach photo file
 - Background, two or three sentences: where she has worked and the kind of portfolio she has
   run: ____________
+- Headshot: attach a photo file. The slot currently reads "Photo to be added"
 
 ---
 
-## Slide 09. Documents to attach
+## Slide 09. The agreement
 
-- Commercial Property Management Agreement for 838 Seneca Ave SW
-- Exhibit A, scope of services matched to the executed lease
-- Exhibit B, fee schedule
-- Exhibit C, insurance certificates, general liability, E&O, fidelity bond, workers' comp
-- Exhibit D, team biographies with licenses
-- Exhibit E, approval thresholds and owner call tree
+The exhibit list was removed on 2026-11-06. The page is now the key terms, a counsel note and two
+buttons. Both buttons are inert until these exist:
+
 - E-signature envelope URL: ____________
 - Direct link to the agreement PDF: ____________
 
-The agreement form goes to counsel before it is sent for signature.
+The agreement form goes to counsel before it is sent for signature. The agreement carries its own
+exhibits; they are no longer itemized on the slide.
 
 ---
 
@@ -42,21 +41,6 @@ The agreement form goes to counsel before it is sent for signature.
 | Makenzie Burks | Paralegal. Office ext. 109, burks@agmrealestategroup.com |
 | 24/7 emergency | 206.622.8600, the main line, answered at any hour |
 | Office | 12330 Northup Way, Bellevue, WA 98005 |
-
----
-
-## Settled on 2026-11-06
-
-Spending authority reads as a per-item limit "to be set with Ownership" on both the Strategy and
-Ready to Proceed pages.
-
-Removed rather than answered: the purchase option row, the owner entity confirmation, the
-commencement date row, the leasing and sales row, the proposed building walk date, the proposed
-management start date, the paragraph on why Cindy fits this building, and the "what it was worth"
-step on the Pacific Business Park case study.
-
-The case study now runs two steps, what AGM found and what AGM did, over three sourced figures:
-$8.2M in May 2023, 100% occupancy at acquisition, 22 tenants.
 
 ---
 

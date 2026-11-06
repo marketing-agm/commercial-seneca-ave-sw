@@ -3,7 +3,7 @@
 Everything below renders in the proposal today as an amber `[bracketed]` placeholder
 (`<span class="tbd">…</span>` in `index.html`). The structure, layout and surrounding copy are
 finished; only these values are missing. Search `index.html` for `class="tbd"` to find them all
-(10 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
+(4 at the time of writing, all on the Team page). Delete the whole `<span>`, not just the brackets, when the real value
 goes in.
 
 Page-level "To complete" notes also appear in the proposal itself as dashed amber boxes
@@ -83,22 +83,15 @@ AGM has taken a position rather than asking: 30 days' termination notice either 
 return records, and five business days to turn the lease review. Change them if the firm wants
 different numbers.
 
-## 5 · The agreement itself (Ready to Proceed page)
+## 5 · The agreement (Ready to Proceed page)
 
-Six attachments are listed and none are attached:
+The exhibit list was removed on 2026-11-06. The page is the key terms, a counsel note and the
+signature band. The key terms still cite Exhibit A, B and C, which are exhibits of the agreement
+itself rather than a list on the slide.
 
-| | Document |
-|---|---|
-| Agreement | Commercial Property Management Agreement for 838 Seneca Ave SW |
-| Exhibit A | Scope of services, matched to the executed lease |
-| Exhibit B | Fee schedule |
-| Exhibit C | Manager's insurance certificates |
-| Exhibit D | Team biographies with licenses |
-| Exhibit E | Approval thresholds and owner call tree |
-
-The two buttons in the navy signature band are inert (`aria-disabled="true"`, a click handler
-cancels them). To activate: replace `href="#"` with the e-signature envelope URL (DocuSign, Dropbox
-Sign, or Adobe Acrobat Sign) and a direct link to the agreement PDF, and remove `aria-disabled`.
+The two buttons in the navy band are inert (`aria-disabled="true"`, a click handler cancels them).
+To activate: replace `href="#"` with the e-signature envelope URL and a direct link to the agreement
+PDF, then remove `aria-disabled`.
 
 **The final agreement form must be reviewed by counsel before it is sent for signature.** The Key
 Terms page is a summary and not the agreement itself. The page says so.
