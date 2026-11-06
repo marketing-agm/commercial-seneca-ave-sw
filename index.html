@@ -556,18 +556,43 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 /* ============================================================
    PHASED PLAN: the first 90 days
    ============================================================ */
-.phases{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--line-strong); border-bottom:1px solid var(--line-soft);}
-.phase{position:relative; padding:30px 26px 34px; border-right:1px solid var(--line-soft); transition:background .16s var(--ease);}
-.phase:last-child{border-right:none;}
+.phases{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));}
+.phase{position:relative; padding:34px 44px 38px 0; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
+.phase:nth-child(2n){padding-left:44px; padding-right:0; border-left:1px solid var(--line-soft);}
+.phase:nth-last-child(-n+2){border-bottom:none; padding-bottom:12px;}
 .phase:hover{background:var(--accent-wash);}
-.phase-when{position:relative; padding-left:22px; margin-bottom:20px;}
-.phase-when::before{content:""; position:absolute; left:0; top:5px; width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-wash-2);}
-.phase-when .pw-k{font-family:var(--serif); font-weight:600; font-size:19px; color:var(--ink); line-height:1.1; letter-spacing:-.01em; font-variant-numeric:tabular-nums;}
-.phase-when .pw-s{font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-top:7px;}
-.phase-title{font-size:14px; font-weight:600; color:var(--ink); margin-bottom:16px; letter-spacing:-.01em; line-height:1.4;}
-.phase .checklist li{font-size:12.3px; line-height:1.6;}
-@media(max-width:1080px){.phases{grid-template-columns:repeat(2,minmax(0,1fr));} .phase:nth-child(2){border-right:none;} .phase:nth-child(-n+2){border-bottom:1px solid var(--line-soft);}}
-@media(max-width:620px){.phases{grid-template-columns:1fr;} .phase{border-right:none; border-bottom:1px solid var(--line-soft);} .phase:last-child{border-bottom:none;}}
+.phase-when{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; position:relative; padding-left:24px; margin-bottom:14px;}
+.phase-when::before{content:""; position:absolute; left:0; top:7px; width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-wash-2);}
+.phase-when .pw-k{font-family:var(--serif); font-weight:600; font-size:23px; color:var(--ink); line-height:1; letter-spacing:-.01em; font-variant-numeric:tabular-nums;}
+.phase-when .pw-s{font-size:10.5px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--accent);}
+.phase-title{font-size:15px; font-weight:600; color:var(--ink); margin:0 0 20px 24px; letter-spacing:-.01em; line-height:1.45;}
+.phase .checklist{margin-left:24px; gap:11px;}
+.phase .checklist li{font-size:12.8px; line-height:1.65;}
+@media(max-width:860px){
+  .phases{grid-template-columns:1fr;}
+  .phase,.phase:nth-child(2n){padding:28px 0 30px; border-left:none; border-bottom:1px solid var(--line-soft);}
+  .phase:last-child{border-bottom:none;}
+}
+@media(max-width:560px){
+  .phase-title,.phase .checklist{margin-left:0;}
+  .phase-when{padding-left:20px;}
+}
+
+/* ============================================================
+   NO DOUBLE RULES. A section heading already draws a full-width
+   hairline, so the block under it must not draw a second one.
+   Open blocks drop their top border; boxed blocks take the
+   heading's rule away instead.
+   ============================================================ */
+.sec-head + .specs, .sec-head + .scope, .sec-head + .cellgrid, .sec-head + .phases,
+.sec-head + .people, .sec-head + .qa, .sec-head + .terms, .sec-head + .exhibits,
+.sec-head + .contacts, .sec-head + .steps, .sec-head + .fee-cards, .sec-head + .footprint{
+  border-top:none;
+}
+.sec-head:has(+ .metrics), .sec-head:has(+ .inline-set), .sec-head:has(+ .bio),
+.sec-head:has(+ .case), .sec-head:has(+ .highlight){
+  border-bottom:none; padding-bottom:4px;
+}
 
 .checklist{margin:16px 0 0; display:grid; gap:9px;}
 .checklist li{position:relative; padding-left:26px; font-size:12.8px; line-height:1.65; color:var(--ink-72);}
