@@ -3,7 +3,7 @@
 Everything below renders in the proposal today as an amber `[bracketed]` placeholder
 (`<span class="tbd">…</span>` in `index.html`). The structure, layout and surrounding copy are
 finished; only these values are missing. Search `index.html` for `class="tbd"` to find them all
-(25 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
+(20 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
 goes in.
 
 Page-level "To complete" notes also appear in the proposal itself as dashed amber boxes
@@ -20,7 +20,7 @@ Contact details arrived on 2026-11-06 from the business cards and are in the dec
 | **Cindy Miller** | Senior Property Manager | 206.694.1726, m. 206.843.5290, ext. 140, cmiller@agmrealestategroup.com |
 | **Herman Chan** | Director of Accounting and Finance | 206.694.1713, ext. 113, hchan@agmrealestategroup.com |
 | **Makenzie Burks** | Paralegal | ext. 109, burks@agmrealestategroup.com |
-| **Alix Vanwagoner** | Management support | avanwagoner@agmrealestategroup.com. **Direct line still needed** |
+| **Alix Vanwagoner** | Management support | 206.694.1783, avanwagoner@agmrealestategroup.com |
 
 Two titles were corrected against the cards: Cindy is Senior Property Manager and Makenzie is
 Paralegal, not Administration. Makenzie was added to the contact page.
@@ -29,8 +29,8 @@ Still needed for Cindy: headshot, years in commercial management, comparable pro
 number and expiry, and the two background paragraphs. Drop the headshot in `assets/` and replace the
 `.bio-photo` placeholder span with an `<img>` tag.
 
-Also open: the 24/7 emergency number as it should be published, and the office address. Public
-directories give 12330 Northup Way, Bellevue, WA 98005, which is in the page marked `[confirm: ...]`.
+The 24/7 emergency number is 206.622.8600, the main line with after-hours routing, and the office is
+12330 Northup Way, Bellevue, WA 98005. Both are published. The contact page carries no placeholders.
 
 There is no named escalation contact in the proposal, per the 2026-11-04 review.
 

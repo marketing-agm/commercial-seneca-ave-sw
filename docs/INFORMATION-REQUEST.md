@@ -1,15 +1,14 @@
 # 838 Seneca management proposal: information needed
 
-25 marks left, of which 6 are documents to attach. Contact details came in on 2026-11-06 and are
-now live in the deck.
+20 marks left, of which 6 are documents to attach. The contact page is complete.
 
-Slides 03, 04, 05 and 08 need nothing.
+Slides 03, 04, 05, 08 and 10 need nothing.
 
 ---
 
 ## Slide 02. Cindy's bio
 
-Phone, mobile and email are in. What is left is the bio itself.
+Her phone, mobile, email and title are in. What is left is the bio itself.
 
 - Years in commercial property management: ____________
 - Two or three comparable properties she runs, by type and submarket: ____________
@@ -19,16 +18,6 @@ Phone, mobile and email are in. What is left is the bio itself.
   run: ____________
 - Why she fits this building, her experience with single-tenant industrial, net lease
   administration and properties carrying environmental or compliance obligations: ____________
-
-Also still open: **Alix Vanwagoner's direct phone.** Her email is in. Everyone else is complete.
-
----
-
-## Slide 10. Contact
-
-- 24/7 after-hours number as published: ____________
-- Office street address and suite. Public directories show 12330 Northup Way: ____________
-- City, state, ZIP. Public directories show Bellevue, WA 98005: ____________
 
 ---
 
@@ -72,18 +61,16 @@ return records, and five business days to turn the lease review.
 
 ---
 
-## Already in, from the business cards of 2026-11-06
+## Already in
 
 | | |
 |---|---|
 | Cindy Miller | Senior Property Manager. Direct 206.694.1726, mobile 206.843.5290, office ext. 140, cmiller@agmrealestategroup.com |
 | Herman Chan | Director of Accounting and Finance. Direct 206.694.1713, office ext. 113, hchan@agmrealestategroup.com |
+| Alix Vanwagoner | Management support. Direct 206.694.1783, avanwagoner@agmrealestategroup.com |
 | Makenzie Burks | Paralegal. Office ext. 109, burks@agmrealestategroup.com |
-| Alix Vanwagoner | avanwagoner@agmrealestategroup.com. Direct line still needed |
-
-Two titles were corrected against the cards: Cindy is Senior Property Manager, not Property Manager,
-and Makenzie is Paralegal, not Administration. Her description on slides 02 and 10 was rewritten to
-match the role, and she was added to the contact page.
+| 24/7 emergency | 206.622.8600, the main line, answered at any hour |
+| Office | 12330 Northup Way, Bellevue, WA 98005 |
 
 ---
 
