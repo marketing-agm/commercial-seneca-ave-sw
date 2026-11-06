@@ -3,7 +3,7 @@
 Everything below renders in the proposal today as an amber `[bracketed]` placeholder
 (`<span class="tbd">…</span>` in `index.html`). The structure, layout and surrounding copy are
 finished; only these values are missing. Search `index.html` for `class="tbd"` to find them all
-(63 at the time of writing). Delete the whole `<span>`, not just the brackets, when the real value
+(38 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
 goes in.
 
 Page-level "To complete" notes also appear in the proposal itself as dashed amber boxes
@@ -35,19 +35,17 @@ There is no named escalation contact in the proposal, per the 2026-11-04 review.
 2026 assessed value are taken from the King County Assessor record for parcel 214600-0040 and are
 cited on the page.
 
-**Still open:** clear height, dock door and grade door counts. The assessor record does not carry
-them, and the page says they are confirmed on the first site inspection.
+**Lease.** The block was collapsed on 2026-11-06. The building is vacant with terms under
+negotiation, so the eight-row abstract was unanswerable. It now states the status, asks only for the
+purchase option if one is on the table, and says AGM abstracts the executed lease at commencement.
 
-**Lease:** current status, tenant name, lease structure (NNN or modified gross), commencement,
-expiration, renewal options (number, length, notice window, rent mechanism), **purchase option
-(exercise window, price or formula, notice requirement)**, and every date that needs diarizing.
+**Scope table.** Now states the split AGM recommends for a single-tenant industrial NNN lease rather
+than asking Ownership for it, with a note that AGM advises on each line during the lease review.
 
-**Scope table:** four rows read `[per lease]`: HVAC, fire sprinkler, landscaping and environmental
-compliance. These come from the executed lease and become Exhibit A.
-
-**Environmental:** the single biggest open item. AGM needs the prior Phase I and Phase II reports,
-any consent or agreed order, the current consultant of record, the sampling and reporting schedule,
-and last year's cost. If there is no continuing obligation, cut that section down to one line.
+**Environmental:** asked on the page as an open item for Ownership, not a blocker to sending. AGM
+needs the prior Phase I and Phase II reports, any consent or agreed order, the current consultant of
+record, the sampling and reporting schedule, and last year's cost. If there is no continuing
+obligation, cut that section down to one line.
 
 ## 3 · Case studies (Track Record page)
 
@@ -57,22 +55,23 @@ $8.2M in May 2023 through a 1031 exchange, 22 tenants, 100% occupancy at acquisi
 the sale, syndicated the fund and manages the property. Still needed is the operating result since
 2023: occupancy held, expense change, and net operating income against the acquisition proforma.
 
-**Mount Si Building is a frame only.** The AGM portfolio carries it as two phases, Phase I on a core
-strategy and Phase II on a value-add strategy, and nothing further. It needs what AGM found at
-takeover, what AGM did, what it was worth, and three figures. North Park and the Center Building are
-the alternatives if either has stronger numbers.
+**Mount Si was cut on 2026-11-06.** It was a frame with no content behind it, and one complete case
+study reads stronger than one complete and one empty. A second can be added when North Park or the
+Center Building has before-and-after figures worth publishing.
 
 Comparable assets and the references section are settled: references were removed on 2026-11-04,
-and the five comparable tiles now carry name, place and asset type only.
+and the five comparable tiles carry name, place and asset type only.
 
 ## 4 · Commercial terms (Ready to Proceed page)
 
 - Exact legal name and state of formation for Thomas Family Properties, LLC
 - Proposed commencement date (also used on the Contact page)
-- Termination notice: 30 or 60 days
 - Unbudgeted spending authority per item (`$X`)
 - Whether leasing and sales are carved out to Ownership's listing broker or coordinated with AGM
-- Records-return window on termination: 15 or 30 days
+
+AGM has taken a position on the rest rather than asking: 30 days' termination notice either way,
+30 days to return records, and five business days to turn the lease review. Change them if the firm
+wants different numbers.
 
 AGM's contracting entity is **AGM Real Estate Group, LLC**. No firm license number is published in
 the proposal.
@@ -102,13 +101,6 @@ Terms page is a summary and not the agreement itself. The page says so.
 - Proposed date and time for the site walk
 - Turnaround commitment for the lease review (`[X]` business days)
 - Proposed management start date
-
-## 7 · Reporting page
-
-Confirm whether Thomas Family Properties, LLC holds 838 Seneca in a structure that issues K-1s, and
-who at Ownership's accounting firm should get portal access.
-
----
 
 ## House style
 
