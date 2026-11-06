@@ -1,8 +1,8 @@
 # 838 Seneca management proposal: information needed
 
-20 marks left, of which 6 are documents to attach. The contact page is complete.
+11 marks left, of which 6 are documents to attach.
 
-Slides 03, 04, 05, 08 and 10 need nothing.
+Slides 01, 03, 04, 05, 06, 08 and 10 need nothing.
 
 ---
 
@@ -16,28 +16,6 @@ Her phone, mobile, email and title are in. What is left is the bio itself.
 - Headshot: attach photo file
 - Background, two or three sentences: where she has worked and the kind of portfolio she has
   run: ____________
-- Why she fits this building, her experience with single-tenant industrial, net lease
-  administration and properties carrying environmental or compliance obligations: ____________
-
----
-
-## Decisions
-
-- Unbudgeted spending authority per item, without prior approval: $____________
-- Exact legal entity name and state of formation for Thomas Family Properties, LLC: ____________
-- Proposed management commencement date: ____________
-- Date and time to propose for the building walk: ____________
-- Leasing and sales, carved out to Ownership's listing broker or coordinated with us: ____________
-
-AGM has already taken a position on the rest: 30 days' termination notice either way, 30 days to
-return records, and five business days to turn the lease review.
-
----
-
-## Slide 01. The Property
-
-- Purchase option, if one is on the table: exercise window, price or formula, notice
-  requirement: ____________
 
 ---
 
@@ -58,6 +36,21 @@ return records, and five business days to turn the lease review.
 - Exhibit E, approval thresholds and owner call tree
 - E-signature envelope URL: ____________
 - Direct link to the agreement PDF: ____________
+
+---
+
+## Settled on 2026-11-06
+
+Spending authority now reads as a per-item limit "to be set with Ownership" on both the Strategy and
+Ready to Proceed pages, rather than a blank.
+
+Removed from the proposal rather than answered: the purchase option row on the Property page, the
+owner entity confirmation, the commencement date row in the key terms, the leasing and sales row,
+the proposed building walk date and time, the proposed management start date, and the paragraph on
+why Cindy fits this building.
+
+Leasing and sales commissions are still covered. The fee footnote on slide 08 says they are not
+included and are carved out to Ownership's listing broker or agreed separately.
 
 ---
 

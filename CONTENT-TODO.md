@@ -3,7 +3,7 @@
 Everything below renders in the proposal today as an amber `[bracketed]` placeholder
 (`<span class="tbd">…</span>` in `index.html`). The structure, layout and surrounding copy are
 finished; only these values are missing. Search `index.html` for `class="tbd"` to find them all
-(20 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
+(11 at the time of writing, of which 6 are documents to attach). Delete the whole `<span>`, not just the brackets, when the real value
 goes in.
 
 Page-level "To complete" notes also appear in the proposal itself as dashed amber boxes
@@ -26,7 +26,8 @@ Two titles were corrected against the cards: Cindy is Senior Property Manager an
 Paralegal, not Administration. Makenzie was added to the contact page.
 
 Still needed for Cindy: headshot, years in commercial management, comparable properties, WA license
-number and expiry, and the two background paragraphs. Drop the headshot in `assets/` and replace the
+number and expiry, and the background paragraph. The "why she fits this building" paragraph was cut
+on 2026-11-06. Drop the headshot in `assets/` and replace the
 `.bio-photo` placeholder span with an `<img>` tag.
 
 The 24/7 emergency number is 206.622.8600, the main line with after-hours routing, and the office is
@@ -69,17 +70,16 @@ and the five comparable tiles carry name, place and asset type only.
 
 ## 4 · Commercial terms (Ready to Proceed page)
 
-- Exact legal name and state of formation for Thomas Family Properties, LLC
-- Proposed commencement date (also used on the Contact page)
-- Unbudgeted spending authority per item (`$X`)
-- Whether leasing and sales are carved out to Ownership's listing broker or coordinated with AGM
+Nothing outstanding. On 2026-11-06 the owner entity confirmation, the commencement date row and the
+leasing and sales row were removed from the key terms, and spending authority now reads as a
+per-item limit "to be set with Ownership" rather than a blank. Leasing and sales commissions are
+still covered by the fee footnote on slide 08.
 
-AGM has taken a position on the rest rather than asking: 30 days' termination notice either way,
-30 days to return records, and five business days to turn the lease review. Change them if the firm
-wants different numbers.
+AGM's contracting entity is **AGM Real Estate Group, LLC**. No firm license number is published.
 
-AGM's contracting entity is **AGM Real Estate Group, LLC**. No firm license number is published in
-the proposal.
+AGM has taken a position rather than asking: 30 days' termination notice either way, 30 days to
+return records, and five business days to turn the lease review. Change them if the firm wants
+different numbers.
 
 ## 5 · The agreement itself (Ready to Proceed page)
 
