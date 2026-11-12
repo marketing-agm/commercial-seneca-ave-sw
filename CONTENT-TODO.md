@@ -28,6 +28,9 @@ boxes. The CSS for both is left in `index.html` so a future placeholder can reus
 - Slide 09: Agreement and Contact are one page. Key Terms was removed. The page runs Next Steps,
   Contact, then the Ready to Proceed band last, which says the agreement is a copy to review and
   nothing needs to be signed. The closing call band was removed. `#contact` still resolves.
+- Marketing broker. Another broker is marketing the building and AGM supports that broker as
+  needed. This is stated in the tenancy row on slide 01, the vacancy scope on slide 04, the
+  leasing and sale brokerage answer on slide 06 and the fee footnote on slide 08.
 - Lease review removed. The building has no tenant and AGM is doing management operations, not
   leasing, so the "Review the lease before signature" step, the Lease Negotiation Support offer on
   Investment Strategy and every line assuming a lease in negotiation are gone. Next Steps is two
