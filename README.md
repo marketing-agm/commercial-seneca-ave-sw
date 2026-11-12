@@ -31,80 +31,35 @@ reveal-on-scroll, prev/next paging, a reading-progress bar, and a light/dark tog
 
 ## Local preview
 Open `index.html` in a browser. That's it. Deep-link a section with the URL hash, e.g.
-`index.html#investment`.
+`index.html#strategy`.
 
 ## Deploy to Cloudflare Pages (AGM standard pattern)
 1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → select this repo.
 2. Settings: Framework preset **None** · Build command **(empty)** · Build output directory **/**
 3. Every push to `main` auto-deploys production; every branch/PR gets its own preview URL.
 
-## Access gate: custom password screen (Pages Functions)
-The site is protected by a **custom-designed cover / login screen** (a minimal, institutional
-white split layout, explanatory copy on the left, password panel on the right, AGM logo top-right),
-served by a Cloudflare Pages Function (`functions/_middleware.js`). This runs **server-side**: until
-the correct password is submitted, the visitor only ever receives the cover page, the actual
-proposal (`index.html`) is never sent to the browser. The password lives only as an encrypted
-Cloudflare secret, never in the code or the client.
-
-This replaces the standard Zero Trust login screen with AGM's own branded page.
-
-### One-time setup (required before the site will unlock)
-Cloudflare dashboard → **Workers & Pages → this project → Settings → Variables and Secrets**. Add
-both of these for **Production _and_ Preview**, then redeploy:
-
-| Name | Value | Mark as |
-|------|-------|---------|
-| `SITE_PASSWORD` | the shared password you give recipients | **Secret** |
-| `GATE_SECRET` | any long random string (40+ chars), used to sign the session cookie | **Secret** |
-
-- Until `SITE_PASSWORD` is set, the site fails closed (shows a "not configured yet" notice).
-- **Change the password** anytime by editing `SITE_PASSWORD` (existing links keep working; open
-  sessions stay valid because `GATE_SECRET` is unchanged).
-- **Force everyone to re-enter** by rotating `GATE_SECRET` (or bumping `TOKEN_VERSION` in the
-  middleware).
-- Sessions last 7 days (`MAX_AGE`); `/__logout` clears the cookie.
-- The cover screen's copy (title, description, "Inside this proposal" list, contact line) lives in the
-  `coverHTML()` function at the bottom of `functions/_middleware.js`.
-
-### Local preview
-Copy `.dev.vars.example` → `.dev.vars` (git-ignored), fill in the two values, and run
-`npx wrangler pages dev .`.
-
-### Note on Zero Trust
-This shared-password gate is intentionally simple and needs no per-user setup. If you ever need
-**per-person access with an audit trail** (who opened it, when), use Cloudflare Zero Trust Access
-instead, but that uses Cloudflare's own login flow, not this custom screen. Don't enable both at once.
+## Access
+The proposal has no password screen. It is a static page, served as is, so anyone with the link can
+read it. `_headers` still sets `noindex` so search engines skip it. The gate was removed on
+2026-11-12 along with `functions/_middleware.js` and `.dev.vars.example`. The `SITE_PASSWORD` and
+`GATE_SECRET` variables in the Cloudflare Pages project are now unused and can be deleted.
 
 ## Analytics (PostHog)
-The site is fully instrumented for PostHog across **both** the login/cover page and the proposal.
-Turn it on by setting these as **environment variables** in the Cloudflare Pages project (Settings →
-Variables and Secrets), for **Production _and_ Preview**, then redeploy:
+Analytics is off. The gate function used to switch it on by writing the PostHog key from a
+Cloudflare variable into `index.html` as it was served, and with the gate gone nothing does that.
 
-| Name | Value |
-|------|-------|
-| `POSTHOG_KEY` | your **Project API Key** (PostHog → Settings → Project → *Project API Key*, starts with `phc_`) |
-| `POSTHOG_HOST` | *(optional)* `https://us.i.posthog.com` (US, default) or `https://eu.i.posthog.com` (EU) |
+To turn it on, paste the **Project API Key** (PostHog, Settings, Project, starts with `phc_`) into the
+marked block in the `<head>` of `index.html`, replacing `phc_REPLACE_WITH_YOUR_PROJECT_API_KEY`, and
+set the host to the US or EU address. The key is a public, client-side key, so it is safe to commit.
 
-Until `POSTHOG_KEY` is set, analytics stays off, no requests, no errors. The key lives only in
-Cloudflare (nothing committed to the repo): the gate function injects it into the cover page and fills
-in the proposal's inline placeholder as `index.html` is served. (You can still hard-code the key
-directly in `index.html`'s marked `<head>` block instead, but that only covers the proposal, not the
-gate page, and puts the key in the repo, the env var is preferred.)
+Once on, it tracks:
+- **Visits**, a virtual `$pageview` per section (the URL carries the `#section` hash).
+- **Tab navigation**, a `tab_click` event with `to`, `from` and `method` (`nav_tab`, `pager`,
+  `rail_ticker`, `keyboard`, `brand`).
+- **Time on each tab**, a `section_time` event with `section`, `section_label` and `seconds`.
+- **Everything**, `autocapture`, session replays and click and scroll heatmaps.
 
-What it tracks once the key is set:
-- **Cover / login page**, a `$pageview` on load and a `gate_viewed` event (tagged `surface: gate`),
-  plus autocapture of the Access click. Lets you see who reaches the gate and whether they bounce.
-  The password field is masked in session replays.
-- **Proposal, visits**, a virtual `$pageview` per section (URL carries the `#section` hash).
-- **Proposal, tab navigation**, a `tab_click` event with `to`, `from`, and `method` (`nav_tab`,
-  `pager`, `rail_ticker`, `keyboard`, `brand`).
-- **Proposal, time on each tab**, a `section_time` event with `section`, `section_label`, and
-  `seconds` when a section is left (open section flushed on tab-hide / exit via `capture_pageleave`).
-- **Everything, both pages**, `autocapture` (every click/interaction), **session replays**, and
-  click/scroll **heatmaps** are enabled.
-
-All events are tagged with `proposal: commercial-microsite` (and `surface: gate` on the cover
-page) so you can filter gate traffic from in-proposal activity.
+All events are tagged with `proposal: commercial-microsite`.
 
 ## Operational notes
 - `_headers` enforces `noindex` and security headers at the edge.

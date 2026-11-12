@@ -17,6 +17,15 @@ boxes. The CSS for both is left in `index.html` so a future placeholder can reus
 
 ## Changes of 2026-11-12
 
+- Password gate removed. `functions/_middleware.js` and `.dev.vars.example` are deleted, so the page
+  is served openly (`_headers` still sets noindex). PostHog analytics is now off until a key is
+  pasted into `index.html`; see the README.
+- Investment Strategy is an unnumbered grid under "Items that would be considered are the following."
+  The exit section is gone. "Packaged for Sale" is the first item and says the objective over the
+  first 90 days is a conversation about holding or selling.
+- Sale and exit language removed elsewhere: the Exit and Option Modeling feature and the buyer line
+  on Reporting, the buyer line on Property, and "sales" from the fee footnote. The Pacific Business
+  Park case study still says the firm handled the sale, as a record of a past transaction.
 - Slide 02: Cindy's photo removed and her full bio added, from her own account of her experience.
 - Slide 03: the stages are now Take Over the Building, Get Vendors Going, Get Reports In and
   Outcome. A "Once a Tenant Is Secured" block carries the second track, with a general-overview note.

@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
 
-# Cloudflare local dev secrets — never commit real passwords
+# Cloudflare local dev secrets: never commit real values
 .dev.vars
 .wrangler/
