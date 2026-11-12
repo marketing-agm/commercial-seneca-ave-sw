@@ -38,6 +38,9 @@ Open `index.html` in a browser. That's it. Deep-link a section with the URL hash
 site's design intact: the navy and blue rail repeats on every page and each slide flows onto as many
 pages as it needs. It has bookmarks, page numbers, clickable contents and working phone and email links.
 
+The cover has a Download PDF button that links to this file, so the file has to sit in the repo root
+under this name.
+
 The PDF is a snapshot, so rebuild it whenever the proposal changes:
 
 ```

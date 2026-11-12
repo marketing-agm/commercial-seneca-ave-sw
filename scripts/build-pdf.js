@@ -30,7 +30,7 @@ const PDF_CSS = `
 html,body{ background:var(--bg) !important; }
 html:has(body.on-cover),body.on-cover{ background:#fff !important; }
 body{ min-width:0 !important; }
-.topbar,.progress,.pager,.cover-pager,.skip,.theme-toggle,.hamburger{ display:none !important; }
+.topbar,.progress,.pager,.cover-pager,.skip,.theme-toggle,.hamburger,.cp-dl{ display:none !important; }
 .reveal,.cellgrid.reveal > .cell{ opacity:1 !important; transform:none !important; transition:none !important; }
 .page.active{ animation:none !important; }
 
@@ -50,7 +50,7 @@ body:not(.on-cover) .shell{ display:block !important; min-height:0 !important; }
 .cp-cover{ display:block !important; min-height:0 !important; }
 .cp-plate{ position:fixed !important; left:0; top:0; width:44%; height:${H}px; min-height:0 !important; z-index:10; }
 .cp-plate-stick{ position:static !important; top:auto !important; height:${H}px !important; }
-.cp-letter-body{ margin-left:44%; max-width:none !important; padding:64px 72px 68px 68px !important;
+.cp-letter-body{ margin:0 0 0 44% !important; width:auto !important; max-width:none !important; padding:64px 72px 68px 68px !important;
   -webkit-box-decoration-break:clone; box-decoration-break:clone; }
 
 /* keep small units whole; let the big ones break between their parts */
