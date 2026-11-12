@@ -745,7 +745,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 @media(max-width:720px){.contacts{grid-template-columns:1fr;} .contact:nth-child(odd){border-right:none;}}
 
 /* next steps, numbered actions */
-.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line-strong);}
+.steps{display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--line-strong);}
 .step{padding:30px 30px 34px; border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft); position:relative;}
 .step:last-child{border-right:none;}
 .step .st-n{font-family:var(--serif); font-weight:600; font-size:15px; color:var(--accent); opacity:.4; margin-bottom:16px; font-variant-numeric:tabular-nums;}
@@ -818,7 +818,6 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 /* long email addresses must wrap rather than widen the page */
 .contact .c-line .cl-v,.person .p-contact,.bio-fact .bf-v{overflow-wrap:anywhere;}
 @media(max-width:560px){.contact .c-line{grid-template-columns:62px 1fr; gap:10px;}}
-.sign-band + .block{margin-top:56px;}
 </style>
 
 <!-- ===================== PostHog product analytics =====================
@@ -927,10 +926,10 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
           <li><a href="#onboarding" data-route="onboarding"><span class="ix-t">The First 90 Days<span class="ix-d">From taking over the building to a steady reporting cadence</span></span></a></li>
           <li><a href="#operations" data-route="operations"><span class="ix-t">Day-to-Day Management<span class="ix-d">What transfers from Ownership on day one</span></span></a></li>
           <li><a href="#reporting" data-route="reporting"><span class="ix-t">Reporting<span class="ix-d">The monthly package and the Owner Portal</span></span></a></li>
-          <li><a href="#strategy" data-route="strategy"><span class="ix-t">Investment Strategy<span class="ix-d">The investment objective, the lease review and readiness for a sale</span></span></a></li>
+          <li><a href="#strategy" data-route="strategy"><span class="ix-t">Investment Strategy<span class="ix-d">The investment objective and readiness for a sale</span></span></a></li>
           <li><a href="#about" data-route="about"><span class="ix-t">Track Record<span class="ix-d">Buildings AGM took over, and what they produced</span></span></a></li>
           <li><a href="#fees" data-route="fees"><span class="ix-t">Fees<span class="ix-d">$750 while vacant, 3% of gross rents once leased</span></span></a></li>
-          <li><a href="#agreement" data-route="agreement"><span class="ix-t">Agreement and Contact<span class="ix-d">A copy of the management agreement, next steps and direct lines</span></span></a></li>
+          <li><a href="#agreement" data-route="agreement"><span class="ix-t">Agreement and Contact<span class="ix-d">Next steps, direct lines and a copy of the management agreement</span></span></a></li>
         </ol>
       </nav>
 
@@ -990,14 +989,14 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         <div class="block reveal">
           <div class="sec-head"><h3>Tenancy &amp; Lease Status</h3><span class="pipe">|</span><span class="kick">Single Tenant</span></div>
           <dl class="specs">
-            <div class="spec"><dt>Current status</dt><dd><strong>Vacant.</strong> Being marketed, with lease terms under negotiation</dd></div>
+            <div class="spec"><dt>Current status</dt><dd><strong>Vacant.</strong> No tenant is in place</dd></div>
             <div class="spec"><dt>At commencement</dt><dd>AGM abstracts the executed lease and diarizes every critical date: option notices, escalations, reconciliations and insurance certificate renewals. The abstract becomes the working record for billing and recoveries.</dd></div>
           </dl>
         </div>
 
         <div class="block reveal">
           <div class="sec-head"><h3>Responsibility Under the Lease</h3><span class="pipe">|</span><span class="kick">Landlord and Tenant</span></div>
-          <p class="lead">A single-tenant industrial lease places most of the building on the tenant, and AGM&rsquo;s scope follows that allocation. Below is the split AGM recommends for the lease now being negotiated.</p>
+          <p class="lead">A single-tenant industrial lease places most of the building on the tenant, and AGM&rsquo;s scope follows that allocation. Below is the split AGM recommends for a lease on this building.</p>
           <table class="scope">
             <thead>
               <tr><th>Obligation</th><th>Proposed</th><th>AGM&rsquo;s role</th></tr>
@@ -1360,7 +1359,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
       <!-- ============ SLIDE 6 · INVESTMENT STRATEGY ============ -->
       <div class="page" id="page-strategy">
 
-        <p class="lead reveal">AGM builds the operating plan from Ownership&rsquo;s investment objective and reads the monthly reporting against a working proforma for the building. The questions below set that objective. The lease review and the exit follow from it.</p>
+        <p class="lead reveal">AGM builds the operating plan from Ownership&rsquo;s investment objective and reads the monthly reporting against a working proforma for the building. The questions below set that objective, and the exit strategy follows from it.</p>
 
         <div class="block reveal">
           <div class="sec-head"><h3>Investment Objective</h3><span class="pipe">|</span><span class="kick">Questions for Ownership</span></div>
@@ -1369,7 +1368,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             <div class="q">
               <div class="q-n">01</div>
               <div>
-                <div class="q-t">Intended hold period, and any purchase option in the lease being negotiated</div>
+                <div class="q-t">Intended hold period, and any purchase option a future tenant may hold</div>
                 <div class="q-w">If a purchase option is granted and looks likely to be exercised, the operating plan prepares for a documented handover at the option price. If Ownership intends to hold through the option window, the plan works toward income durability and building condition. AGM needs Ownership&rsquo;s current view, because the two produce different decisions on most capital items.</div>
               </div>
             </div>
@@ -1419,17 +1418,8 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         </div>
 
         <div class="block reveal">
-          <div class="sec-head"><h3>Lease Negotiation Support</h3><span class="pipe">|</span><span class="kick">Available Now</span></div>
-          <div class="highlight">
-            <span class="h-label">Offer</span>
-            <span class="h-value">AGM understands lease negotiations are underway for this building. Before signature, AGM will review the draft from the operating side at no cost, covering maintenance and expense allocation, recovery and reconciliation mechanics, access and notice provisions for environmental work, insurance requirements and option notice mechanics. A lease that states clearly who does what costs less to administer for its full term.</span>
-          </div>
-        </div>
-
-
-        <div class="block reveal">
           <div class="sec-head"><h3>Exit Strategy</h3><span class="pipe">|</span><span class="kick">Sale or Purchase Option</span></div>
-          <p class="lead">If the tenant holds a purchase option, the tenant may control the timing of the exit. Ownership still controls the record that supports the price, and a complete record shortens diligence and reduces price adjustments and holdbacks.</p>
+          <p class="lead">If a future lease gives the tenant a purchase option, the tenant may control the timing of the exit. Ownership still controls the record that supports the price, and a complete record shortens diligence and reduces price adjustments and holdbacks.</p>
           <div class="cellgrid reveal no-num">
             <div class="cell">
               <div class="cell-title">Books a Buyer Can Rely On</div>
@@ -1609,18 +1599,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
       <!-- ============ SLIDE 9 · AGREEMENT & CONTACT ============ -->
       <div class="page" id="page-agreement">
 
-        <p class="lead reveal">AGM&rsquo;s standard management agreement is here to review, along with the proposed next steps and every direct line.</p>
-
-        <div class="sign-band reveal">
-          <div>
-            <div class="sb-k">Ready to Proceed</div>
-            <div class="sb-h">Review the management agreement.</div>
-            <p class="sb-p">This is a copy of AGM&rsquo;s standard management agreement for Ownership to review ahead of time. Nothing needs to be signed yet.</p>
-          </div>
-          <div class="sb-actions">
-            <a class="btn" href="#" data-download aria-disabled="true">Management Agreement</a>
-          </div>
-        </div>
+        <p class="lead reveal">The proposed next steps and every direct line come first, followed by AGM&rsquo;s standard management agreement to review.</p>
 
         <div class="block reveal">
           <div class="sec-head"><h3>Next Steps</h3><span class="pipe">|</span><span class="kick">Proposed</span></div>
@@ -1632,11 +1611,6 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             </div>
             <div class="step">
               <div class="st-n">02</div>
-              <div class="st-t">Review the lease before signature.</div>
-              <div class="st-d">Send the draft and AGM returns written comments within five business days, at no cost. The Investment Strategy page lists what the review covers.</div>
-            </div>
-            <div class="step">
-              <div class="st-n">03</div>
               <div class="st-t">Start management.</div>
               <div class="st-d">When Ownership is ready, AGM sends the agreement for signature and the ninety-day plan begins on the commencement date. AGM needs the environmental file and the expense history. AGM gathers the rest.</div>
             </div>
@@ -1708,12 +1682,12 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 
         <div class="sign-band reveal">
           <div>
-            <div class="sb-k">Next Step</div>
-            <div class="sb-h">A walk-through and the lease draft.</div>
-            <p class="sb-p">Give AGM an hour at the building and a copy of the lease being negotiated. Ownership receives comments on the lease and a plan for the property whether or not it engages AGM.</p>
+            <div class="sb-k">Ready to Proceed</div>
+            <div class="sb-h">Review the management agreement.</div>
+            <p class="sb-p">This is a copy of AGM&rsquo;s standard management agreement for Ownership to review ahead of time. Nothing needs to be signed yet.</p>
           </div>
           <div class="sb-actions">
-            <a class="btn" href="tel:+12066228600">Call 206.622.8600</a>
+            <a class="btn" href="#" data-download aria-disabled="true">Management Agreement</a>
           </div>
         </div>
       </div>
@@ -1745,13 +1719,13 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     {route:"reporting",  nav:"reporting",  eyebrow:"05 \u00b7 Reporting",  t1:"Reporting &",    t2:"The Owner Portal",      label:"Reporting & the Owner Portal",
       lead:"The same package in the Owner Portal by the 15th of every month, in a format Ownership\u2019s accountant can use without rework. Segregated bank accounts, separated duties and monthly reconciliation behind it."},
     {route:"strategy",   nav:"strategy",   eyebrow:"06 \u00b7 Strategy",   t1:"Investment",     t2:"Strategy",              label:"Investment Strategy",
-      lead:"The investment objective AGM needs from Ownership, the lease review offered before signature, and how the record is kept ready for a sale or an exercised purchase option."},
+      lead:"The investment objective AGM needs from Ownership, and how the record is kept ready for a sale."},
     {route:"about",      nav:"about",      eyebrow:"07 \u00b7 Record",     t1:"Track",          t2:"Record",                label:"Track Record",
       lead:"A building AGM took on, what the takeover found and what it produced for the owner. Then the comparable assets under management and where AGM already has vendors under contract."},
     {route:"fees",       nav:"fees",       eyebrow:"08 \u00b7 Fees",       t1:"Management",     t2:"Fees",                  label:"Management Fees",
       lead:"$750 per month while the building is vacant. On lease commencement, 3% of gross rents subject to a $1,500 monthly minimum, plus a one-time $1,500 onboarding fee."},
     {route:"agreement",  nav:"agreement",  eyebrow:"09 \u00b7 Agreement",  t1:"Agreement",      t2:"& Contact",             label:"Agreement & Contact",
-      lead:"A copy of AGM\u2019s standard management agreement to review, the proposed next steps and every direct line, including the 24/7 emergency number."}
+      lead:"The proposed next steps, every direct line including the 24/7 emergency number, and a copy of AGM\u2019s standard management agreement to review."}
   ];
   var IDX = {};
   PAGES.forEach(function(p,i){ IDX[p.route]=i; });
