@@ -10,11 +10,11 @@ counterpart to AGM's HOA proposal micro-site and shares its design system.
 ## What this is
 Twelve sections, rebuilt as an institutional, navigable micro-site:
 
-A single Cover page (letter, property plate and contents), then ten sections:
+A single Cover page (letter, property plate and contents), then nine sections:
 
 1. The Property · 2. Your Team · 3. The First 90 Days · 4. Day-to-Day Management · 5. Reporting &
-the Owner Portal · 6. Investment Strategy & Exit · 7. Track Record · 8. Management Fees ·
-9. Ready to Proceed · 10. Contact & Next Steps.
+the Owner Portal · 6. Investment Strategy · 7. Track Record · 8. Management Fees · 9. Agreement &
+Contact.
 
 **Restructured 2026-11-04** in response to the principal's review. The original eight sections were a
 capabilities brochure about AGM; the deck now opens on the building, names the people who would run
@@ -118,7 +118,7 @@ page) so you can filter gate traffic from in-proposal activity.
 - The final management agreement form is to be reviewed by counsel before it is sent for signature.
   The Key Terms page is a summary and says so.
 - **Old links keep working.** `#letter` and `#contents` resolve to the Cover, `#technology` to
-  Reporting and `#insurance` to Fees, via the `ALIAS` map in the routing script.
+  Reporting, `#insurance` to Fees and `#contact` to Agreement, via the `ALIAS` map in the routing script.
 - **Printing.** A print stylesheet renders every section in order with the nav, rail, pager and the
   amber placeholder highlights suppressed, so the owner can save or forward a clean PDF.
 - Fee figures are live: $750/month while vacant, 3% of gross rents with a $1,500 monthly minimum once

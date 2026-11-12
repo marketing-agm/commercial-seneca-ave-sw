@@ -281,11 +281,10 @@ ${ph}
             <li>The First 90 Days</li>
             <li>Day-to-Day Management and Capital Projects</li>
             <li>Reporting and the Owner Portal</li>
-            <li>Strategy, Exit and Questions for Ownership</li>
+            <li>Investment Strategy</li>
             <li>Track Record</li>
             <li>Fees</li>
-            <li>Ready to Proceed</li>
-            <li>Contact and Next Steps</li>
+            <li>Agreement and Contact</li>
           </ul>
         </div>
       </section>

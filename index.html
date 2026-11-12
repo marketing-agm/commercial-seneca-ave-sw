@@ -529,18 +529,18 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 /* ============================================================
    TEAM: named people, with a lead bio card
    ============================================================ */
-.bio{display:grid; grid-template-columns:200px 1fr; gap:38px; align-items:start; border:1px solid var(--line-strong); border-left:3px solid var(--accent); border-radius:var(--radius); background:var(--surface); padding:38px 42px; box-shadow:var(--card-shadow);}
-.bio-photo{aspect-ratio:1/1; border-radius:var(--radius); overflow:hidden; background:linear-gradient(135deg,var(--surface-3),var(--surface-2)); border:1px solid var(--line); display:grid; place-items:center; position:relative;}
-.bio-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
-.bio-photo .ph-k{font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-42); text-align:center; padding:0 16px; line-height:1.7;}
+.bio{display:block; border:1px solid var(--line-strong); border-left:3px solid var(--accent); border-radius:var(--radius); background:var(--surface); padding:38px 42px; box-shadow:var(--card-shadow);}
 .bio-name{font-family:var(--serif); font-weight:600; font-size:26px; letter-spacing:-.01em; color:var(--ink); margin:0 0 7px; line-height:1.15;}
 .bio-role{font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:20px;}
-.bio-body{font-size:13.5px; line-height:1.75; color:var(--ink-72); margin:0 0 20px;}
+.bio-body{font-size:13.5px; line-height:1.75; color:var(--ink-72); margin:0 0 16px; max-width:760px;}
+.bio-sub{font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:26px 0 12px;}
+.bio-facts{margin-top:28px;}
+.bio-fact.wide{grid-column:1 / -1;}
 .bio-facts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 32px; border-top:1px solid var(--line-soft); padding-top:18px;}
 .bio-fact{padding:9px 0; border-bottom:1px solid var(--line-soft);}
 .bio-fact .bf-k{font-size:10px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-42); margin-bottom:5px;}
 .bio-fact .bf-v{font-size:12.5px; line-height:1.55; color:var(--ink-80);}
-@media(max-width:760px){.bio{grid-template-columns:1fr; gap:26px; padding:30px 26px;} .bio-photo{max-width:200px;} .bio-facts{grid-template-columns:1fr;}}
+@media(max-width:760px){.bio{padding:30px 26px;} .bio-facts{grid-template-columns:1fr;}}
 
 .people{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; border-top:1px solid var(--line-strong);}
 .person{padding:26px 30px 28px; border-bottom:1px solid var(--line-soft); transition:background .16s var(--ease);}
@@ -818,6 +818,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
 /* long email addresses must wrap rather than widen the page */
 .contact .c-line .cl-v,.person .p-contact,.bio-fact .bf-v{overflow-wrap:anywhere;}
 @media(max-width:560px){.contact .c-line{grid-template-columns:62px 1fr; gap:10px;}}
+.sign-band + .block{margin-top:56px;}
 </style>
 
 <!-- ===================== PostHog product analytics =====================
@@ -872,7 +873,6 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         <button class="nav-link" data-route="about">Track Record</button>
         <button class="nav-link" data-route="fees">Fees</button>
         <button class="nav-link" data-route="agreement">Agreement</button>
-        <button class="nav-link" data-route="contact">Contact</button>
       </div>
       <div class="nav-right">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle light / dark">◐</button>
@@ -924,14 +924,13 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         <ol>
           <li><a href="#property" data-route="property"><span class="ix-t">The Property<span class="ix-d">The asset, the lease and who the lease makes responsible for what</span></span></a></li>
           <li><a href="#team" data-route="team"><span class="ix-t">Your Team<span class="ix-d">The four people who would run this building, with direct lines</span></span></a></li>
-          <li><a href="#onboarding" data-route="onboarding"><span class="ix-t">The First 90 Days<span class="ix-d">What AGM reviews, sets up and hands over</span></span></a></li>
+          <li><a href="#onboarding" data-route="onboarding"><span class="ix-t">The First 90 Days<span class="ix-d">From taking over the building to a steady reporting cadence</span></span></a></li>
           <li><a href="#operations" data-route="operations"><span class="ix-t">Day-to-Day Management<span class="ix-d">What transfers from Ownership on day one</span></span></a></li>
           <li><a href="#reporting" data-route="reporting"><span class="ix-t">Reporting<span class="ix-d">The monthly package and the Owner Portal</span></span></a></li>
-          <li><a href="#strategy" data-route="strategy"><span class="ix-t">Strategy and Exit<span class="ix-d">Protecting value at a sale, and questions for Ownership</span></span></a></li>
+          <li><a href="#strategy" data-route="strategy"><span class="ix-t">Investment Strategy<span class="ix-d">The investment objective, the lease review and readiness for a sale</span></span></a></li>
           <li><a href="#about" data-route="about"><span class="ix-t">Track Record<span class="ix-d">Buildings AGM took over, and what they produced</span></span></a></li>
           <li><a href="#fees" data-route="fees"><span class="ix-t">Fees<span class="ix-d">$750 while vacant, 3% of gross rents once leased</span></span></a></li>
-          <li><a href="#agreement" data-route="agreement"><span class="ix-t">Ready to Proceed<span class="ix-d">Key terms, the agreement and an electronic signature</span></span></a></li>
-          <li><a href="#contact" data-route="contact"><span class="ix-t">Contact<span class="ix-d">Direct lines, the 24/7 number and the next three steps</span></span></a></li>
+          <li><a href="#agreement" data-route="agreement"><span class="ix-t">Agreement and Contact<span class="ix-d">A copy of the management agreement, next steps and direct lines</span></span></a></li>
         </ol>
       </nav>
 
@@ -1016,7 +1015,6 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <tr><td>Environmental compliance</td><td class="who who-ll">Landlord</td><td>File custody and consultant coordination</td></tr>
             </tbody>
           </table>
-          <p class="tbd-note"><strong>Note:</strong> this is the allocation AGM recommends for a single-tenant industrial NNN lease. AGM will advise on each line during the lease review and confirm it against the executed lease. The finished table becomes Exhibit A to the management agreement.</p>
         </div>
 
         <div class="block reveal">
@@ -1048,7 +1046,6 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <div class="pills"><span class="pill">Annual Budget Line</span><span class="pill">Approval Threshold</span><span class="pill">Variance Reporting</span></div>
             </div>
           </div>
-          <p class="tbd-note"><strong>Open item for Ownership:</strong> AGM needs the current environmental file. That means the prior Phase I and Phase II reports, any consent or agreed order, the consultant of record, the sampling and reporting schedule, and last year&rsquo;s cost. If there is no continuing obligation, this section reduces to one line.</p>
         </div>
       </div>
 
@@ -1060,23 +1057,26 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         <div class="block reveal">
           <div class="sec-head"><h3>Your Property Manager</h3><span class="pipe">|</span><span class="kick">Day-to-Day Point of Contact</span></div>
           <div class="bio">
-            <div class="bio-photo">
-              <span class="ph-k">Photo<br />to be added</span>
-            </div>
-            <div>
-              <div class="bio-role">Senior Property Manager &middot; 838 Seneca Ave SW</div>
+            <div class="bio-main">
+              <div class="bio-role">Director of Real Estate / Senior Property Manager &middot; 838 Seneca Ave SW</div>
               <h4 class="bio-name">Cindy Miller</h4>
-              <p class="bio-body">Cindy is Ownership&rsquo;s point of contact. She runs daily operations, holds the vendor relationships, reviews every invoice before payment, prepares the monthly report and brings Ownership the decisions that require approval. <span class="tbd">[Two or three sentences on Cindy&rsquo;s background: where she has worked and the kind of portfolio she has run.]</span></p>
+              <p class="bio-body">Cindy is Ownership&rsquo;s point of contact. She runs daily operations, holds the vendor relationships, reviews every invoice before payment, prepares the monthly report and brings Ownership the decisions that require approval.</p>
+              <p class="bio-body">Her background is in asset management, contract management and consulting. Before AGM she managed more than 1.6 million square feet of medical, office, retail and industrial property.</p>
+              <div class="bio-sub">Fit for this building</div>
+              <p class="bio-body">Cindy has worked on industrial property throughout her career, including single-tenant buildings of 112,000, 197,910 and 10,830 square feet. She has researched and contracted vendors across the trades, including environmental work for fire, mold, asbestos and illegal grow operations.</p>
+              <p class="bio-body">She completed extensive OSHA inspections and training for a 94,000 square foot medical plaza and maintained compliance requirements under GSA leases in multiple locations.</p>
+              <p class="bio-body">Most of the leases she has managed are NNN or modified NNN. A net lease shifts many expenses to the tenant, but ownership keeps its own responsibilities. On this building Cindy would verify the lease obligations, track rent and escalations, answer tenant, owner and lender inquiries, process the payables that belong to ownership and prepare the financial reports, along with the rest of the day-to-day work.</p>
               <div class="bio-facts">
-                <div class="bio-fact"><div class="bf-k">Years in commercial management</div><div class="bf-v"><span class="tbd">[number]</span></div></div>
-                <div class="bio-fact"><div class="bf-k">Comparable properties managed</div><div class="bf-v"><span class="tbd">[two or three, by type and submarket]</span></div></div>
-                <div class="bio-fact"><div class="bf-k">Licenses</div><div class="bf-v"><span class="tbd">[WA broker or managing broker license number, expiry]</span></div></div>
+                <div class="bio-fact"><div class="bf-k">Years in commercial property management</div><div class="bf-v">Over 30 years</div></div>
+                <div class="bio-fact"><div class="bf-k">Years with AGM</div><div class="bf-v">Less than one year. Before AGM, VP and Senior Property Manager at a prior company for over 20 years.</div></div>
+                <div class="bio-fact wide"><div class="bf-k">Industrial space managed before AGM</div><div class="bf-v">3 buildings, 800,000 SF in SC<br />11 buildings, 289,360 SF in Fife<br />6 buildings, 67,205 SF in Auburn</div></div>
+                <div class="bio-fact"><div class="bf-k">Comparable properties managed</div><div class="bf-v">Northlake Plaza, office, Seattle<br />Burien Town Square, retail, Burien<br />Center Building, flex, Bellevue</div></div>
+                <div class="bio-fact"><div class="bf-k">License</div><div class="bf-v">WA license 129095, expires 4/2027. Studying for the Managing Broker license.</div></div>
                 <div class="bio-fact"><div class="bf-k">Direct line</div><div class="bf-v">206.694.1726</div></div>
                 <div class="bio-fact"><div class="bf-k">Email</div><div class="bf-v">cmiller@agmrealestategroup.com</div></div>
               </div>
             </div>
           </div>
-          <p class="tbd-note"><strong>To complete:</strong> Cindy&rsquo;s headshot, license number and the background paragraph.</p>
         </div>
 
         <div class="block reveal">
@@ -1103,7 +1103,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
           </div>
           <div class="highlight reveal">
             <span class="h-label">Accountability</span>
-            <span class="h-value">One accountable manager and three named colleagues. Full contact details, including the 24/7 emergency line, are on the Contact page.</span>
+            <span class="h-value">One accountable manager and three named colleagues. Full contact details, including the 24/7 emergency line, are on the last page.</span>
           </div>
         </div>
       </div>
@@ -1117,7 +1117,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
           <div class="sec-head"><h3>Transition Plan</h3><span class="pipe">|</span><span class="kick">Day One to Day Ninety</span></div>
           <div class="phases">
             <div class="phase">
-              <div class="phase-when"><div class="pw-k">Day 1&ndash;7</div><div class="pw-s">Take Custody</div></div>
+              <div class="phase-when"><div class="pw-k">Day 1&ndash;7</div><div class="pw-s">Take Over the Building</div></div>
               <div class="phase-title">AGM takes custody of the records, the funds and the keys.</div>
               <ul class="checklist">
                 <li>Two accounts opened in Ownership&rsquo;s name: operating, and a separate trust account for deposits</li>
@@ -1127,42 +1127,45 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               </ul>
             </div>
             <div class="phase">
-              <div class="phase-when"><div class="pw-k">Day 8&ndash;30</div><div class="pw-s">Secure and Inspect</div></div>
-              <div class="phase-title">The building is secured, inspected and live on the platform.</div>
+              <div class="phase-when"><div class="pw-k">Day 8&ndash;30</div><div class="pw-s">Get Vendors Going</div></div>
+              <div class="phase-title">Vendors are onboarded and the building is inspected.</div>
               <ul class="checklist">
+                <li>Utility and vendor accounts transferred. Vendor W-9s and insurance certificates collected</li>
                 <li>Full site inspection with a dated photographic condition record, roof to paving</li>
                 <li>Fire sprinkler certification, alarm monitoring and backflow test confirmed current</li>
                 <li>Property and budget loaded. Owner Portal access issued to Ownership and its accountant</li>
-                <li>Utility and vendor accounts transferred. Vendor W-9s and insurance certificates collected</li>
               </ul>
             </div>
             <div class="phase">
-              <div class="phase-when"><div class="pw-k">Day 31&ndash;60</div><div class="pw-s">Report Findings</div></div>
-              <div class="phase-title">AGM reports what the review found.</div>
+              <div class="phase-when"><div class="pw-k">Day 31&ndash;60</div><div class="pw-s">Get Reports In</div></div>
+              <div class="phase-title">AGM delivers the first reports and the review findings.</div>
               <ul class="checklist">
+                <li>First full monthly financial package delivered</li>
                 <li>Deferred maintenance list with estimated cost and urgency</li>
                 <li>Vendor contracts rebid where pricing is off market</li>
                 <li>Assessed value reviewed against the King County appeal deadline, with a recommendation</li>
-                <li>First full monthly financial package delivered</li>
               </ul>
             </div>
             <div class="phase">
-              <div class="phase-when"><div class="pw-k">Day 61&ndash;90</div><div class="pw-s">Deliver the Plan</div></div>
-              <div class="phase-title">Ownership receives the operating, capital and lease-up plans.</div>
+              <div class="phase-when"><div class="pw-k">Day 61&ndash;90</div><div class="pw-s">Outcome</div></div>
+              <div class="phase-title">Operations run smoothly and the reporting cadence is set.</div>
               <ul class="checklist">
-                <li>Twelve-month operating budget presented for approval</li>
-                <li>Five-year capital plan for roof, HVAC, paving and electrical service</li>
+                <li>Vendors under contract and onboarded</li>
+                <li>Monthly reports in the Owner Portal by the 15th, every month</li>
+                <li>Twelve-month operating budget and five-year capital plan presented for approval</li>
                 <li>Reserve level and spending approval thresholds agreed</li>
-                <li>Lease-up readiness: condition, signage and the commencement checklist</li>
               </ul>
             </div>
           </div>
-          <p class="source-note">At lease commencement the plan picks up a second track. AGM abstracts the executed lease, diarizes every critical date, issues payment instructions to the tenant, sets up recovery billing and confirms the landlord and tenant allocation at Exhibit A.</p>
         </div>
 
-        <div class="highlight reveal">
-          <span class="h-label">At Day 90</span>
-          <span class="h-value">Ownership holds a dated condition record, reconciled books in segregated accounts, a twelve-month budget, a five-year capital plan, an ordered environmental file, a current compliance calendar and one named manager.</span>
+        <div class="block reveal">
+          <div class="sec-head"><h3>Once a Tenant Is Secured</h3><span class="pipe">|</span><span class="kick">Second Track</span></div>
+          <div class="highlight">
+            <span class="h-label">Tenant Onboarding</span>
+            <span class="h-value">When a new tenant is secured, the second track starts with tenant onboarding. AGM abstracts the executed lease and diarizes every critical date, gives the tenant payment instructions, Cindy&rsquo;s direct line and the 24/7 number, sets up rent and recovery billing, collects the tenant&rsquo;s insurance certificate and confirms who is responsible for what under the lease. The building then runs as a leased, operating asset.</span>
+          </div>
+          <p class="source-note">This is a general overview only. Timing and scope are confirmed with Ownership and adjust to the building.</p>
         </div>
       </div>
 
@@ -1354,45 +1357,14 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         </div>
       </div>
 
-      <!-- ============ SLIDE 8 · STRATEGY & EXIT ============ -->
+      <!-- ============ SLIDE 6 · INVESTMENT STRATEGY ============ -->
       <div class="page" id="page-strategy">
 
-        <p class="lead reveal">AGM sets operating strategy from Ownership&rsquo;s stated objective, and builds a working proforma for the building that the monthly reporting is read against. This section covers how management protects value at exit, and the questions AGM needs answered.</p>
+        <p class="lead reveal">AGM builds the operating plan from Ownership&rsquo;s investment objective and reads the monthly reporting against a working proforma for the building. The questions below set that objective. The lease review and the exit follow from it.</p>
 
         <div class="block reveal">
-          <div class="sec-head"><h3>Protecting the Exit</h3><span class="pipe">|</span><span class="kick">Sale or Purchase Option</span></div>
-          <p class="lead">If the tenant holds a purchase option, the tenant may control the timing of the exit. Ownership still controls the record that supports the price, and a complete record shortens diligence and reduces price adjustments and holdbacks.</p>
-          <div class="cellgrid reveal no-num">
-            <div class="cell">
-              <div class="cell-title">Books a Buyer Can Rely On</div>
-              <div class="cell-desc">Three years of reconciled financials with invoice-level support behind every line, presented the same way each month so a buyer can read them without rebuilding the set.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">A Documented Capital History</div>
-              <div class="cell-desc">Scope, contractor, cost, warranty and in-service date, held for every capital item. Without that file a buyer treats the work as unverified and prices it accordingly.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">An Ordered Compliance File</div>
-              <div class="cell-desc">Assembled as it happens. Rebuilding an environmental and compliance record under a thirty-day diligence clock is a common cause of a delayed closing on an industrial site.</div>
-            </div>
-            <div class="cell">
-              <div class="cell-title">A Defensible Lease File</div>
-              <div class="cell-desc">The buyer is purchasing an income stream, and the executed lease, amendments, estoppel-ready abstract, reconciliation history and payment record are the evidence of it.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="block reveal">
-          <div class="sec-head"><h3>Lease Negotiation Support</h3><span class="pipe">|</span><span class="kick">Available Now</span></div>
-          <div class="highlight">
-            <span class="h-label">Offer</span>
-            <span class="h-value">AGM understands lease negotiations are underway for this building. Before signature, AGM will review the draft from the operating side at no cost, covering maintenance and expense allocation, recovery and reconciliation mechanics, access and notice provisions for environmental work, insurance requirements and option notice mechanics. A lease that states clearly who does what costs less to administer for its full term.</span>
-          </div>
-        </div>
-
-        <div class="block reveal">
-          <div class="sec-head"><h3>Questions for Ownership</h3><span class="pipe">|</span><span class="kick">Open Items</span></div>
-          <p class="lead">The operating plan cannot be set until Ownership answers these. They form the agenda for the walk-through proposed under Contact.</p>
+          <div class="sec-head"><h3>Investment Objective</h3><span class="pipe">|</span><span class="kick">Questions for Ownership</span></div>
+          <p class="lead">The operating plan cannot be set until Ownership answers these. They form the agenda for the walk-through proposed under Next Steps.</p>
           <div class="qa">
             <div class="q">
               <div class="q-n">01</div>
@@ -1440,11 +1412,44 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <div class="q-n">07</div>
               <div>
                 <div class="q-t">Leasing and sale brokerage</div>
-                <div class="q-w">If a listing broker is already engaged, the management agreement carves out leasing and sales and defines how AGM supports that broker. AGM does not require the brokerage to take the management.</div>
+                <div class="q-w">AGM will support the broker.</div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Lease Negotiation Support</h3><span class="pipe">|</span><span class="kick">Available Now</span></div>
+          <div class="highlight">
+            <span class="h-label">Offer</span>
+            <span class="h-value">AGM understands lease negotiations are underway for this building. Before signature, AGM will review the draft from the operating side at no cost, covering maintenance and expense allocation, recovery and reconciliation mechanics, access and notice provisions for environmental work, insurance requirements and option notice mechanics. A lease that states clearly who does what costs less to administer for its full term.</span>
+          </div>
+        </div>
+
+
+        <div class="block reveal">
+          <div class="sec-head"><h3>Exit Strategy</h3><span class="pipe">|</span><span class="kick">Sale or Purchase Option</span></div>
+          <p class="lead">If the tenant holds a purchase option, the tenant may control the timing of the exit. Ownership still controls the record that supports the price, and a complete record shortens diligence and reduces price adjustments and holdbacks.</p>
+          <div class="cellgrid reveal no-num">
+            <div class="cell">
+              <div class="cell-title">Books a Buyer Can Rely On</div>
+              <div class="cell-desc">Three years of reconciled financials with invoice-level support behind every line, presented the same way each month so a buyer can read them without rebuilding the set.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">A Documented Capital History</div>
+              <div class="cell-desc">Scope, contractor, cost, warranty and in-service date, held for every capital item. Without that file a buyer treats the work as unverified and prices it accordingly.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">An Ordered Compliance File</div>
+              <div class="cell-desc">Assembled as it happens. Rebuilding an environmental and compliance record under a thirty-day diligence clock is a common cause of a delayed closing on an industrial site.</div>
+            </div>
+            <div class="cell">
+              <div class="cell-title">A Defensible Lease File</div>
+              <div class="cell-desc">The buyer is purchasing an income stream, and the executed lease, amendments, estoppel-ready abstract, reconciliation history and payment record are the evidence of it.</div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- ============ SLIDE 9 · TRACK RECORD & ABOUT AGM ============ -->
@@ -1493,24 +1498,14 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
               <div class="asset-facts"><span>Industrial</span></div>
             </div>
             <div class="asset">
-              <div class="asset-tile"><img src="/assets/marysville.png" alt="Quill Crossing Apartments, Marysville, WA" loading="lazy" /></div>
-              <div class="asset-loc">Quill Crossing Apartments &middot; Marysville, WA</div>
-              <div class="asset-facts"><span>Multifamily</span></div>
-            </div>
-            <div class="asset">
-              <div class="asset-tile"><img src="/assets/mt-si.jpg" alt="Mount Si Building, Bellevue, WA" loading="lazy" /></div>
-              <div class="asset-loc">Mount Si Building &middot; Bellevue, WA</div>
+              <div class="asset-tile"><img src="/assets/mt-si.jpg" alt="Mount Si Building, North Bend, WA" loading="lazy" /></div>
+              <div class="asset-loc">Mount Si Building &middot; North Bend, WA</div>
               <div class="asset-facts"><span>Commercial</span></div>
             </div>
             <div class="asset">
               <div class="asset-tile"><img src="/assets/bellevue.png" alt="Clover Building, Bellevue, WA" loading="lazy" /></div>
               <div class="asset-loc">Clover Building &middot; Bellevue, WA</div>
               <div class="asset-facts"><span>Commercial</span></div>
-            </div>
-            <div class="asset">
-              <div class="asset-tile"><img src="/assets/queen anne.png" alt="Niwa Apartments, Queen Anne, Seattle, WA" loading="lazy" /></div>
-              <div class="asset-loc">Niwa Apartments &middot; Queen Anne, Seattle, WA</div>
-              <div class="asset-facts"><span>Multifamily</span></div>
             </div>
           </div>
         </div>
@@ -1611,49 +1606,21 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
         </div>
       </div>
 
-      <!-- ============ SLIDE 11 · READY TO PROCEED ============ -->
+      <!-- ============ SLIDE 9 · AGREEMENT & CONTACT ============ -->
       <div class="page" id="page-agreement">
 
-        <p class="lead reveal">These are the terms AGM proposes for 838 Seneca Ave SW. Where a figure or a date is still open, it is marked, and AGM will settle it with Ownership before the agreement is sent for signature.</p>
-
-        <div class="block reveal">
-          <div class="sec-head"><h3>Key Terms</h3><span class="pipe">|</span><span class="kick">Summary</span></div>
-          <dl class="terms">
-            <div class="term"><dt>Owner entity</dt><dd>Thomas Family Properties, LLC</dd></div>
-            <div class="term"><dt>Property</dt><dd>838 Seneca Ave SW, Renton, WA 98057. King County parcel 214600-0040, Lot 2 of City of Renton Short Plat LUA 98-017.</dd></div>
-            <div class="term"><dt>Manager</dt><dd>AGM Real Estate Group, LLC</dd></div>
-            <div class="term"><dt>Term and termination</dt><dd>One year, continuing month to month. Either party may terminate for convenience on 30 days&rsquo; written notice, without cause or penalty</dd></div>
-            <div class="term"><dt>Management fee</dt><dd>$750 per month while vacant. On lease commencement, 3% of gross rents subject to a $1,500 monthly minimum. One-time onboarding fee of $1,500. Full schedule at Exhibit B.</dd></div>
-            <div class="term"><dt>Scope of services</dt><dd>As set out at Exhibit A, matched line by line to the executed lease&rsquo;s allocation between landlord and tenant</dd></div>
-            <div class="term"><dt>Spending authority</dt><dd>AGM may incur unbudgeted expense up to a per-item limit, to be set with Ownership, without prior approval. Emergency authority is limited to preventing injury or further property damage, with notice to Ownership the same day.</dd></div>
-            <div class="term"><dt>Bank accounts</dt><dd>Funds held in accounts in Ownership&rsquo;s name, with tenant deposits in a separate trust account, segregated from AGM&rsquo;s funds and from other properties. AGM is a signatory for operating disbursements only.</dd></div>
-            <div class="term"><dt>Reporting deadline</dt><dd>Monthly financial package delivered to the Owner Portal by the 15th of the following month</dd></div>
-            <div class="term"><dt>Insurance</dt><dd>AGM carries general liability, errors and omissions, fidelity bond and workers&rsquo; compensation at the limits shown at Exhibit C. Ownership names AGM as additional insured on the property policy.</dd></div>
-            <div class="term"><dt>Indemnity</dt><dd>Mutual, each party for its own negligent acts and omissions</dd></div>
-            <div class="term"><dt>Environmental</dt><dd>AGM coordinates consultants, maintains the file, administers the compliance calendar and arranges site access. AGM does not assume liability as an owner or operator, does not direct remediation and does not act as the environmental professional of record.</dd></div>
-            <div class="term"><dt>Transition on termination</dt><dd>Within 30 days of termination, AGM returns all records, funds, keys, tenant files, vendor contracts and the complete property file, in the formats in which they are held</dd></div>
-          </dl>
-          <p class="tbd-note"><strong>Before circulation:</strong> the final agreement form is to be reviewed by counsel before it is sent for signature. This summary is not the agreement, and the agreement carries its own exhibits.</p>
-        </div>
+        <p class="lead reveal">AGM&rsquo;s standard management agreement is here to review, along with the proposed next steps and every direct line.</p>
 
         <div class="sign-band reveal">
           <div>
             <div class="sb-k">Ready to Proceed</div>
-            <div class="sb-h">Execute the agreement from here.</div>
-            <p class="sb-p">The signature link opens the agreement with the terms above filled in. Ownership signs electronically and AGM countersigns the same day. Nothing is binding until both parties sign.</p>
+            <div class="sb-h">Review the management agreement.</div>
+            <p class="sb-p">This is a copy of AGM&rsquo;s standard management agreement for Ownership to review ahead of time. Nothing needs to be signed yet.</p>
           </div>
           <div class="sb-actions">
-            <a class="btn" href="#" data-esign aria-disabled="true">Review &amp; Sign</a>
-            <a class="btn ghost" href="#" data-download aria-disabled="true">Read the Agreement (PDF)</a>
+            <a class="btn" href="#" data-download aria-disabled="true">Management Agreement</a>
           </div>
         </div>
-        <p class="tbd-note"><strong>To activate:</strong> replace the two links above with the e-signature envelope URL prepared for Thomas Family Properties, LLC and a direct link to the agreement PDF. Both links are inert until then.</p>
-      </div>
-
-      <!-- ============ SLIDE 12 · CONTACT & NEXT STEPS ============ -->
-      <div class="page" id="page-contact">
-
-        <p class="lead reveal">AGM is asking for an hour at the building, a copy of the lease draft, and a start date. Direct lines for the people who would run it are below.</p>
 
         <div class="block reveal">
           <div class="sec-head"><h3>Next Steps</h3><span class="pipe">|</span><span class="kick">Proposed</span></div>
@@ -1666,12 +1633,12 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             <div class="step">
               <div class="st-n">02</div>
               <div class="st-t">Review the lease before signature.</div>
-              <div class="st-d">Send the draft and AGM returns written comments within five business days, at no cost. The Strategy page lists what the review covers.</div>
+              <div class="st-d">Send the draft and AGM returns written comments within five business days, at no cost. The Investment Strategy page lists what the review covers.</div>
             </div>
             <div class="step">
               <div class="st-n">03</div>
               <div class="st-t">Start management.</div>
-              <div class="st-d">Sign from the Ready to Proceed section and the ninety-day plan begins on the commencement date. AGM needs the lease, the environmental file and the expense history. AGM gathers the rest.</div>
+              <div class="st-d">When Ownership is ready, AGM sends the agreement for signature and the ninety-day plan begins on the commencement date. AGM needs the environmental file and the expense history. AGM gathers the rest.</div>
             </div>
           </div>
         </div>
@@ -1682,7 +1649,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             <div class="contact">
               <div class="c-k">Day-to-Day Property Manager</div>
               <div class="c-name">Cindy Miller</div>
-              <div class="c-role">Senior Property Manager &middot; 838 Seneca Ave SW</div>
+              <div class="c-role">Director of Real Estate / Senior Property Manager</div>
               <div class="c-lines">
                 <div class="c-line"><span class="cl-k">Direct</span><span class="cl-v"><a href="tel:+12066941726">206.694.1726</a></span></div>
                 <div class="c-line"><span class="cl-k">Mobile</span><span class="cl-v"><a href="tel:+12068435290">206.843.5290</a></span></div>
@@ -1743,11 +1710,10 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
           <div>
             <div class="sb-k">Next Step</div>
             <div class="sb-h">A walk-through and the lease draft.</div>
-            <p class="sb-p">Give AGM an hour at the building and a copy of the lease being negotiated. Ownership receives comments on the lease and a plan for the property whether or not it engages AGM. To move straight to an agreement, the executable version is in the Ready to Proceed section.</p>
+            <p class="sb-p">Give AGM an hour at the building and a copy of the lease being negotiated. Ownership receives comments on the lease and a plan for the property whether or not it engages AGM.</p>
           </div>
           <div class="sb-actions">
             <a class="btn" href="tel:+12066228600">Call 206.622.8600</a>
-            <a class="btn ghost" href="#agreement" data-route="agreement">Ready to Proceed</a>
           </div>
         </div>
       </div>
@@ -1771,23 +1737,21 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     {route:"property",   nav:"property",   eyebrow:"01 \u00b7 Property",   t1:"The",            t2:"Property",              label:"838 Seneca Ave SW",
       lead:"A 24,592 SF single-tenant industrial building on 1.41 acres in Renton. The asset, the lease status, the responsibility split under the lease and the compliance obligations that come with an industrial site."},
     {route:"team",       nav:"team",       eyebrow:"02 \u00b7 Team",       t1:"Your",           t2:"Team",                  label:"Your AGM Team",
-      lead:"One property manager is accountable for this building, supported by accounting, management support and administration. Each person is named, with a direct line."},
+      lead:"One property manager is accountable for this building, supported by accounting, management support and a paralegal. Each person is named, with a direct line."},
     {route:"onboarding", nav:"onboarding", eyebrow:"03 \u00b7 Onboarding", t1:"The First",      t2:"90 Days",               label:"The First 90 Days",
-      lead:"Transition requires one meeting and a signature from Ownership. What AGM reviews on day one, what is set up, and what Ownership holds at the end of ninety days."},
+      lead:"Transition requires one meeting and a signature from Ownership. What AGM takes over in the first week, how vendors and reporting get started, and the outcome at ninety days."},
     {route:"operations", nav:"operations", eyebrow:"04 \u00b7 Operations", t1:"Day-to-Day",     t2:"Management",            label:"Day-to-Day Management",
       lead:"The work that transfers from Ownership on the commencement date: tenant calls, vendor coordination, reimbursements and year-end numbers. Scope and inspection frequency are sized to a single-tenant industrial building."},
     {route:"reporting",  nav:"reporting",  eyebrow:"05 \u00b7 Reporting",  t1:"Reporting &",    t2:"The Owner Portal",      label:"Reporting & the Owner Portal",
       lead:"The same package in the Owner Portal by the 15th of every month, in a format Ownership\u2019s accountant can use without rework. Segregated bank accounts, separated duties and monthly reconciliation behind it."},
-    {route:"strategy",   nav:"strategy",   eyebrow:"06 \u00b7 Strategy",   t1:"Strategy",       t2:"& Exit",                label:"Investment Strategy & Exit",
-      lead:"How management protects value at a sale or an exercised purchase option, AGM\u2019s offer to review the lease now in negotiation, and the questions AGM needs Ownership to answer."},
+    {route:"strategy",   nav:"strategy",   eyebrow:"06 \u00b7 Strategy",   t1:"Investment",     t2:"Strategy",              label:"Investment Strategy",
+      lead:"The investment objective AGM needs from Ownership, the lease review offered before signature, and how the record is kept ready for a sale or an exercised purchase option."},
     {route:"about",      nav:"about",      eyebrow:"07 \u00b7 Record",     t1:"Track",          t2:"Record",                label:"Track Record",
       lead:"A building AGM took on, what the takeover found and what it produced for the owner. Then the comparable assets under management and where AGM already has vendors under contract."},
     {route:"fees",       nav:"fees",       eyebrow:"08 \u00b7 Fees",       t1:"Management",     t2:"Fees",                  label:"Management Fees",
       lead:"$750 per month while the building is vacant. On lease commencement, 3% of gross rents subject to a $1,500 monthly minimum, plus a one-time $1,500 onboarding fee."},
-    {route:"agreement",  nav:"agreement",  eyebrow:"09 \u00b7 Agreement",  t1:"Ready to",       t2:"Proceed",               label:"Ready to Proceed",
-      lead:"The terms AGM proposes for this building, the agreement itself, and an electronic signature link so Ownership can execute without a separate round of paperwork."},
-    {route:"contact",    nav:"contact",    eyebrow:"10 \u00b7 Contact",    t1:"Contact &",      t2:"Next Steps",            label:"Contact & Next Steps",
-      lead:"An hour at the building, the lease draft to review before signature, and a start date. Every direct line, including the 24/7 emergency number."}
+    {route:"agreement",  nav:"agreement",  eyebrow:"09 \u00b7 Agreement",  t1:"Agreement",      t2:"& Contact",             label:"Agreement & Contact",
+      lead:"A copy of AGM\u2019s standard management agreement to review, the proposed next steps and every direct line, including the 24/7 emergency number."}
   ];
   var IDX = {};
   PAGES.forEach(function(p,i){ IDX[p.route]=i; });
@@ -1797,7 +1761,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     {route:"cover", t1:"Cover", t2:"Letter", label:"Cover Letter"}
   ];
   // the letter and the contents page were merged on 2026-11-04; keep old links working
-  var ALIAS = { letter:"cover", contents:"cover", technology:"reporting", insurance:"fees", explore:"property" };
+  var ALIAS = { letter:"cover", contents:"cover", technology:"reporting", insurance:"fees", explore:"property", contact:"agreement" };
   var ORDER = COVERS.concat(PAGES);
   var ORD = {};
   ORDER.forEach(function(p,i){ ORD[p.route]=i; });
@@ -1823,8 +1787,8 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
     strategy:'<path d="M4 19.5h16"/><path d="M5.5 15l4-4.5 3.5 3 5.5-6.5"/><path d="M15.5 4.5h3v3"/>',
     about:'<path d="M12 3.8l2.5 5.1 5.6.8-4 3.9 1 5.6-5.1-2.7-5.1 2.7 1-5.6-4-3.9 5.6-.8z"/>',
     fees:'<path d="M6.5 3.5h11v17l-2.2-1.4-2.3 1.4-2.3-1.4-2.2 1.4z"/><path d="M9.5 8h5M9.5 11.5h5"/>',
-    agreement:'<path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4"/><path d="M9 16.5c1.6-3.4 2.6-5 3.2-4.8.7.2-.4 3 .3 3.4.5.3 1.1-.6 2.5-1.3"/>',
-    contact:'<path d="M7.6 4.5l2 3.3-1.7 1.9c.9 2.1 2.3 3.5 4.4 4.4l1.9-1.7 3.3 2v2.8c0 .9-.8 1.6-1.7 1.5C9.4 18 6 14.6 5.3 7.7c-.1-.9.6-1.7 1.5-1.7z"/>'
+    agreement:'<path d="M6 3.5h8l4 4v13H6z"/><path d="M14 3.5v4h4"/><path d="M9 16.5c1.6-3.4 2.6-5 3.2-4.8.7.2-.4 3 .3 3.4.5.3 1.1-.6 2.5-1.3"/>'
+    
   };
   function iconSVG(nav){
     var paths = ICONS[nav] || ICONS.about;
