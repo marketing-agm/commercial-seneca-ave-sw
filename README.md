@@ -33,6 +33,22 @@ reveal-on-scroll, prev/next paging, a reading-progress bar, and a light/dark tog
 Open `index.html` in a browser. That's it. Deep-link a section with the URL hash, e.g.
 `index.html#strategy`.
 
+## PDF version
+`AGM-838-Seneca-Management-Proposal.pdf` is a landscape PDF of the whole proposal, 22 pages, with the
+site's design intact: the navy and blue rail repeats on every page and each slide flows onto as many
+pages as it needs. It has bookmarks, page numbers, clickable contents and working phone and email links.
+
+The PDF is a snapshot, so rebuild it whenever the proposal changes:
+
+```
+node scripts/build-pdf.js
+```
+
+It needs node, `playwright` with its Chromium, and python3 with `pypdf` and `reportlab`. The script
+serves the repo on a private local port, prints each slide on its own at 1440 x 1113 px (the 11 : 8.5
+ratio of a landscape Letter page), then `scripts/merge-pdf.py` joins them. The "Management Agreement"
+button is not clickable in the PDF until the agreement has a link.
+
 ## Deploy to Cloudflare Pages (AGM standard pattern)
 1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → select this repo.
 2. Settings: Framework preset **None** · Build command **(empty)** · Build output directory **/**

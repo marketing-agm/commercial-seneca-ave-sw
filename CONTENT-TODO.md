@@ -9,8 +9,14 @@
 Nothing else is outstanding. The proposal carries no `class="tbd"` placeholders and no `.tbd-note`
 boxes. The CSS for both is left in `index.html` so a future placeholder can reuse it.
 
+## PDF
+
+`AGM-838-Seneca-Management-Proposal.pdf` is built by `node scripts/build-pdf.js` and has to be rebuilt
+after any change to the proposal. The deck and the PDF are separate files and will drift otherwise.
+
 ## Release check
 
+- Rebuild the PDF
 - `grep -c 'class="tbd"' index.html` returns 0
 - `grep -c 'class="tbd-note"' index.html` returns 0
 - No em dashes in any file. Use `python3 -c "print(open('index.html',encoding='utf-8').read().count(chr(0x2014)))"`
