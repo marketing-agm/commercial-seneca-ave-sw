@@ -50,7 +50,8 @@ node scripts/build-pdf.js
 It needs node, `playwright` with its Chromium, and python3 with `pypdf` and `reportlab`. The script
 serves the repo on a private local port, prints each slide on its own at 1440 x 1113 px (the 11 : 8.5
 ratio of a landscape Letter page), then `scripts/merge-pdf.py` joins them. The "Management Agreement"
-button is not clickable in the PDF until the agreement has a link.
+button in the PDF links to the agreement on the live site, at `https://commercial-seneca-ave-sw.pages.dev`
+unless `SITE_URL` is set.
 
 ## Deploy to Cloudflare Pages (AGM standard pattern)
 1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → select this repo.

@@ -2,12 +2,17 @@
 
 ## Outstanding
 
-- **Management agreement PDF.** The "Management Agreement" button on slide 09 is inert
-  (`aria-disabled="true"`, a click handler cancels it). To activate it, replace `href="#"` with the
-  PDF link and remove `aria-disabled`.
+Nothing. The "Management Agreement" button on slide 09 downloads
+`AGM-838-Seneca-Management-Agreement.pdf`, the draft agreement dated 2026.11.12, saved as
+`Thomas-Family-Properties-LLC-Management-Agreement-DRAFT-2026.11.12.pdf`. To publish a newer draft,
+replace that file and update the `download` name on the button in `index.html`.
 
-Nothing else is outstanding. The proposal carries no `class="tbd"` placeholders and no `.tbd-note`
-boxes. The CSS for both is left in `index.html` so a future placeholder can reuse it.
+The proposal carries no `class="tbd"` placeholders and no `.tbd-note` boxes. The CSS for both is left
+in `index.html` so a future placeholder can reuse it.
+
+The draft agreement disagrees with the proposal on inspection frequency, on whether the Owner Portal
+carries a fee, and on several fees and terms the proposal does not mention. See
+`docs/INFORMATION-REQUEST.md`.
 
 ## PDF
 

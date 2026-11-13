@@ -1,26 +1,30 @@
 # 838 Seneca management proposal: information needed
 
-One item left. Every placeholder and every amber note has been removed from the proposal.
+Nothing is needed to publish. The proposal has no placeholders, and the Management Agreement button
+downloads the draft agreement dated 2026.11.12.
 
 ---
 
-## Slide 09. Agreement and Contact
+## Points to reconcile between the draft agreement and the proposal
 
-- Link to the management agreement PDF: ____________
+The agreement and the proposal disagree in three places. The owner can read both, so one side should
+change before this goes out.
 
-The "Management Agreement" button is inert until this exists. It is a copy of AGM's standard
-agreement for Ownership to review, and the page says nothing needs to be signed yet.
+1. **Inspections.** Section 3(k) of the agreement says the property is inspected "no less than
+   monthly" by a building engineer, maintenance personnel or a contractor, at Owner's expense. Slide
+   04 says quarterly for a leased building and monthly only while vacant.
+2. **Portal and platform cost.** Slide 08 lists Owner Portal access as included in the monthly fee at
+   no additional charge. Section 3(g) of the agreement charges $125 a month for website hosting and
+   maintenance and a separate monthly software and property platform maintenance fee, invoiced as an
+   operating expense.
+3. **Fees and terms the proposal does not mention.** The agreement has a $500 offboarding fee on
+   termination (section 12(b)), an Early Termination Fee of the average monthly base fee times the
+   months remaining in the term (section 10(g)), a one-year term that renews unless either side gives
+   90 days' notice (section 2), and a 12 percent annual late fee on unpaid management fees.
 
----
-
-## Open questions
-
-- The note under the 90-day plan reads "This is a general overview only." The request that added it
-  ended mid-sentence ("general overview only, and"). If there was more to say, send the rest.
-- Cindy's title is published as "Director of Real Estate / Senior Property Manager". Confirm the
-  slash is the intended form.
-- Her industrial space managed before AGM lists "SC" for the 800,000 SF. Confirm whether that is
-  South Carolina or should be spelled out.
+Smaller points: the agreement fixes the routine maintenance approval threshold at $5,000, rising $100
+a year, while the proposal says the spending limit is to be set with Ownership. The agreement's
+effective date, term end date and notice contact are still blank.
 
 ---
 

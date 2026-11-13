@@ -9,11 +9,12 @@ import re
 import sys
 
 from pypdf import PdfReader, PdfWriter
-from pypdf.generic import ArrayObject, DictionaryObject, NameObject, NumberObject
+from pypdf.generic import ArrayObject, DictionaryObject, NameObject, NumberObject, TextStringObject
 from reportlab.lib.colors import Color
 from reportlab.pdfgen import canvas
 
 manifest_path, out_path = sys.argv[1], sys.argv[2]
+site_url = sys.argv[3].rstrip("/") if len(sys.argv) > 3 else ""
 manifest = json.load(open(manifest_path, encoding="utf-8"))
 
 writer = PdfWriter()
@@ -37,6 +38,13 @@ for page in writer.pages:
         annot = ref.get_object()
         action = annot.get("/A")
         uri = str(action.get_object().get("/URI", "")) if action else ""
+        local = re.match(r"https?://(?:127\.0\.0\.1|localhost)(?::\d+)?/(.*)", uri)
+        if local:
+            # a link to a file on the site: point it at the live site, or drop it if no address was given
+            if site_url:
+                action.get_object()[NameObject("/URI")] = TextStringObject(f"{site_url}/{local.group(1)}")
+                keep.append(ref)
+            continue
         if uri.startswith("http://agm-pdf.invalid/"):
             route = uri.rsplit("#", 1)[-1] if "#" in uri else ""
             if route in first_page:

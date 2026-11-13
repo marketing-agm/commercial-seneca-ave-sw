@@ -18,6 +18,9 @@ const { execFileSync } = require('child_process');
 const { chromium } = require('playwright');
 
 const ROOT = path.resolve(__dirname, '..');
+// links inside the PDF that point at files on the site (the Management Agreement button) are written as absolute
+// addresses on the live site; set SITE_URL if it moves
+const SITE_URL = (process.env.SITE_URL || 'https://commercial-seneca-ave-sw.pages.dev').replace(/\/$/, '');
 const OUT = path.resolve(process.argv[2] || path.join(ROOT, 'AGM-838-Seneca-Management-Proposal.pdf'));
 const ROUTES = ['cover', 'property', 'team', 'onboarding', 'operations', 'reporting', 'strategy', 'about', 'fees', 'agreement'];
 const W = 1440, H = 1113, RAIL = 384;
@@ -139,6 +142,6 @@ function serve() {
   srv.close();
 
   fs.writeFileSync(path.join(tmp, 'manifest.json'), JSON.stringify(manifest, null, 2));
-  execFileSync('python3', ['-I', path.join(__dirname, 'merge-pdf.py'), path.join(tmp, 'manifest.json'), OUT], { stdio: 'inherit' });
+  execFileSync('python3', ['-I', path.join(__dirname, 'merge-pdf.py'), path.join(tmp, 'manifest.json'), OUT, SITE_URL], { stdio: 'inherit' });
   fs.rmSync(tmp, { recursive: true, force: true });
 })();
